@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-export type AIProvider = 'openai' | 'anthropic' | 'google';
+export type AIProvider = 'openai' | 'anthropic' | 'google' | 'deepseek' | 'qwen';
 
 interface AIMessage {
   role: 'user' | 'assistant';
@@ -19,6 +19,8 @@ const MODELS: Record<AIProvider, string[]> = {
   openai: ['gpt-4o-mini', 'gpt-4o', 'gpt-4.1-mini', 'gpt-4.1-nano', 'o4-mini'],
   anthropic: ['claude-sonnet-4-5-20250929', 'claude-haiku-4-5-20251001'],
   google: ['gemini-2.0-flash', 'gemini-2.5-flash-preview-04-17'],
+  deepseek: ['deepseek-chat', 'deepseek-reasoner'],
+  qwen: ['qwen-turbo', 'qwen-plus', 'qwen-max'],
 };
 
 export function getModels(provider: AIProvider): string[] {
@@ -52,8 +54,15 @@ RULES:
 
 You have context about the problem they're solving and their current code.`;
 
-async function streamOpenAI(config: AIConfig, messages: AIMessage[], systemContext: string, onChunk: (text: string) => void, signal: AbortSignal) {
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
+const OPENAI_COMPAT_URLS: Partial<Record<AIProvider, string>> = {
+  openai: 'https://api.openai.com/v1/chat/completions',
+  deepseek: 'https://api.deepseek.com/chat/completions',
+  qwen: 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions',
+};
+
+async function streamOpenAICompat(config: AIConfig, messages: AIMessage[], systemContext: string, onChunk: (text: string) => void, signal: AbortSignal) {
+  const url = OPENAI_COMPAT_URLS[config.provider] || OPENAI_COMPAT_URLS.openai!;
+  const res = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -72,7 +81,7 @@ async function streamOpenAI(config: AIConfig, messages: AIMessage[], systemConte
 
   if (!res.ok) {
     const err = await res.text();
-    throw new Error(`OpenAI API error: ${res.status} - ${err}`);
+    throw new Error(`${config.provider} API error: ${res.status} - ${err}`);
   }
 
   const reader = res.body!.getReader();
@@ -220,7 +229,7 @@ export function useAI() {
     try {
       const streamFn = config.provider === 'anthropic' ? streamAnthropic
         : config.provider === 'google' ? streamGoogle
-        : streamOpenAI;
+        : streamOpenAICompat;
 
       await streamFn(config, newMessages, systemContext, onChunk, signal || new AbortController().signal);
     } catch (e: any) {

@@ -535,6 +535,8 @@ function AIPanel({ ai, problem, code, language }: { ai: ReturnType<typeof useAI>
               <option value="openai">OpenAI</option>
               <option value="anthropic">Anthropic</option>
               <option value="google">Google Gemini</option>
+              <option value="deepseek">DeepSeek</option>
+              <option value="qwen">Qwen (Alibaba)</option>
             </select>
           </div>
           <div>
