@@ -158,8 +158,8 @@ export default function ProblemView() {
       </div>
 
       {/* MOBILE: problem on top, editor hidden behind toggle */}
-      <div className="md:hidden">
-        <div className="overflow-y-auto p-4 pb-24">
+      <div className="md:hidden overflow-x-hidden max-w-full">
+        <div className="overflow-y-auto overflow-x-hidden p-4 pb-24">
           <Link
             to="/patterns"
             className="mb-4 inline-flex items-center gap-1 text-sm text-gray-400 hover:text-gray-200"
@@ -557,7 +557,7 @@ function RevealButton({
         {label}
       </div>
       {isCode ? (
-        <pre className="overflow-x-auto whitespace-pre-wrap font-mono text-xs leading-relaxed text-gray-200">
+        <pre className="overflow-x-auto whitespace-pre-wrap break-words font-mono text-xs leading-relaxed text-gray-200 max-w-full">
           {content}
         </pre>
       ) : (

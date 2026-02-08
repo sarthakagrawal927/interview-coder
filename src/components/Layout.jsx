@@ -19,7 +19,7 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 pb-16 md:pb-0">
+    <div className="min-h-screen bg-gray-950 pb-16 md:pb-0 overflow-x-hidden max-w-full">
       {/* Top Nav */}
       <nav className="sticky top-0 z-50 border-b border-gray-800 bg-gray-950/80 backdrop-blur-xl">
         <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
