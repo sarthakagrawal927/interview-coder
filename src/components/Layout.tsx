@@ -91,12 +91,10 @@ export default function Layout() {
                   <Brain className="h-4 w-4" />
                   Review
                 </NavLink>
-                {activeCategory.id === 'dsa' && (
-                  <NavLink to={`${basePath}/import`} className={linkClass}>
-                    <PlusCircle className="h-4 w-4" />
-                    Import
-                  </NavLink>
-                )}
+                <NavLink to={`${basePath}/import`} className={linkClass}>
+                  <PlusCircle className="h-4 w-4" />
+                  Import
+                </NavLink>
               </div>
             )}
 
