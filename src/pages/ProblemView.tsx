@@ -1,12 +1,13 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Editor from '@monaco-editor/react';
 import { useProblems } from '../hooks/useProblems';
 import { useProgress } from '../hooks/useProgress';
 import { useCodeExecution } from '../hooks/useCodeExecution';
-import { useAI, loadAIConfig, saveAIConfig, getModels, type AIProvider } from '../hooks/useAI';
+import { useAI, loadAIConfig, saveAIConfig, getModels, LOCAL_PROVIDERS, type AIProvider } from '../hooks/useAI';
 import { useNotes } from '../hooks/useNotes';
-import type { Language } from '../types';
+import { fetchLeetCodeProblem, buildProblemFromLeetCode } from '../lib/leetcode';
+import type { Language, SimilarQuestion } from '../types';
 import {
   Play,
   RotateCcw,
@@ -27,6 +28,8 @@ import {
   Send,
   X,
   Settings,
+  PlusCircle,
+  Link2,
 } from 'lucide-react';
 
 export default function ProblemView() {
@@ -189,6 +192,7 @@ export default function ProblemView() {
               setRevealedCode={setRevealedCode}
             />
             <NotesSection notes={notes} setNotesLocal={setNotesLocal} handleSaveNotes={handleSaveNotes} />
+            <SimilarProblems problem={problem} />
           </div>
         </div>
 
@@ -330,6 +334,7 @@ export default function ProblemView() {
           </div>
 
           <NotesSection notes={notes} setNotesLocal={setNotesLocal} handleSaveNotes={handleSaveNotes} />
+          <SimilarProblems problem={problem} />
         </div>
       </div>
     </>
@@ -528,7 +533,7 @@ function AIPanel({ ai, problem, code, language, selectedCode }: { ai: ReturnType
 
   const handleSend = () => {
     if (!input.trim() || ai.isStreaming) return;
-    if (!config.apiKey) {
+    if (!LOCAL_PROVIDERS.has(config.provider) && !config.apiKey) {
       setShowSettings(true);
       return;
     }
@@ -539,7 +544,7 @@ function AIPanel({ ai, problem, code, language, selectedCode }: { ai: ReturnType
 
   const handleAskAboutSelection = (question: string) => {
     if (!selectedCode || ai.isStreaming) return;
-    if (!config.apiKey) {
+    if (!LOCAL_PROVIDERS.has(config.provider) && !config.apiKey) {
       setShowSettings(true);
       return;
     }
@@ -573,11 +578,18 @@ function AIPanel({ ai, problem, code, language, selectedCode }: { ai: ReturnType
               }}
               className="w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-xs text-gray-200 outline-none"
             >
-              <option value="openai">OpenAI</option>
-              <option value="anthropic">Anthropic</option>
-              <option value="google">Google Gemini</option>
-              <option value="deepseek">DeepSeek</option>
-              <option value="qwen">Qwen (Alibaba)</option>
+              <optgroup label="Local CLI (no API key)">
+                <option value="claude-code">Claude Code</option>
+                <option value="codex">Codex CLI</option>
+                <option value="gemini-cli">Gemini CLI</option>
+              </optgroup>
+              <optgroup label="Cloud API (needs key)">
+                <option value="openai">OpenAI</option>
+                <option value="anthropic">Anthropic</option>
+                <option value="google">Google Gemini</option>
+                <option value="deepseek">DeepSeek</option>
+                <option value="qwen">Qwen (Alibaba)</option>
+              </optgroup>
             </select>
           </div>
           <div>
@@ -590,16 +602,23 @@ function AIPanel({ ai, problem, code, language, selectedCode }: { ai: ReturnType
               {getModels(config.provider).map(m => <option key={m} value={m}>{m}</option>)}
             </select>
           </div>
-          <div>
-            <label className="mb-1 block text-xs text-gray-400">API Key</label>
-            <input
-              type="password"
-              value={config.apiKey}
-              onChange={e => setConfig(prev => ({ ...prev, apiKey: e.target.value }))}
-              placeholder="sk-..."
-              className="w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-xs text-gray-200 placeholder-gray-500 outline-none"
-            />
-          </div>
+          {LOCAL_PROVIDERS.has(config.provider) ? (
+            <div className="rounded-lg border border-gray-700 bg-gray-800/50 p-3">
+              <p className="text-xs text-gray-400">No API key needed. Uses your local CLI.</p>
+              <p className="mt-1 text-xs text-gray-500">Run <code className="rounded bg-gray-700 px-1">npm run server</code> to start the local server.</p>
+            </div>
+          ) : (
+            <div>
+              <label className="mb-1 block text-xs text-gray-400">API Key</label>
+              <input
+                type="password"
+                value={config.apiKey}
+                onChange={e => setConfig(prev => ({ ...prev, apiKey: e.target.value }))}
+                placeholder="sk-..."
+                className="w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-xs text-gray-200 placeholder-gray-500 outline-none"
+              />
+            </div>
+          )}
           <button
             onClick={handleSaveSettings}
             className="w-full rounded-lg bg-purple-600 py-2 text-xs font-medium text-white hover:bg-purple-700"
@@ -916,6 +935,109 @@ function RevealButton({
       ) : (
         <p className={`text-sm leading-relaxed ${textColor}`}>{content}</p>
       )}
+    </div>
+  );
+}
+
+function SimilarProblems({ problem }: { problem: any }) {
+  const navigate = useNavigate();
+  const { getBySlug, getByPattern, addCustomProblem, patterns } = useProblems();
+  const [importing, setImporting] = useState<string | null>(null);
+
+  // Same-pattern problems (excluding current)
+  const samePattern = getByPattern(problem.pattern)
+    .filter(p => p.id !== problem.id)
+    .slice(0, 3);
+
+  // LeetCode similar questions from the problem data
+  const similarFromLC: SimilarQuestion[] = (problem.similarQuestions || []).slice(0, 5);
+
+  if (samePattern.length === 0 && similarFromLC.length === 0) return null;
+
+  const handleImportSimilar = async (slug: string) => {
+    const existing = getBySlug(slug);
+    if (existing) {
+      navigate(`/problem/${existing.id}`);
+      return;
+    }
+
+    setImporting(slug);
+    try {
+      const data = await fetchLeetCodeProblem(slug);
+      const q = data.data.question;
+      const pat = patterns.find(p => p.id === problem.pattern);
+      const newProblem = buildProblemFromLeetCode(q, slug, pat?.name || '');
+      addCustomProblem(newProblem);
+      navigate(`/problem/${newProblem.id}`);
+    } catch {
+      // Fallback: navigate to import page
+      navigate(`/import`);
+    } finally {
+      setImporting(null);
+    }
+  };
+
+  const diffColors: Record<string, string> = {
+    Easy: 'text-green-400', Medium: 'text-yellow-400', Hard: 'text-red-400',
+  };
+
+  return (
+    <div className="mb-6">
+      <h2 className="mb-3 text-sm font-semibold text-gray-400 uppercase tracking-wider">
+        Similar Problems
+      </h2>
+
+      <div className="space-y-2">
+        {/* Same-pattern problems already in the app */}
+        {samePattern.map(p => (
+          <Link
+            key={p.id}
+            to={`/problem/${p.id}`}
+            className="flex items-center justify-between rounded-lg border border-gray-800 bg-gray-900/50 p-3 transition-colors hover:bg-gray-800/50"
+          >
+            <div className="min-w-0">
+              <div className="text-sm font-medium text-gray-200 truncate">
+                {p.leetcodeNumber ? `${p.leetcodeNumber}. ` : ''}{p.title}
+              </div>
+            </div>
+            <span className={`ml-2 flex-shrink-0 text-xs font-medium ${diffColors[p.difficulty] || 'text-gray-400'}`}>
+              {p.difficulty}
+            </span>
+          </Link>
+        ))}
+
+        {/* LeetCode similar questions (may need import) */}
+        {similarFromLC.map(sq => {
+          const existing = getBySlug(sq.titleSlug);
+          if (existing && samePattern.some(p => p.id === existing.id)) return null;
+
+          return (
+            <button
+              key={sq.titleSlug}
+              onClick={() => existing ? navigate(`/problem/${existing.id}`) : handleImportSimilar(sq.titleSlug)}
+              disabled={importing === sq.titleSlug}
+              className="flex w-full items-center justify-between rounded-lg border border-gray-800 bg-gray-900/50 p-3 text-left transition-colors hover:bg-gray-800/50 disabled:opacity-50"
+            >
+              <div className="flex items-center gap-2 min-w-0">
+                {!existing && (
+                  importing === sq.titleSlug
+                    ? <Loader2 className="h-3.5 w-3.5 flex-shrink-0 text-blue-400 animate-spin" />
+                    : <PlusCircle className="h-3.5 w-3.5 flex-shrink-0 text-blue-400" />
+                )}
+                <span className="text-sm font-medium text-gray-200 truncate">{sq.title}</span>
+              </div>
+              <div className="flex items-center gap-2 ml-2 flex-shrink-0">
+                <span className={`text-xs font-medium ${diffColors[sq.difficulty] || 'text-gray-400'}`}>
+                  {sq.difficulty}
+                </span>
+                {!existing && (
+                  <Link2 className="h-3 w-3 text-gray-600" />
+                )}
+              </div>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -2,7 +2,10 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
 
-export type AIProvider = 'openai' | 'anthropic' | 'google' | 'deepseek' | 'qwen';
+export type AIProvider = 'claude-code' | 'codex' | 'gemini-cli' | 'openai' | 'anthropic' | 'google' | 'deepseek' | 'qwen';
+
+// Local CLI providers that don't need API keys
+export const LOCAL_PROVIDERS = new Set<AIProvider>(['claude-code', 'codex', 'gemini-cli']);
 
 interface AIMessage {
   role: 'user' | 'assistant';
@@ -18,6 +21,9 @@ interface AIConfig {
 const AI_CONFIG_KEY = 'dsa-prep-ai-config';
 
 const MODELS: Record<AIProvider, string[]> = {
+  'claude-code': ['claude-code-local'],
+  'codex': ['codex-local'],
+  'gemini-cli': ['gemini-cli-local'],
   openai: ['gpt-4.1-nano', 'gpt-4.1-mini', 'gpt-4.1', 'gpt-4o-mini', 'gpt-4o', 'o4-mini', 'o3-mini', 'gpt-4.5-preview'],
   anthropic: ['claude-haiku-4-5-20251001', 'claude-sonnet-4-5-20250929', 'claude-opus-4-6'],
   google: ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-2.5-pro', 'gemini-3-flash-preview', 'gemini-3-pro-preview'],
@@ -34,7 +40,7 @@ export function loadAIConfig(): AIConfig {
     const raw = localStorage.getItem(AI_CONFIG_KEY);
     if (raw) return JSON.parse(raw);
   } catch { }
-  return { provider: 'openai', apiKey: '', model: 'gpt-4.1-nano' };
+  return { provider: 'claude-code' as AIProvider, apiKey: '', model: 'claude-code-local' };
 }
 
 export function saveAIConfig(config: AIConfig) {
@@ -201,6 +207,55 @@ async function streamGoogle(config: AIConfig, messages: AIMessage[], systemConte
   }
 }
 
+// Maps frontend provider names to server-side tool names
+const LOCAL_TOOL_MAP: Partial<Record<AIProvider, string>> = {
+  'claude-code': 'claude',
+  'codex': 'codex',
+  'gemini-cli': 'gemini',
+};
+
+async function streamLocalCLI(config: AIConfig, messages: AIMessage[], systemContext: string, onChunk: (text: string) => void, signal: AbortSignal) {
+  const tool = LOCAL_TOOL_MAP[config.provider] || 'claude';
+  const res = await fetch('/api/chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      messages,
+      systemPrompt: SYSTEM_PROMPT + '\n\n' + systemContext,
+      tool,
+    }),
+    signal,
+  });
+
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Local CLI server error: ${res.status} - ${err}`);
+  }
+
+  const reader = res.body!.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split('\n');
+    buffer = lines.pop() || '';
+    for (const line of lines) {
+      if (line.startsWith('data: ') && line !== 'data: [DONE]') {
+        try {
+          const json = JSON.parse(line.slice(6));
+          if (json.text) onChunk(json.text);
+          if (json.error) throw new Error(json.error);
+        } catch (e: any) {
+          if (e.message && !e.message.includes('JSON')) throw e;
+        }
+      }
+    }
+  }
+}
+
 const LOCAL_CHATS_KEY = 'dsa-prep-chats';
 
 function loadLocalChats(): Record<string, AIMessage[]> {
@@ -295,7 +350,8 @@ export function useAI(problemId?: string) {
     };
 
     try {
-      const streamFn = config.provider === 'anthropic' ? streamAnthropic
+      const streamFn = LOCAL_PROVIDERS.has(config.provider) ? streamLocalCLI
+        : config.provider === 'anthropic' ? streamAnthropic
         : config.provider === 'google' ? streamGoogle
         : streamOpenAICompat;
 
