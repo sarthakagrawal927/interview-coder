@@ -25,11 +25,18 @@ export function getCategoryConfig(id: InterviewCategory): CategoryConfig {
 
 // ─── Core Types ─────────────────────────────────────────────────────────────
 
+export interface Resource {
+  title: string;
+  url: string;
+  type?: 'article' | 'video' | 'course' | 'docs';
+}
+
 export interface Pattern {
   id: string;
   name: string;
   icon: string;
   description: string;
+  resources?: Resource[];
 }
 
 export interface Step {
@@ -99,6 +106,8 @@ export interface Problem {
   assessing?: string;
   starHints?: { situation: string; task: string; action: string; result: string };
   tips?: string[];
+  // Shared
+  resources?: { title: string; url: string; type?: 'article' | 'video' | 'course' | 'docs' }[];
 }
 
 // ─── Data container (shared across all categories) ──────────────────────────
