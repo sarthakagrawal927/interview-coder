@@ -1,0 +1,2870 @@
+{
+  "patterns": [
+    {
+      "id": "leadership-and-influence",
+      "name": "Leadership & Influence",
+      "icon": "👑",
+      "description": "Leading teams and influencing without authority"
+    },
+    {
+      "id": "conflict-resolution",
+      "name": "Conflict Resolution",
+      "icon": "🤝",
+      "description": "Handling disagreements and difficult conversations"
+    },
+    {
+      "id": "problem-solving-and-decision-making",
+      "name": "Problem Solving & Decision Making",
+      "icon": "🧩",
+      "description": "Analytical thinking and navigating ambiguity"
+    },
+    {
+      "id": "teamwork-and-collaboration",
+      "name": "Teamwork & Collaboration",
+      "icon": "👥",
+      "description": "Working effectively with cross-functional teams"
+    },
+    {
+      "id": "failure-and-learning",
+      "name": "Failure & Learning",
+      "icon": "📈",
+      "description": "Mistakes, setbacks, and growth mindset"
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "icon": "💬",
+      "description": "Conveying ideas and adapting communication style"
+    },
+    {
+      "id": "time-management-and-prioritization",
+      "name": "Time Management & Prioritization",
+      "icon": "⏰",
+      "description": "Managing workload and competing priorities"
+    },
+    {
+      "id": "innovation-and-creativity",
+      "name": "Innovation & Creativity",
+      "icon": "💡",
+      "description": "Thinking outside the box and driving change"
+    },
+    {
+      "id": "customer-obsession",
+      "name": "Customer Obsession",
+      "icon": "🎯",
+      "description": "Customer focus, empathy, and delivering value"
+    },
+    {
+      "id": "ownership-and-accountability",
+      "name": "Ownership & Accountability",
+      "icon": "🏆",
+      "description": "Taking responsibility and driving results"
+    }
+  ],
+  "problems": [
+    {
+      "id": "beh-001",
+      "title": "You led a project or initiative without having formal authority ove...",
+      "difficulty": "Hard",
+      "pattern": "leadership-and-influence",
+      "category": "behavioral",
+      "description": "Tell me about a time you led a project or initiative without having formal authority over the team members involved.",
+      "question": "Tell me about a time you led a project or initiative without having formal authority over the team members involved.",
+      "assessing": "Ability to influence without authority, emergent leadership qualities, and whether you can rally people around a shared goal through persuasion rather than positional power.",
+      "starHints": {
+        "situation": "Describe the project context and why there was no formal authority structure (cross-team effort, volunteer initiative, etc.)",
+        "task": "Explain what needed to be accomplished and why leadership was needed",
+        "action": "Detail how you built consensus, motivated others, set direction, and managed without a title -- focus on specific influence tactics",
+        "result": "Share the measurable outcome and how the team dynamic evolved"
+      },
+      "tips": [
+        "Emphasize soft influence tactics like building relationships and creating shared vision",
+        "Show you understand the difference between authority and leadership",
+        "Mention how you handled resistance from those who questioned your role",
+        "Quantify the impact where possible"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the project context and why there was no formal authority structure (cross-team effort, volunteer initiative, etc.)",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Explain what needed to be accomplished and why leadership was needed",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Detail how you built consensus, motivated others, set direction, and managed without a title -- focus on specific influence tactics",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Share the measurable outcome and how the team dynamic evolved",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-001-c1",
+          "front": "Tell me about a time you led a project or initiative without having formal authority over the team members involved.",
+          "back": "Assessing: Ability to influence without authority, emergent leadership qualities, and whether you can rally people around a shared goal through persuasion rather than positional power."
+        },
+        {
+          "id": "beh-001-c2",
+          "front": "What is assessed: You led a project or initiative without having formal authority ove...?",
+          "back": "Ability to influence without authority, emergent leadership qualities, and whether you can rally people around a shared goal through persuasion rather than positional power."
+        }
+      ]
+    },
+    {
+      "id": "beh-002",
+      "title": "Where you had to convince a senior stakeholder or executive to chan...",
+      "difficulty": "Hard",
+      "pattern": "leadership-and-influence",
+      "category": "behavioral",
+      "description": "Describe a situation where you had to convince a senior stakeholder or executive to change their mind on a technical decision.",
+      "question": "Describe a situation where you had to convince a senior stakeholder or executive to change their mind on a technical decision.",
+      "assessing": "Communication skills with senior leadership, ability to use data and evidence to influence upward, courage to push back respectfully, and strategic thinking.",
+      "starHints": {
+        "situation": "Set up the technical decision in question and why you believed the current direction was wrong",
+        "task": "Explain the stakes -- what would happen if the wrong decision was made",
+        "action": "Describe how you prepared your case with data, prototypes, or evidence, how you framed the conversation, and how you navigated organizational dynamics",
+        "result": "Whether they changed their mind or not, what was the outcome and what did you learn about influencing upward"
+      },
+      "tips": [
+        "Show that you did your homework before the conversation",
+        "Demonstrate respect for their perspective even while disagreeing",
+        "Use data and evidence, not just opinions",
+        "If they did not change their mind, show you committed to the decision anyway (disagree and commit)"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Set up the technical decision in question and why you believed the current direction was wrong",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Explain the stakes -- what would happen if the wrong decision was made",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Describe how you prepared your case with data, prototypes, or evidence, how you framed the conversation, and how you navigated organizational dynamics",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Whether they changed their mind or not, what was the outcome and what did you learn about influencing upward",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-002-c1",
+          "front": "Describe a situation where you had to convince a senior stakeholder or executive to change their mind on a technical decision.",
+          "back": "Assessing: Communication skills with senior leadership, ability to use data and evidence to influence upward, courage to push back respectfully, and strategic thinking."
+        },
+        {
+          "id": "beh-002-c2",
+          "front": "What is assessed: Where you had to convince a senior stakeholder or executive to chan...?",
+          "back": "Communication skills with senior leadership, ability to use data and evidence to influence upward, courage to push back respectfully, and strategic thinking."
+        }
+      ]
+    },
+    {
+      "id": "beh-003",
+      "title": "You mentored someone and it had a significant impact on their caree...",
+      "difficulty": "Medium",
+      "pattern": "leadership-and-influence",
+      "category": "behavioral",
+      "description": "Tell me about a time you mentored someone and it had a significant impact on their career or performance.",
+      "question": "Tell me about a time you mentored someone and it had a significant impact on their career or performance.",
+      "assessing": "Investment in growing others, empathy, coaching ability, and whether you see developing people as part of your role regardless of title.",
+      "starHints": {
+        "situation": "Describe who you mentored and the context (new hire, struggling teammate, junior engineer, etc.)",
+        "task": "What specific gap or challenge were you helping them with",
+        "action": "Detail your mentoring approach -- regular check-ins, pair programming, code reviews, career advice, etc.",
+        "result": "Concrete improvements in their performance, promotion, confidence, or skill level"
+      },
+      "tips": [
+        "Be specific about what changed for the person you mentored",
+        "Show empathy and patience in your approach",
+        "Highlight that you adapted your style to their needs",
+        "Avoid making it sound like you did all the work -- give them credit"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe who you mentored and the context (new hire, struggling teammate, junior engineer, etc.)",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What specific gap or challenge were you helping them with",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Detail your mentoring approach -- regular check-ins, pair programming, code reviews, career advice, etc.",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Concrete improvements in their performance, promotion, confidence, or skill level",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-003-c1",
+          "front": "Tell me about a time you mentored someone and it had a significant impact on their career or performance.",
+          "back": "Assessing: Investment in growing others, empathy, coaching ability, and whether you see developing people as part of your role regardless of title."
+        },
+        {
+          "id": "beh-003-c2",
+          "front": "What is assessed: You mentored someone and it had a significant impact on their caree...?",
+          "back": "Investment in growing others, empathy, coaching ability, and whether you see developing people as part of your role regardless of title."
+        }
+      ]
+    },
+    {
+      "id": "beh-004",
+      "title": "Give an example of when you drove a cultural or process change in y...",
+      "difficulty": "Hard",
+      "pattern": "leadership-and-influence",
+      "category": "behavioral",
+      "description": "Give an example of when you drove a cultural or process change in your team or organization.",
+      "question": "Give an example of when you drove a cultural or process change in your team or organization.",
+      "assessing": "Change management ability, systems thinking, persistence in driving improvements, and whether you leave teams better than you found them.",
+      "starHints": {
+        "situation": "Describe the existing culture or process and why it was problematic",
+        "task": "What change did you believe was needed and why",
+        "action": "How you built the case, got buy-in, piloted the change, and scaled it. Include how you handled resistance.",
+        "result": "Measurable improvements in productivity, quality, morale, or other metrics"
+      },
+      "tips": [
+        "Show awareness that culture change is hard and takes time",
+        "Demonstrate that you brought people along rather than forcing change",
+        "Include specific metrics showing the before and after",
+        "Mention any setbacks and how you adjusted"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the existing culture or process and why it was problematic",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What change did you believe was needed and why",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you built the case, got buy-in, piloted the change, and scaled it. Include how you handled resistance.",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Measurable improvements in productivity, quality, morale, or other metrics",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-004-c1",
+          "front": "Give an example of when you drove a cultural or process change in your team or organization.",
+          "back": "Assessing: Change management ability, systems thinking, persistence in driving improvements, and whether you leave teams better than you found them."
+        },
+        {
+          "id": "beh-004-c2",
+          "front": "What is assessed: Give an example of when you drove a cultural or process change in y...?",
+          "back": "Change management ability, systems thinking, persistence in driving improvements, and whether you leave teams better than you found them."
+        }
+      ]
+    },
+    {
+      "id": "beh-005",
+      "title": "You had to make a decision that was unpopular with your team.",
+      "difficulty": "Medium",
+      "pattern": "leadership-and-influence",
+      "category": "behavioral",
+      "description": "Tell me about a time you had to make a decision that was unpopular with your team.",
+      "question": "Tell me about a time you had to make a decision that was unpopular with your team.",
+      "assessing": "Courage to make tough calls, ability to communicate difficult decisions with empathy, and whether you prioritize what is right over what is easy.",
+      "starHints": {
+        "situation": "Describe the context and the decision that needed to be made",
+        "task": "Why was this decision necessary despite being unpopular",
+        "action": "How you communicated the decision, how you listened to concerns, and how you supported the team through the transition",
+        "result": "The outcome and how the team responded over time"
+      },
+      "tips": [
+        "Show transparency in your reasoning",
+        "Demonstrate empathy for those affected",
+        "Do not frame it as you vs. the team",
+        "Show that you followed through and monitored the impact"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the context and the decision that needed to be made",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Why was this decision necessary despite being unpopular",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you communicated the decision, how you listened to concerns, and how you supported the team through the transition",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The outcome and how the team responded over time",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-005-c1",
+          "front": "Tell me about a time you had to make a decision that was unpopular with your team.",
+          "back": "Assessing: Courage to make tough calls, ability to communicate difficult decisions with empathy, and whether you prioritize what is right over what is easy."
+        },
+        {
+          "id": "beh-005-c2",
+          "front": "What is assessed: You had to make a decision that was unpopular with your team.?",
+          "back": "Courage to make tough calls, ability to communicate difficult decisions with empathy, and whether you prioritize what is right over what is easy."
+        }
+      ]
+    },
+    {
+      "id": "beh-006",
+      "title": "You disagreed with your manager or tech lead. How did you handle it",
+      "difficulty": "Medium",
+      "pattern": "conflict-resolution",
+      "category": "behavioral",
+      "description": "Tell me about a time you disagreed with your manager or tech lead. How did you handle it?",
+      "question": "Tell me about a time you disagreed with your manager or tech lead. How did you handle it?",
+      "assessing": "Professional maturity, ability to disagree respectfully, whether you can separate ego from ideas, and how you navigate power dynamics constructively.",
+      "starHints": {
+        "situation": "Describe the specific disagreement and the context (technical decision, project direction, priorities, etc.)",
+        "task": "What was at stake if the wrong approach was taken",
+        "action": "How you raised your concerns -- privately or publicly, the evidence you brought, and how you listened to their perspective",
+        "result": "The resolution, whether you prevailed or committed to their decision, and what you learned"
+      },
+      "tips": [
+        "Never badmouth your manager, even if they were wrong",
+        "Show that you tried to understand their perspective first",
+        "Focus on the resolution, not the conflict itself",
+        "If you were wrong, say so -- it shows self-awareness",
+        "Demonstrate the 'disagree and commit' principle"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the specific disagreement and the context (technical decision, project direction, priorities, etc.)",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What was at stake if the wrong approach was taken",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you raised your concerns -- privately or publicly, the evidence you brought, and how you listened to their perspective",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The resolution, whether you prevailed or committed to their decision, and what you learned",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-006-c1",
+          "front": "Tell me about a time you disagreed with your manager or tech lead. How did you handle it?",
+          "back": "Assessing: Professional maturity, ability to disagree respectfully, whether you can separate ego from ideas, and how you navigate power dynamics constructively."
+        },
+        {
+          "id": "beh-006-c2",
+          "front": "What is assessed: You disagreed with your manager or tech lead. How did you handle it?",
+          "back": "Professional maturity, ability to disagree respectfully, whether you can separate ego from ideas, and how you navigate power dynamics constructively."
+        }
+      ]
+    },
+    {
+      "id": "beh-007",
+      "title": "Where two team members were in conflict and you had to mediate.",
+      "difficulty": "Hard",
+      "pattern": "conflict-resolution",
+      "category": "behavioral",
+      "description": "Describe a situation where two team members were in conflict and you had to mediate.",
+      "question": "Describe a situation where two team members were in conflict and you had to mediate.",
+      "assessing": "Emotional intelligence, conflict mediation skills, impartiality, and whether you proactively address team dysfunction rather than ignoring it.",
+      "starHints": {
+        "situation": "Describe the conflict between the two people and how it was affecting the team",
+        "task": "Why intervention was necessary and what outcome you were aiming for",
+        "action": "Steps you took -- one-on-one conversations, facilitating a joint discussion, finding common ground, establishing agreements",
+        "result": "How the relationship improved and what impact it had on team productivity"
+      },
+      "tips": [
+        "Show that you listened to both sides without taking sides",
+        "Demonstrate empathy for both parties",
+        "Focus on the professional impact, not personal drama",
+        "Show a structured approach to conflict resolution"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the conflict between the two people and how it was affecting the team",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Why intervention was necessary and what outcome you were aiming for",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Steps you took -- one-on-one conversations, facilitating a joint discussion, finding common ground, establishing agreements",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "How the relationship improved and what impact it had on team productivity",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-007-c1",
+          "front": "Describe a situation where two team members were in conflict and you had to mediate.",
+          "back": "Assessing: Emotional intelligence, conflict mediation skills, impartiality, and whether you proactively address team dysfunction rather than ignoring it."
+        },
+        {
+          "id": "beh-007-c2",
+          "front": "What is assessed: Where two team members were in conflict and you had to mediate.?",
+          "back": "Emotional intelligence, conflict mediation skills, impartiality, and whether you proactively address team dysfunction rather than ignoring it."
+        }
+      ]
+    },
+    {
+      "id": "beh-008",
+      "title": "You received harsh or unfair feedback. How did you respond",
+      "difficulty": "Medium",
+      "pattern": "conflict-resolution",
+      "category": "behavioral",
+      "description": "Tell me about a time you received harsh or unfair feedback. How did you respond?",
+      "question": "Tell me about a time you received harsh or unfair feedback. How did you respond?",
+      "assessing": "Emotional resilience, growth mindset, self-awareness, and whether you can extract value from criticism without becoming defensive.",
+      "starHints": {
+        "situation": "Describe the feedback you received and the context",
+        "task": "Your initial emotional reaction and what you needed to figure out",
+        "action": "How you processed the feedback, sought to understand the underlying message, and what you did with it",
+        "result": "How the feedback changed your behavior or approach, and how your relationship with the feedback-giver evolved"
+      },
+      "tips": [
+        "Be honest about your initial reaction, but show you moved past it",
+        "Demonstrate ability to separate the delivery from the content",
+        "Show that you looked for the kernel of truth even in unfair feedback",
+        "Avoid positioning yourself as a victim"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the feedback you received and the context",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Your initial emotional reaction and what you needed to figure out",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you processed the feedback, sought to understand the underlying message, and what you did with it",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "How the feedback changed your behavior or approach, and how your relationship with the feedback-giver evolved",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-008-c1",
+          "front": "Tell me about a time you received harsh or unfair feedback. How did you respond?",
+          "back": "Assessing: Emotional resilience, growth mindset, self-awareness, and whether you can extract value from criticism without becoming defensive."
+        },
+        {
+          "id": "beh-008-c2",
+          "front": "What is assessed: You received harsh or unfair feedback. How did you respond?",
+          "back": "Emotional resilience, growth mindset, self-awareness, and whether you can extract value from criticism without becoming defensive."
+        }
+      ]
+    },
+    {
+      "id": "beh-009",
+      "title": "You had a disagreement with a colleague about a technical approach....",
+      "difficulty": "Easy",
+      "pattern": "conflict-resolution",
+      "category": "behavioral",
+      "description": "Tell me about a time you had a disagreement with a colleague about a technical approach. How was it resolved?",
+      "question": "Tell me about a time you had a disagreement with a colleague about a technical approach. How was it resolved?",
+      "assessing": "Technical communication, ability to debate ideas without making it personal, openness to other perspectives, and collaborative problem-solving.",
+      "starHints": {
+        "situation": "Describe the technical disagreement (architecture choice, language/framework, design pattern, etc.)",
+        "task": "What decision needed to be made and what were the tradeoffs",
+        "action": "How you presented your case, how you evaluated their approach, any benchmarks or prototypes you built to compare",
+        "result": "The decision that was made, why, and what you learned from the other perspective"
+      },
+      "tips": [
+        "Show that you evaluated both approaches objectively",
+        "Mention if you built prototypes or used data to decide",
+        "Demonstrate intellectual humility",
+        "Avoid framing it as 'I was right and they were wrong'"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the technical disagreement (architecture choice, language/framework, design pattern, etc.)",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What decision needed to be made and what were the tradeoffs",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you presented your case, how you evaluated their approach, any benchmarks or prototypes you built to compare",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The decision that was made, why, and what you learned from the other perspective",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-009-c1",
+          "front": "Tell me about a time you had a disagreement with a colleague about a technical approach. How was it resolved?",
+          "back": "Assessing: Technical communication, ability to debate ideas without making it personal, openness to other perspectives, and collaborative problem-solving."
+        },
+        {
+          "id": "beh-009-c2",
+          "front": "What is assessed: You had a disagreement with a colleague about a technical approach....?",
+          "back": "Technical communication, ability to debate ideas without making it personal, openness to other perspectives, and collaborative problem-solving."
+        }
+      ]
+    },
+    {
+      "id": "beh-010",
+      "title": "When you had to push back on a request from a partner team or stake...",
+      "difficulty": "Medium",
+      "pattern": "conflict-resolution",
+      "category": "behavioral",
+      "description": "Describe a time when you had to push back on a request from a partner team or stakeholder.",
+      "question": "Describe a time when you had to push back on a request from a partner team or stakeholder.",
+      "assessing": "Ability to set boundaries, negotiate, and say no constructively while maintaining relationships and focusing on organizational priorities.",
+      "starHints": {
+        "situation": "Describe the request and why it was problematic (scope, timeline, priorities, technical feasibility)",
+        "task": "What was the right thing to do and why pushing back was necessary",
+        "action": "How you communicated your position, offered alternatives, and found a compromise",
+        "result": "The outcome for both teams and the relationship going forward"
+      },
+      "tips": [
+        "Show that you understood their needs even while pushing back",
+        "Offer alternative solutions rather than just saying no",
+        "Demonstrate that you kept the bigger picture in mind",
+        "Show that the relationship remained intact or improved"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the request and why it was problematic (scope, timeline, priorities, technical feasibility)",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What was the right thing to do and why pushing back was necessary",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you communicated your position, offered alternatives, and found a compromise",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The outcome for both teams and the relationship going forward",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-010-c1",
+          "front": "Describe a time when you had to push back on a request from a partner team or stakeholder.",
+          "back": "Assessing: Ability to set boundaries, negotiate, and say no constructively while maintaining relationships and focusing on organizational priorities."
+        },
+        {
+          "id": "beh-010-c2",
+          "front": "What is assessed: When you had to push back on a request from a partner team or stake...?",
+          "back": "Ability to set boundaries, negotiate, and say no constructively while maintaining relationships and focusing on organizational priorities."
+        }
+      ]
+    },
+    {
+      "id": "beh-011",
+      "title": "Tell me about the most technically challenging problem you have sol...",
+      "difficulty": "Hard",
+      "pattern": "problem-solving-and-decision-making",
+      "category": "behavioral",
+      "description": "Tell me about the most technically challenging problem you have solved. Walk me through your approach.",
+      "question": "Tell me about the most technically challenging problem you have solved. Walk me through your approach.",
+      "assessing": "Technical depth, systematic problem-solving approach, ability to break down complex problems, persistence, and whether you can communicate technical details clearly.",
+      "starHints": {
+        "situation": "Describe the technical problem and why it was challenging (scale, complexity, novelty, constraints)",
+        "task": "What needed to be solved and what were the constraints",
+        "action": "Your systematic approach: how you investigated, what hypotheses you formed, how you tested them, what tools and techniques you used",
+        "result": "The solution, its impact, and what you learned about problem-solving"
+      },
+      "tips": [
+        "Choose a problem with genuine technical depth, not just business complexity",
+        "Walk through your thought process, not just the solution",
+        "Mention dead ends and how you pivoted",
+        "Quantify the impact of your solution"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the technical problem and why it was challenging (scale, complexity, novelty, constraints)",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What needed to be solved and what were the constraints",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Your systematic approach: how you investigated, what hypotheses you formed, how you tested them, what tools and techniques you used",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The solution, its impact, and what you learned about problem-solving",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-011-c1",
+          "front": "Tell me about the most technically challenging problem you have solved. Walk me through your approach.",
+          "back": "Assessing: Technical depth, systematic problem-solving approach, ability to break down complex problems, persistence, and whether you can communicate technical details clearly."
+        },
+        {
+          "id": "beh-011-c2",
+          "front": "What is assessed: Tell me about the most technically challenging problem you have sol...?",
+          "back": "Technical depth, systematic problem-solving approach, ability to break down complex problems, persistence, and whether you can communicate technical details clearly."
+        }
+      ]
+    },
+    {
+      "id": "beh-012",
+      "title": "When you had to make a critical decision with incomplete information.",
+      "difficulty": "Hard",
+      "pattern": "problem-solving-and-decision-making",
+      "category": "behavioral",
+      "description": "Describe a time when you had to make a critical decision with incomplete information.",
+      "question": "Describe a time when you had to make a critical decision with incomplete information.",
+      "assessing": "Comfort with ambiguity, judgment under uncertainty, risk assessment skills, and whether you can make timely decisions rather than being paralyzed by imperfect data.",
+      "starHints": {
+        "situation": "Describe the decision that needed to be made and why information was incomplete",
+        "task": "The urgency and what was at stake",
+        "action": "How you gathered what information you could, how you assessed risk, what framework you used to decide, and how you communicated the uncertainty",
+        "result": "The outcome and whether your decision proved correct -- if not, how you course-corrected"
+      },
+      "tips": [
+        "Show a structured approach to uncertainty, not just gut instinct",
+        "Demonstrate that you identified the key unknowns",
+        "Explain how you mitigated risk (reversibility of the decision, fallback plans)",
+        "Show that you acted decisively rather than waiting for perfect information"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the decision that needed to be made and why information was incomplete",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "The urgency and what was at stake",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you gathered what information you could, how you assessed risk, what framework you used to decide, and how you communicated the uncertainty",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The outcome and whether your decision proved correct -- if not, how you course-corrected",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-012-c1",
+          "front": "Describe a time when you had to make a critical decision with incomplete information.",
+          "back": "Assessing: Comfort with ambiguity, judgment under uncertainty, risk assessment skills, and whether you can make timely decisions rather than being paralyzed by imperfect data."
+        },
+        {
+          "id": "beh-012-c2",
+          "front": "What is assessed: When you had to make a critical decision with incomplete information.?",
+          "back": "Comfort with ambiguity, judgment under uncertainty, risk assessment skills, and whether you can make timely decisions rather than being paralyzed by imperfect data."
+        }
+      ]
+    },
+    {
+      "id": "beh-013",
+      "title": "You identified a problem before anyone else noticed it.",
+      "difficulty": "Medium",
+      "pattern": "problem-solving-and-decision-making",
+      "category": "behavioral",
+      "description": "Tell me about a time you identified a problem before anyone else noticed it.",
+      "question": "Tell me about a time you identified a problem before anyone else noticed it.",
+      "assessing": "Proactiveness, attention to detail, pattern recognition, and whether you take initiative to address problems before they escalate.",
+      "starHints": {
+        "situation": "Describe what you noticed and the context that made it non-obvious to others",
+        "task": "Why this was a real problem and what the potential impact was if unaddressed",
+        "action": "How you investigated further, validated your concern, and brought it to the team's attention",
+        "result": "The problem was addressed before it caused damage -- quantify what was prevented"
+      },
+      "tips": [
+        "Show that your awareness came from genuine engagement, not just luck",
+        "Demonstrate a habit of monitoring and questioning",
+        "Show that you did not just identify the problem but also proposed solutions",
+        "This maps well to Amazon's 'Dive Deep' principle"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe what you noticed and the context that made it non-obvious to others",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Why this was a real problem and what the potential impact was if unaddressed",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you investigated further, validated your concern, and brought it to the team's attention",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The problem was addressed before it caused damage -- quantify what was prevented",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-013-c1",
+          "front": "Tell me about a time you identified a problem before anyone else noticed it.",
+          "back": "Assessing: Proactiveness, attention to detail, pattern recognition, and whether you take initiative to address problems before they escalate."
+        },
+        {
+          "id": "beh-013-c2",
+          "front": "What is assessed: You identified a problem before anyone else noticed it.?",
+          "back": "Proactiveness, attention to detail, pattern recognition, and whether you take initiative to address problems before they escalate."
+        }
+      ]
+    },
+    {
+      "id": "beh-014",
+      "title": "Where you had to choose between two good options. How did you decide",
+      "difficulty": "Medium",
+      "pattern": "problem-solving-and-decision-making",
+      "category": "behavioral",
+      "description": "Describe a situation where you had to choose between two good options. How did you decide?",
+      "question": "Describe a situation where you had to choose between two good options. How did you decide?",
+      "assessing": "Decision-making frameworks, ability to articulate tradeoffs, analytical thinking, and whether you can commit fully once a decision is made.",
+      "starHints": {
+        "situation": "Describe the two options and why both were viable",
+        "task": "What criteria mattered most in making this decision",
+        "action": "How you evaluated the tradeoffs -- data analysis, stakeholder input, prototyping, weighing short-term vs. long-term impact",
+        "result": "The decision you made, its outcome, and whether you would make the same choice again"
+      },
+      "tips": [
+        "Show structured thinking, not just intuition",
+        "Demonstrate that you considered multiple perspectives",
+        "Explain your criteria for what 'better' meant in this context",
+        "Acknowledge what you gave up with the option not chosen"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the two options and why both were viable",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What criteria mattered most in making this decision",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you evaluated the tradeoffs -- data analysis, stakeholder input, prototyping, weighing short-term vs. long-term impact",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The decision you made, its outcome, and whether you would make the same choice again",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-014-c1",
+          "front": "Describe a situation where you had to choose between two good options. How did you decide?",
+          "back": "Assessing: Decision-making frameworks, ability to articulate tradeoffs, analytical thinking, and whether you can commit fully once a decision is made."
+        },
+        {
+          "id": "beh-014-c2",
+          "front": "What is assessed: Where you had to choose between two good options. How did you decide?",
+          "back": "Decision-making frameworks, ability to articulate tradeoffs, analytical thinking, and whether you can commit fully once a decision is made."
+        }
+      ]
+    },
+    {
+      "id": "beh-015",
+      "title": "You had to quickly learn a new technology or domain to solve a prob...",
+      "difficulty": "Easy",
+      "pattern": "problem-solving-and-decision-making",
+      "category": "behavioral",
+      "description": "Tell me about a time you had to quickly learn a new technology or domain to solve a problem.",
+      "question": "Tell me about a time you had to quickly learn a new technology or domain to solve a problem.",
+      "assessing": "Learning agility, resourcefulness, adaptability, and whether you can be effective outside your comfort zone.",
+      "starHints": {
+        "situation": "Describe the unfamiliar technology or domain and why you needed to learn it",
+        "task": "The timeline pressure and what you needed to accomplish",
+        "action": "Your learning strategy: resources used, people consulted, experiments run, how you balanced learning with delivering",
+        "result": "How quickly you became productive and the quality of what you delivered"
+      },
+      "tips": [
+        "Emphasize your learning process, not just the outcome",
+        "Show that you are comfortable saying 'I do not know yet'",
+        "Mention how you leveraged others' expertise",
+        "Demonstrate that this is a repeatable skill, not a one-off"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the unfamiliar technology or domain and why you needed to learn it",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "The timeline pressure and what you needed to accomplish",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Your learning strategy: resources used, people consulted, experiments run, how you balanced learning with delivering",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "How quickly you became productive and the quality of what you delivered",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-015-c1",
+          "front": "Tell me about a time you had to quickly learn a new technology or domain to solve a problem.",
+          "back": "Assessing: Learning agility, resourcefulness, adaptability, and whether you can be effective outside your comfort zone."
+        },
+        {
+          "id": "beh-015-c2",
+          "front": "What is assessed: You had to quickly learn a new technology or domain to solve a prob...?",
+          "back": "Learning agility, resourcefulness, adaptability, and whether you can be effective outside your comfort zone."
+        }
+      ]
+    },
+    {
+      "id": "beh-016",
+      "title": "You worked on a cross-functional team with people from different ba...",
+      "difficulty": "Easy",
+      "pattern": "teamwork-and-collaboration",
+      "category": "behavioral",
+      "description": "Tell me about a time you worked on a cross-functional team with people from different backgrounds or disciplines.",
+      "question": "Tell me about a time you worked on a cross-functional team with people from different backgrounds or disciplines.",
+      "assessing": "Cross-functional collaboration, ability to work with diverse perspectives, communication across disciplines, and whether you value contributions from non-engineering roles.",
+      "starHints": {
+        "situation": "Describe the cross-functional team (engineers, designers, PMs, data scientists, etc.) and the project",
+        "task": "Your role and the shared objective",
+        "action": "How you bridged communication gaps, respected different expertise, and contributed to a shared outcome",
+        "result": "The project outcome and how the cross-functional dynamic made the result better"
+      },
+      "tips": [
+        "Show genuine appreciation for non-engineering perspectives",
+        "Mention specific examples of how different expertise improved the outcome",
+        "Demonstrate flexibility in communication style",
+        "Avoid positioning engineering as the most important function"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the cross-functional team (engineers, designers, PMs, data scientists, etc.) and the project",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Your role and the shared objective",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you bridged communication gaps, respected different expertise, and contributed to a shared outcome",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The project outcome and how the cross-functional dynamic made the result better",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-016-c1",
+          "front": "Tell me about a time you worked on a cross-functional team with people from different backgrounds or disciplines.",
+          "back": "Assessing: Cross-functional collaboration, ability to work with diverse perspectives, communication across disciplines, and whether you value contributions from non-engineering roles."
+        },
+        {
+          "id": "beh-016-c2",
+          "front": "What is assessed: You worked on a cross-functional team with people from different ba...?",
+          "back": "Cross-functional collaboration, ability to work with diverse perspectives, communication across disciplines, and whether you value contributions from non-engineering roles."
+        }
+      ]
+    },
+    {
+      "id": "beh-017",
+      "title": "When a teammate was not pulling their weight. What did you do",
+      "difficulty": "Hard",
+      "pattern": "teamwork-and-collaboration",
+      "category": "behavioral",
+      "description": "Describe a time when a teammate was not pulling their weight. What did you do?",
+      "question": "Describe a time when a teammate was not pulling their weight. What did you do?",
+      "assessing": "Empathy, direct communication, problem-solving in interpersonal situations, and whether you address issues constructively rather than complaining or ignoring them.",
+      "starHints": {
+        "situation": "Describe the situation without being judgmental about the person",
+        "task": "The impact on the team and why it needed to be addressed",
+        "action": "How you approached the person -- empathetically understanding if there were underlying issues, offering help, having an honest conversation, escalating if needed",
+        "result": "Whether the situation improved and what happened with the team dynamic"
+      },
+      "tips": [
+        "Lead with empathy -- maybe they were dealing with something you did not know about",
+        "Show that you tried to help before escalating",
+        "Avoid being dismissive or punitive in your tone",
+        "Focus on behaviors and impact, not character judgments"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the situation without being judgmental about the person",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "The impact on the team and why it needed to be addressed",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you approached the person -- empathetically understanding if there were underlying issues, offering help, having an honest conversation, escalating if needed",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Whether the situation improved and what happened with the team dynamic",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-017-c1",
+          "front": "Describe a time when a teammate was not pulling their weight. What did you do?",
+          "back": "Assessing: Empathy, direct communication, problem-solving in interpersonal situations, and whether you address issues constructively rather than complaining or ignoring them."
+        },
+        {
+          "id": "beh-017-c2",
+          "front": "What is assessed: When a teammate was not pulling their weight. What did you do?",
+          "back": "Empathy, direct communication, problem-solving in interpersonal situations, and whether you address issues constructively rather than complaining or ignoring them."
+        }
+      ]
+    },
+    {
+      "id": "beh-018",
+      "title": "You helped someone on your team who was struggling.",
+      "difficulty": "Easy",
+      "pattern": "teamwork-and-collaboration",
+      "category": "behavioral",
+      "description": "Tell me about a time you helped someone on your team who was struggling.",
+      "question": "Tell me about a time you helped someone on your team who was struggling.",
+      "assessing": "Supportiveness, team-first mentality, willingness to invest time in others, and emotional intelligence to notice when someone needs help.",
+      "starHints": {
+        "situation": "Describe who was struggling and how you noticed",
+        "task": "What they were dealing with and why you felt compelled to help",
+        "action": "Specific ways you helped -- pair programming, taking on some of their work, connecting them with resources, emotional support",
+        "result": "How they recovered and any lasting impact on your relationship or the team"
+      },
+      "tips": [
+        "Show that you noticed proactively, not just when asked",
+        "Demonstrate that helping others is natural for you, not transactional",
+        "Give credit to the person for their own recovery",
+        "Mention if this created a culture of mutual support"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe who was struggling and how you noticed",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What they were dealing with and why you felt compelled to help",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Specific ways you helped -- pair programming, taking on some of their work, connecting them with resources, emotional support",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "How they recovered and any lasting impact on your relationship or the team",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-018-c1",
+          "front": "Tell me about a time you helped someone on your team who was struggling.",
+          "back": "Assessing: Supportiveness, team-first mentality, willingness to invest time in others, and emotional intelligence to notice when someone needs help."
+        },
+        {
+          "id": "beh-018-c2",
+          "front": "What is assessed: You helped someone on your team who was struggling.?",
+          "back": "Supportiveness, team-first mentality, willingness to invest time in others, and emotional intelligence to notice when someone needs help."
+        }
+      ]
+    },
+    {
+      "id": "beh-019",
+      "title": "Describe a successful project you worked on. What was your contribu...",
+      "difficulty": "Easy",
+      "pattern": "teamwork-and-collaboration",
+      "category": "behavioral",
+      "description": "Describe a successful project you worked on. What was your contribution and how did the team work together?",
+      "question": "Describe a successful project you worked on. What was your contribution and how did the team work together?",
+      "assessing": "Self-awareness about your role, ability to share credit, understanding of team dynamics, and whether you contribute to a positive team environment.",
+      "starHints": {
+        "situation": "Describe the project scope and the team composition",
+        "task": "Your specific role and responsibilities within the team",
+        "action": "How the team collaborated, how you specifically contributed, and how decisions were made collectively",
+        "result": "The project outcome with metrics, and explicit acknowledgment of others' contributions"
+      },
+      "tips": [
+        "Use 'we' language naturally, but also be clear about your specific contributions",
+        "Do not take solo credit for team achievements",
+        "Show awareness of what made the teamwork effective",
+        "Mention any challenges the team overcame together"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the project scope and the team composition",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Your specific role and responsibilities within the team",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How the team collaborated, how you specifically contributed, and how decisions were made collectively",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The project outcome with metrics, and explicit acknowledgment of others' contributions",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-019-c1",
+          "front": "Describe a successful project you worked on. What was your contribution and how did the team work together?",
+          "back": "Assessing: Self-awareness about your role, ability to share credit, understanding of team dynamics, and whether you contribute to a positive team environment."
+        },
+        {
+          "id": "beh-019-c2",
+          "front": "What is assessed: Describe a successful project you worked on. What was your contribu...?",
+          "back": "Self-awareness about your role, ability to share credit, understanding of team dynamics, and whether you contribute to a positive team environment."
+        }
+      ]
+    },
+    {
+      "id": "beh-020",
+      "title": "You had to work with someone whose working style was very different...",
+      "difficulty": "Medium",
+      "pattern": "teamwork-and-collaboration",
+      "category": "behavioral",
+      "description": "Tell me about a time you had to work with someone whose working style was very different from yours.",
+      "question": "Tell me about a time you had to work with someone whose working style was very different from yours.",
+      "assessing": "Adaptability, tolerance for different approaches, maturity in interpersonal relationships, and ability to find productive common ground.",
+      "starHints": {
+        "situation": "Describe the person and how their style differed (remote vs. in-office, detailed planner vs. improviser, quiet vs. vocal, etc.)",
+        "task": "What you needed to accomplish together",
+        "action": "How you adapted, found compromises, and leveraged the differences as strengths",
+        "result": "The working relationship outcome and what you learned about working with diverse styles"
+      },
+      "tips": [
+        "Avoid framing their style as wrong",
+        "Show genuine appreciation for what their different approach brought",
+        "Demonstrate flexibility and self-awareness about your own style",
+        "Mention lasting changes you made based on this experience"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the person and how their style differed (remote vs. in-office, detailed planner vs. improviser, quiet vs. vocal, etc.)",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What you needed to accomplish together",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you adapted, found compromises, and leveraged the differences as strengths",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The working relationship outcome and what you learned about working with diverse styles",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-020-c1",
+          "front": "Tell me about a time you had to work with someone whose working style was very different from yours.",
+          "back": "Assessing: Adaptability, tolerance for different approaches, maturity in interpersonal relationships, and ability to find productive common ground."
+        },
+        {
+          "id": "beh-020-c2",
+          "front": "What is assessed: You had to work with someone whose working style was very different...?",
+          "back": "Adaptability, tolerance for different approaches, maturity in interpersonal relationships, and ability to find productive common ground."
+        }
+      ]
+    },
+    {
+      "id": "beh-021",
+      "title": "Tell me about your biggest professional failure. What happened and ...",
+      "difficulty": "Hard",
+      "pattern": "failure-and-learning",
+      "category": "behavioral",
+      "description": "Tell me about your biggest professional failure. What happened and what did you learn?",
+      "question": "Tell me about your biggest professional failure. What happened and what did you learn?",
+      "assessing": "Self-awareness, intellectual honesty, growth mindset, resilience, and whether you take genuine accountability rather than deflecting blame.",
+      "starHints": {
+        "situation": "Describe a real, significant failure -- not a humble brag or minor setback",
+        "task": "What you were trying to achieve and why it mattered",
+        "action": "What went wrong, specifically what YOUR role in the failure was, and what you did in the immediate aftermath",
+        "result": "The concrete lessons learned and specific examples of how you applied those lessons since"
+      },
+      "tips": [
+        "Choose a real failure, not a disguised success story",
+        "Take genuine ownership -- avoid blaming others or circumstances",
+        "The learning is more important than the failure itself",
+        "Show that you have applied the lessons since then with specific examples",
+        "Do not choose something so catastrophic it raises red flags about your judgment"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe a real, significant failure -- not a humble brag or minor setback",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What you were trying to achieve and why it mattered",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "What went wrong, specifically what YOUR role in the failure was, and what you did in the immediate aftermath",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The concrete lessons learned and specific examples of how you applied those lessons since",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-021-c1",
+          "front": "Tell me about your biggest professional failure. What happened and what did you learn?",
+          "back": "Assessing: Self-awareness, intellectual honesty, growth mindset, resilience, and whether you take genuine accountability rather than deflecting blame."
+        },
+        {
+          "id": "beh-021-c2",
+          "front": "What is assessed: Tell me about your biggest professional failure. What happened and ...?",
+          "back": "Self-awareness, intellectual honesty, growth mindset, resilience, and whether you take genuine accountability rather than deflecting blame."
+        }
+      ]
+    },
+    {
+      "id": "beh-022",
+      "title": "When a project you were leading failed or was cancelled. How did yo...",
+      "difficulty": "Hard",
+      "pattern": "failure-and-learning",
+      "category": "behavioral",
+      "description": "Describe a time when a project you were leading failed or was cancelled. How did you handle it?",
+      "question": "Describe a time when a project you were leading failed or was cancelled. How did you handle it?",
+      "assessing": "Resilience, leadership through adversity, ability to extract value from failure, and how you handle disappointment professionally.",
+      "starHints": {
+        "situation": "Describe the project and what led to its failure or cancellation",
+        "task": "Your role as the leader and your responsibilities during the wind-down",
+        "action": "How you communicated the failure, supported your team, salvaged what you could, and conducted a retrospective",
+        "result": "Lessons documented, how the team recovered, and what you did differently on the next project"
+      },
+      "tips": [
+        "Show that you took responsibility rather than blaming external factors",
+        "Demonstrate that you managed team morale through the failure",
+        "Mention any salvageable outcomes (learnings, reusable code, relationships)",
+        "Show that you conducted a proper retrospective"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the project and what led to its failure or cancellation",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Your role as the leader and your responsibilities during the wind-down",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you communicated the failure, supported your team, salvaged what you could, and conducted a retrospective",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Lessons documented, how the team recovered, and what you did differently on the next project",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-022-c1",
+          "front": "Describe a time when a project you were leading failed or was cancelled. How did you handle it?",
+          "back": "Assessing: Resilience, leadership through adversity, ability to extract value from failure, and how you handle disappointment professionally."
+        },
+        {
+          "id": "beh-022-c2",
+          "front": "What is assessed: When a project you were leading failed or was cancelled. How did yo...?",
+          "back": "Resilience, leadership through adversity, ability to extract value from failure, and how you handle disappointment professionally."
+        }
+      ]
+    },
+    {
+      "id": "beh-023",
+      "title": "You made a mistake that affected your team. How did you handle it",
+      "difficulty": "Medium",
+      "pattern": "failure-and-learning",
+      "category": "behavioral",
+      "description": "Tell me about a time you made a mistake that affected your team. How did you handle it?",
+      "question": "Tell me about a time you made a mistake that affected your team. How did you handle it?",
+      "assessing": "Accountability, transparency, speed of response to mistakes, and whether you prioritize fixing the problem over protecting your ego.",
+      "starHints": {
+        "situation": "Describe the mistake and how it impacted the team",
+        "task": "What needed to happen to fix the situation",
+        "action": "How quickly you owned up, what you did to mitigate the damage, and how you communicated about it",
+        "result": "The resolution, what you put in place to prevent recurrence, and how the team responded to your transparency"
+      },
+      "tips": [
+        "Show speed in owning the mistake -- do not describe delays in admitting it",
+        "Focus on the fix and prevention, not on self-flagellation",
+        "Demonstrate that transparency built trust rather than eroded it",
+        "Show concrete changes you made to prevent recurrence"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the mistake and how it impacted the team",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What needed to happen to fix the situation",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How quickly you owned up, what you did to mitigate the damage, and how you communicated about it",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The resolution, what you put in place to prevent recurrence, and how the team responded to your transparency",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-023-c1",
+          "front": "Tell me about a time you made a mistake that affected your team. How did you handle it?",
+          "back": "Assessing: Accountability, transparency, speed of response to mistakes, and whether you prioritize fixing the problem over protecting your ego."
+        },
+        {
+          "id": "beh-023-c2",
+          "front": "What is assessed: You made a mistake that affected your team. How did you handle it?",
+          "back": "Accountability, transparency, speed of response to mistakes, and whether you prioritize fixing the problem over protecting your ego."
+        }
+      ]
+    },
+    {
+      "id": "beh-024",
+      "title": "You received critical feedback that changed how you work.",
+      "difficulty": "Easy",
+      "pattern": "failure-and-learning",
+      "category": "behavioral",
+      "description": "Tell me about a time you received critical feedback that changed how you work.",
+      "question": "Tell me about a time you received critical feedback that changed how you work.",
+      "assessing": "Coachability, self-awareness, growth mindset, and ability to internalize feedback rather than just acknowledging it superficially.",
+      "starHints": {
+        "situation": "Describe the feedback and who gave it",
+        "task": "What the feedback revealed about a blind spot or area for improvement",
+        "action": "How you processed the feedback, what specific changes you made, and how you tracked your improvement",
+        "result": "Measurable changes in your work and acknowledgment from others that you improved"
+      },
+      "tips": [
+        "Choose feedback that led to a genuine behavior change",
+        "Show you sought additional feedback to track improvement",
+        "Demonstrate that you now actively seek feedback",
+        "Avoid making it sound like the feedback was wrong or unfair"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the feedback and who gave it",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What the feedback revealed about a blind spot or area for improvement",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you processed the feedback, what specific changes you made, and how you tracked your improvement",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Measurable changes in your work and acknowledgment from others that you improved",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-024-c1",
+          "front": "Tell me about a time you received critical feedback that changed how you work.",
+          "back": "Assessing: Coachability, self-awareness, growth mindset, and ability to internalize feedback rather than just acknowledging it superficially."
+        },
+        {
+          "id": "beh-024-c2",
+          "front": "What is assessed: You received critical feedback that changed how you work.?",
+          "back": "Coachability, self-awareness, growth mindset, and ability to internalize feedback rather than just acknowledging it superficially."
+        }
+      ]
+    },
+    {
+      "id": "beh-025",
+      "title": "When you tried something new and it did not work out as expected.",
+      "difficulty": "Easy",
+      "pattern": "failure-and-learning",
+      "category": "behavioral",
+      "description": "Describe a time when you tried something new and it did not work out as expected.",
+      "question": "Describe a time when you tried something new and it did not work out as expected.",
+      "assessing": "Willingness to experiment and take calculated risks, how you handle setbacks from innovation attempts, and whether failure discourages you from trying new things.",
+      "starHints": {
+        "situation": "Describe the new approach, technology, or process you tried",
+        "task": "Why you thought it was worth trying and what you hoped to achieve",
+        "action": "How you tested it, what signals told you it was not working, and how you decided to pivot or stop",
+        "result": "What you learned and whether elements of the experiment informed future work"
+      },
+      "tips": [
+        "Show that the experiment was well-reasoned, not reckless",
+        "Demonstrate that you set clear success criteria upfront",
+        "Explain how you limited the blast radius of potential failure",
+        "Show that the experience did not make you risk-averse"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the new approach, technology, or process you tried",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Why you thought it was worth trying and what you hoped to achieve",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you tested it, what signals told you it was not working, and how you decided to pivot or stop",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "What you learned and whether elements of the experiment informed future work",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-025-c1",
+          "front": "Describe a time when you tried something new and it did not work out as expected.",
+          "back": "Assessing: Willingness to experiment and take calculated risks, how you handle setbacks from innovation attempts, and whether failure discourages you from trying new things."
+        },
+        {
+          "id": "beh-025-c2",
+          "front": "What is assessed: When you tried something new and it did not work out as expected.?",
+          "back": "Willingness to experiment and take calculated risks, how you handle setbacks from innovation attempts, and whether failure discourages you from trying new things."
+        }
+      ]
+    },
+    {
+      "id": "beh-026",
+      "title": "You had to explain a complex technical concept to a non-technical a...",
+      "difficulty": "Medium",
+      "pattern": "communication",
+      "category": "behavioral",
+      "description": "Tell me about a time you had to explain a complex technical concept to a non-technical audience.",
+      "question": "Tell me about a time you had to explain a complex technical concept to a non-technical audience.",
+      "assessing": "Communication clarity, ability to adjust complexity level for your audience, empathy for non-technical stakeholders, and whether you can be an effective bridge between technical and business worlds.",
+      "starHints": {
+        "situation": "Describe the technical concept and who the audience was (executives, customers, marketing, etc.)",
+        "task": "Why this communication was important and what outcome you needed",
+        "action": "Your approach: analogies used, visuals created, jargon eliminated, level of detail chosen, how you checked for understanding",
+        "result": "Whether the audience understood and how it impacted the decision or project"
+      },
+      "tips": [
+        "Give specific examples of analogies or simplifications you used",
+        "Show awareness that communication failed if the audience did not understand, regardless of how accurate you were",
+        "Demonstrate that you tailored the message to the audience's concerns, not just the technical facts",
+        "Mention if you iterated on your explanation based on feedback"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the technical concept and who the audience was (executives, customers, marketing, etc.)",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Why this communication was important and what outcome you needed",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Your approach: analogies used, visuals created, jargon eliminated, level of detail chosen, how you checked for understanding",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Whether the audience understood and how it impacted the decision or project",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-026-c1",
+          "front": "Tell me about a time you had to explain a complex technical concept to a non-technical audience.",
+          "back": "Assessing: Communication clarity, ability to adjust complexity level for your audience, empathy for non-technical stakeholders, and whether you can be an effective bridge between technical and business worlds."
+        },
+        {
+          "id": "beh-026-c2",
+          "front": "What is assessed: You had to explain a complex technical concept to a non-technical a...?",
+          "back": "Communication clarity, ability to adjust complexity level for your audience, empathy for non-technical stakeholders, and whether you can be an effective bridge between technical and business worlds."
+        }
+      ]
+    },
+    {
+      "id": "beh-027",
+      "title": "Where miscommunication led to a problem. How did you resolve it",
+      "difficulty": "Medium",
+      "pattern": "communication",
+      "category": "behavioral",
+      "description": "Describe a situation where miscommunication led to a problem. How did you resolve it?",
+      "question": "Describe a situation where miscommunication led to a problem. How did you resolve it?",
+      "assessing": "Ability to diagnose communication breakdowns, take responsibility for your part, and put systems in place to prevent recurrence.",
+      "starHints": {
+        "situation": "Describe the miscommunication and how it manifested",
+        "task": "The problem it caused and the urgency of resolution",
+        "action": "How you identified the root cause of the miscommunication, resolved the immediate issue, and what you changed to prevent it from happening again",
+        "result": "The resolution and any new communication practices you established"
+      },
+      "tips": [
+        "Own your part in the miscommunication even if others contributed",
+        "Focus on systemic fixes, not just one-time resolutions",
+        "Show empathy for others involved",
+        "Mention specific tools or practices you introduced (documentation, regular syncs, etc.)"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the miscommunication and how it manifested",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "The problem it caused and the urgency of resolution",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you identified the root cause of the miscommunication, resolved the immediate issue, and what you changed to prevent it from happening again",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The resolution and any new communication practices you established",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-027-c1",
+          "front": "Describe a situation where miscommunication led to a problem. How did you resolve it?",
+          "back": "Assessing: Ability to diagnose communication breakdowns, take responsibility for your part, and put systems in place to prevent recurrence."
+        },
+        {
+          "id": "beh-027-c2",
+          "front": "What is assessed: Where miscommunication led to a problem. How did you resolve it?",
+          "back": "Ability to diagnose communication breakdowns, take responsibility for your part, and put systems in place to prevent recurrence."
+        }
+      ]
+    },
+    {
+      "id": "beh-028",
+      "title": "You had to deliver bad news to your team or a stakeholder.",
+      "difficulty": "Hard",
+      "pattern": "communication",
+      "category": "behavioral",
+      "description": "Tell me about a time you had to deliver bad news to your team or a stakeholder.",
+      "question": "Tell me about a time you had to deliver bad news to your team or a stakeholder.",
+      "assessing": "Courage to be transparent, empathy in delivery, ability to maintain trust through difficult conversations, and whether you combine the bad news with a path forward.",
+      "starHints": {
+        "situation": "Describe the bad news and its context (delayed launch, budget cut, technical blocker, cancellation)",
+        "task": "Who needed to know and what the stakes were",
+        "action": "How you prepared, the framing you chose, how you delivered it, how you handled reactions, and the plan you presented alongside the bad news",
+        "result": "How the audience responded and what happened next"
+      },
+      "tips": [
+        "Show that you delivered the news promptly rather than hiding it",
+        "Demonstrate that you came with a proposed plan, not just the problem",
+        "Show empathy for the impact on others",
+        "Mention how transparency maintained or built trust"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the bad news and its context (delayed launch, budget cut, technical blocker, cancellation)",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Who needed to know and what the stakes were",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you prepared, the framing you chose, how you delivered it, how you handled reactions, and the plan you presented alongside the bad news",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "How the audience responded and what happened next",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-028-c1",
+          "front": "Tell me about a time you had to deliver bad news to your team or a stakeholder.",
+          "back": "Assessing: Courage to be transparent, empathy in delivery, ability to maintain trust through difficult conversations, and whether you combine the bad news with a path forward."
+        },
+        {
+          "id": "beh-028-c2",
+          "front": "What is assessed: You had to deliver bad news to your team or a stakeholder.?",
+          "back": "Courage to be transparent, empathy in delivery, ability to maintain trust through difficult conversations, and whether you combine the bad news with a path forward."
+        }
+      ]
+    },
+    {
+      "id": "beh-029",
+      "title": "When you had to write a document or proposal that influenced a majo...",
+      "difficulty": "Medium",
+      "pattern": "communication",
+      "category": "behavioral",
+      "description": "Describe a time when you had to write a document or proposal that influenced a major decision.",
+      "question": "Describe a time when you had to write a document or proposal that influenced a major decision.",
+      "assessing": "Written communication skills, ability to structure arguments persuasively, strategic thinking, and whether you can influence through documentation.",
+      "starHints": {
+        "situation": "Describe the document (design doc, RFC, proposal, post-mortem) and the decision it needed to influence",
+        "task": "What you needed to convey and who the audience was",
+        "action": "How you structured the document, how you anticipated objections, how you gathered data, and how you incorporated feedback from reviewers",
+        "result": "The decision that was made and how the document influenced it"
+      },
+      "tips": [
+        "This is especially relevant for Amazon (writing culture) and Google (design docs)",
+        "Show that you structured the document for the reader, not for yourself",
+        "Mention how you handled dissenting feedback on drafts",
+        "Emphasize clarity and data-driven reasoning"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the document (design doc, RFC, proposal, post-mortem) and the decision it needed to influence",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What you needed to convey and who the audience was",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you structured the document, how you anticipated objections, how you gathered data, and how you incorporated feedback from reviewers",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The decision that was made and how the document influenced it",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-029-c1",
+          "front": "Describe a time when you had to write a document or proposal that influenced a major decision.",
+          "back": "Assessing: Written communication skills, ability to structure arguments persuasively, strategic thinking, and whether you can influence through documentation."
+        },
+        {
+          "id": "beh-029-c2",
+          "front": "What is assessed: When you had to write a document or proposal that influenced a majo...?",
+          "back": "Written communication skills, ability to structure arguments persuasively, strategic thinking, and whether you can influence through documentation."
+        }
+      ]
+    },
+    {
+      "id": "beh-030",
+      "title": "You had to give difficult feedback to a peer or colleague.",
+      "difficulty": "Medium",
+      "pattern": "communication",
+      "category": "behavioral",
+      "description": "Tell me about a time you had to give difficult feedback to a peer or colleague.",
+      "question": "Tell me about a time you had to give difficult feedback to a peer or colleague.",
+      "assessing": "Courage to have honest conversations, ability to deliver feedback constructively, empathy, and commitment to helping others grow even when it is uncomfortable.",
+      "starHints": {
+        "situation": "Describe the behavior or issue you needed to address and your relationship with this person",
+        "task": "Why giving this feedback was necessary for the team or the person's growth",
+        "action": "How you prepared, the setting you chose, how you framed the feedback (specific, behavior-focused, impact-oriented), and how you listened to their response",
+        "result": "How they received it, any behavior change, and the impact on your working relationship"
+      },
+      "tips": [
+        "Show that you gave feedback to help, not to criticize",
+        "Use the SBI model (Situation-Behavior-Impact) in your description",
+        "Demonstrate that you chose the right time and place",
+        "Show that you followed up to support their improvement"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the behavior or issue you needed to address and your relationship with this person",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Why giving this feedback was necessary for the team or the person's growth",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you prepared, the setting you chose, how you framed the feedback (specific, behavior-focused, impact-oriented), and how you listened to their response",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "How they received it, any behavior change, and the impact on your working relationship",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-030-c1",
+          "front": "Tell me about a time you had to give difficult feedback to a peer or colleague.",
+          "back": "Assessing: Courage to have honest conversations, ability to deliver feedback constructively, empathy, and commitment to helping others grow even when it is uncomfortable."
+        },
+        {
+          "id": "beh-030-c2",
+          "front": "What is assessed: You had to give difficult feedback to a peer or colleague.?",
+          "back": "Courage to have honest conversations, ability to deliver feedback constructively, empathy, and commitment to helping others grow even when it is uncomfortable."
+        }
+      ]
+    },
+    {
+      "id": "beh-031",
+      "title": "When you had too many things on your plate. How did you prioritize",
+      "difficulty": "Easy",
+      "pattern": "time-management-and-prioritization",
+      "category": "behavioral",
+      "description": "Tell me about a time when you had too many things on your plate. How did you prioritize?",
+      "question": "Tell me about a time when you had too many things on your plate. How did you prioritize?",
+      "assessing": "Prioritization skills, ability to make tradeoffs, communication about capacity, and whether you default to working harder or working smarter.",
+      "starHints": {
+        "situation": "Describe the competing demands and why they all seemed urgent or important",
+        "task": "What criteria you needed to use to prioritize",
+        "action": "Your prioritization framework (impact vs. effort, urgency vs. importance, stakeholder alignment), how you communicated about what would be delayed, and any delegation",
+        "result": "What got done, what did not, and whether your prioritization was correct"
+      },
+      "tips": [
+        "Show a systematic approach, not just scrambling",
+        "Demonstrate that you communicated proactively about tradeoffs",
+        "Mention if you pushed back on or renegotiated any deadlines",
+        "Show that you focused on impact, not just checking boxes"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the competing demands and why they all seemed urgent or important",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What criteria you needed to use to prioritize",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Your prioritization framework (impact vs. effort, urgency vs. importance, stakeholder alignment), how you communicated about what would be delayed, and any delegation",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "What got done, what did not, and whether your prioritization was correct",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-031-c1",
+          "front": "Tell me about a time when you had too many things on your plate. How did you prioritize?",
+          "back": "Assessing: Prioritization skills, ability to make tradeoffs, communication about capacity, and whether you default to working harder or working smarter."
+        },
+        {
+          "id": "beh-031-c2",
+          "front": "What is assessed: When you had too many things on your plate. How did you prioritize?",
+          "back": "Prioritization skills, ability to make tradeoffs, communication about capacity, and whether you default to working harder or working smarter."
+        }
+      ]
+    },
+    {
+      "id": "beh-032",
+      "title": "When you had to meet a very tight deadline. How did you ensure deli...",
+      "difficulty": "Medium",
+      "pattern": "time-management-and-prioritization",
+      "category": "behavioral",
+      "description": "Describe a time when you had to meet a very tight deadline. How did you ensure delivery?",
+      "question": "Describe a time when you had to meet a very tight deadline. How did you ensure delivery?",
+      "assessing": "Ability to perform under pressure, planning skills, scope management, and whether you can deliver quality work in compressed timelines.",
+      "starHints": {
+        "situation": "Describe the deadline, why it was tight, and the scope of the deliverable",
+        "task": "What absolutely had to be delivered and what was nice-to-have",
+        "action": "How you scoped down, planned your time, identified blockers early, asked for help, and managed stakeholder expectations",
+        "result": "Whether you met the deadline, the quality of the delivery, and any tradeoffs made"
+      },
+      "tips": [
+        "Show that you were strategic about scope, not just heroic about hours",
+        "Mention if you had to negotiate scope or push back",
+        "Demonstrate awareness of quality tradeoffs",
+        "Avoid glorifying crunch culture or overwork"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the deadline, why it was tight, and the scope of the deliverable",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What absolutely had to be delivered and what was nice-to-have",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you scoped down, planned your time, identified blockers early, asked for help, and managed stakeholder expectations",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Whether you met the deadline, the quality of the delivery, and any tradeoffs made",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-032-c1",
+          "front": "Describe a time when you had to meet a very tight deadline. How did you ensure delivery?",
+          "back": "Assessing: Ability to perform under pressure, planning skills, scope management, and whether you can deliver quality work in compressed timelines."
+        },
+        {
+          "id": "beh-032-c2",
+          "front": "What is assessed: When you had to meet a very tight deadline. How did you ensure deli...?",
+          "back": "Ability to perform under pressure, planning skills, scope management, and whether you can deliver quality work in compressed timelines."
+        }
+      ]
+    },
+    {
+      "id": "beh-033",
+      "title": "An unexpected problem derailed your planning. How did you adapt",
+      "difficulty": "Medium",
+      "pattern": "time-management-and-prioritization",
+      "category": "behavioral",
+      "description": "Tell me about a time an unexpected problem derailed your planning. How did you adapt?",
+      "question": "Tell me about a time an unexpected problem derailed your planning. How did you adapt?",
+      "assessing": "Adaptability, composure under disruption, replanning ability, and whether you can maintain progress when initial plans break down.",
+      "starHints": {
+        "situation": "Describe your original plan and the unexpected disruption",
+        "task": "What needed to change and the impact on your commitments",
+        "action": "How you assessed the new situation, reprioritized, communicated the changes, and found a path forward",
+        "result": "The outcome and how close you got to the original goals"
+      },
+      "tips": [
+        "Show composure and problem-solving, not panic",
+        "Demonstrate proactive communication about the disruption",
+        "Mention contingency planning if applicable",
+        "Show that you learned how to build more resilient plans"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe your original plan and the unexpected disruption",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What needed to change and the impact on your commitments",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you assessed the new situation, reprioritized, communicated the changes, and found a path forward",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The outcome and how close you got to the original goals",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-033-c1",
+          "front": "Tell me about a time an unexpected problem derailed your planning. How did you adapt?",
+          "back": "Assessing: Adaptability, composure under disruption, replanning ability, and whether you can maintain progress when initial plans break down."
+        },
+        {
+          "id": "beh-033-c2",
+          "front": "What is assessed: An unexpected problem derailed your planning. How did you adapt?",
+          "back": "Adaptability, composure under disruption, replanning ability, and whether you can maintain progress when initial plans break down."
+        }
+      ]
+    },
+    {
+      "id": "beh-034",
+      "title": "Describe a long-term project you managed. How did you keep it on tr...",
+      "difficulty": "Hard",
+      "pattern": "time-management-and-prioritization",
+      "category": "behavioral",
+      "description": "Describe a long-term project you managed. How did you keep it on track over weeks or months?",
+      "question": "Describe a long-term project you managed. How did you keep it on track over weeks or months?",
+      "assessing": "Long-term planning, discipline, ability to break large goals into milestones, stakeholder management over time, and sustained execution.",
+      "starHints": {
+        "situation": "Describe the project scope, timeline, and complexity",
+        "task": "What made long-term tracking challenging (scope changes, competing priorities, team changes, etc.)",
+        "action": "Your project management approach: milestones, tracking mechanisms, regular check-ins, risk management, how you maintained team momentum",
+        "result": "Whether you delivered on time and within scope, and lessons about long-term execution"
+      },
+      "tips": [
+        "Show concrete project management practices, not just good intentions",
+        "Mention how you handled scope creep or shifting priorities",
+        "Demonstrate communication cadence with stakeholders",
+        "Show how you kept the team motivated over the long haul"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the project scope, timeline, and complexity",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What made long-term tracking challenging (scope changes, competing priorities, team changes, etc.)",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Your project management approach: milestones, tracking mechanisms, regular check-ins, risk management, how you maintained team momentum",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Whether you delivered on time and within scope, and lessons about long-term execution",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-034-c1",
+          "front": "Describe a long-term project you managed. How did you keep it on track over weeks or months?",
+          "back": "Assessing: Long-term planning, discipline, ability to break large goals into milestones, stakeholder management over time, and sustained execution."
+        },
+        {
+          "id": "beh-034-c2",
+          "front": "What is assessed: Describe a long-term project you managed. How did you keep it on tr...?",
+          "back": "Long-term planning, discipline, ability to break large goals into milestones, stakeholder management over time, and sustained execution."
+        }
+      ]
+    },
+    {
+      "id": "beh-035",
+      "title": "You had to say no to a request or opportunity. How did you decide",
+      "difficulty": "Medium",
+      "pattern": "time-management-and-prioritization",
+      "category": "behavioral",
+      "description": "Tell me about a time you had to say no to a request or opportunity. How did you decide?",
+      "question": "Tell me about a time you had to say no to a request or opportunity. How did you decide?",
+      "assessing": "Judgment about where to spend your time, ability to make tradeoffs, communication skills in declining, and whether you protect your team's focus.",
+      "starHints": {
+        "situation": "Describe the request or opportunity and why it was tempting",
+        "task": "What made saying no the right decision (existing commitments, priorities, ROI assessment)",
+        "action": "How you evaluated the tradeoff, how you communicated your decision, and any alternatives you offered",
+        "result": "The outcome of saying no and whether it was the right call"
+      },
+      "tips": [
+        "Show that saying no was a deliberate strategic choice",
+        "Demonstrate that you communicated respectfully and offered alternatives",
+        "Show awareness of opportunity cost",
+        "Mention if saying no allowed you to deliver something more important"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the request or opportunity and why it was tempting",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What made saying no the right decision (existing commitments, priorities, ROI assessment)",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you evaluated the tradeoff, how you communicated your decision, and any alternatives you offered",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The outcome of saying no and whether it was the right call",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-035-c1",
+          "front": "Tell me about a time you had to say no to a request or opportunity. How did you decide?",
+          "back": "Assessing: Judgment about where to spend your time, ability to make tradeoffs, communication skills in declining, and whether you protect your team's focus."
+        },
+        {
+          "id": "beh-035-c2",
+          "front": "What is assessed: You had to say no to a request or opportunity. How did you decide?",
+          "back": "Judgment about where to spend your time, ability to make tradeoffs, communication skills in declining, and whether you protect your team's focus."
+        }
+      ]
+    },
+    {
+      "id": "beh-036",
+      "title": "You came up with an innovative solution to a problem that others ha...",
+      "difficulty": "Hard",
+      "pattern": "innovation-and-creativity",
+      "category": "behavioral",
+      "description": "Tell me about a time you came up with an innovative solution to a problem that others had given up on.",
+      "question": "Tell me about a time you came up with an innovative solution to a problem that others had given up on.",
+      "assessing": "Creative thinking, persistence, ability to see problems from new angles, and whether you bring a fresh perspective when conventional approaches fail.",
+      "starHints": {
+        "situation": "Describe the problem and why previous attempts had failed",
+        "task": "What constraints or assumptions were limiting the solution space",
+        "action": "How you reframed the problem, what new perspective or approach you brought, and how you validated it",
+        "result": "The innovative solution and its impact compared to what was expected"
+      },
+      "tips": [
+        "Show that your innovation was grounded in understanding the problem deeply",
+        "Explain what you saw that others missed",
+        "Demonstrate a willingness to challenge assumptions",
+        "Quantify the improvement over previous approaches"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the problem and why previous attempts had failed",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What constraints or assumptions were limiting the solution space",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you reframed the problem, what new perspective or approach you brought, and how you validated it",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The innovative solution and its impact compared to what was expected",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-036-c1",
+          "front": "Tell me about a time you came up with an innovative solution to a problem that others had given up on.",
+          "back": "Assessing: Creative thinking, persistence, ability to see problems from new angles, and whether you bring a fresh perspective when conventional approaches fail."
+        },
+        {
+          "id": "beh-036-c2",
+          "front": "What is assessed: You came up with an innovative solution to a problem that others ha...?",
+          "back": "Creative thinking, persistence, ability to see problems from new angles, and whether you bring a fresh perspective when conventional approaches fail."
+        }
+      ]
+    },
+    {
+      "id": "beh-037",
+      "title": "When you simplified a complex system or process.",
+      "difficulty": "Medium",
+      "pattern": "innovation-and-creativity",
+      "category": "behavioral",
+      "description": "Describe a time when you simplified a complex system or process.",
+      "question": "Describe a time when you simplified a complex system or process.",
+      "assessing": "Ability to reduce complexity, appreciation for simplicity, systems thinking, and whether you actively fight unnecessary complexity in your work.",
+      "starHints": {
+        "situation": "Describe the complex system or process and why it had become problematic",
+        "task": "What simplification was needed and what constraints existed",
+        "action": "How you analyzed the complexity, identified what could be removed or consolidated, and implemented the simplification",
+        "result": "The reduction in complexity (fewer steps, less code, faster processes) and its downstream impact"
+      },
+      "tips": [
+        "Show that you understood the system deeply before simplifying",
+        "Demonstrate that you preserved essential functionality",
+        "Quantify the simplification (lines of code removed, steps eliminated, time saved)",
+        "This resonates strongly at Apple and Stripe where simplicity is a core value"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the complex system or process and why it had become problematic",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What simplification was needed and what constraints existed",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you analyzed the complexity, identified what could be removed or consolidated, and implemented the simplification",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The reduction in complexity (fewer steps, less code, faster processes) and its downstream impact",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-037-c1",
+          "front": "Describe a time when you simplified a complex system or process.",
+          "back": "Assessing: Ability to reduce complexity, appreciation for simplicity, systems thinking, and whether you actively fight unnecessary complexity in your work."
+        },
+        {
+          "id": "beh-037-c2",
+          "front": "What is assessed: When you simplified a complex system or process.?",
+          "back": "Ability to reduce complexity, appreciation for simplicity, systems thinking, and whether you actively fight unnecessary complexity in your work."
+        }
+      ]
+    },
+    {
+      "id": "beh-038",
+      "title": "You proposed a new idea or approach at work. What happened",
+      "difficulty": "Easy",
+      "pattern": "innovation-and-creativity",
+      "category": "behavioral",
+      "description": "Tell me about a time you proposed a new idea or approach at work. What happened?",
+      "question": "Tell me about a time you proposed a new idea or approach at work. What happened?",
+      "assessing": "Initiative, creativity, ability to champion ideas, and whether you contribute to the intellectual life of your team beyond assigned tasks.",
+      "starHints": {
+        "situation": "Describe the context and what prompted the idea",
+        "task": "What problem or opportunity the idea addressed",
+        "action": "How you developed the idea, built a case for it, pitched it, and handled feedback or pushback",
+        "result": "Whether the idea was adopted and its impact. If not adopted, what you learned about advocating for ideas."
+      },
+      "tips": [
+        "Show initiative in identifying the opportunity",
+        "Demonstrate that you built a compelling case, not just shared a random thought",
+        "Show you were open to feedback and iteration on your idea",
+        "Even if the idea was not adopted, show what you learned"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the context and what prompted the idea",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What problem or opportunity the idea addressed",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you developed the idea, built a case for it, pitched it, and handled feedback or pushback",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Whether the idea was adopted and its impact. If not adopted, what you learned about advocating for ideas.",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-038-c1",
+          "front": "Tell me about a time you proposed a new idea or approach at work. What happened?",
+          "back": "Assessing: Initiative, creativity, ability to champion ideas, and whether you contribute to the intellectual life of your team beyond assigned tasks."
+        },
+        {
+          "id": "beh-038-c2",
+          "front": "What is assessed: You proposed a new idea or approach at work. What happened?",
+          "back": "Initiative, creativity, ability to champion ideas, and whether you contribute to the intellectual life of your team beyond assigned tasks."
+        }
+      ]
+    },
+    {
+      "id": "beh-039",
+      "title": "When you had to think outside the box to meet a business goal with ...",
+      "difficulty": "Medium",
+      "pattern": "innovation-and-creativity",
+      "category": "behavioral",
+      "description": "Describe a time when you had to think outside the box to meet a business goal with limited resources.",
+      "question": "Describe a time when you had to think outside the box to meet a business goal with limited resources.",
+      "assessing": "Resourcefulness, creative problem-solving under constraints, frugality mindset, and ability to deliver outsized impact with limited resources.",
+      "starHints": {
+        "situation": "Describe the goal and the resource constraints (time, money, headcount, infrastructure)",
+        "task": "What needed to be achieved despite the limitations",
+        "action": "Your creative approach: repurposing existing tools, finding shortcuts, leveraging open source, automating manual work, or redefining the scope creatively",
+        "result": "What you delivered and how it compared to what a fully-resourced approach would have achieved"
+      },
+      "tips": [
+        "This maps directly to Amazon's 'Frugality' leadership principle",
+        "Show that constraints drove creativity, not just compromise",
+        "Demonstrate resourcefulness over brute force",
+        "Quantify the resource savings"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the goal and the resource constraints (time, money, headcount, infrastructure)",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What needed to be achieved despite the limitations",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "Your creative approach: repurposing existing tools, finding shortcuts, leveraging open source, automating manual work, or redefining the scope creatively",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "What you delivered and how it compared to what a fully-resourced approach would have achieved",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-039-c1",
+          "front": "Describe a time when you had to think outside the box to meet a business goal with limited resources.",
+          "back": "Assessing: Resourcefulness, creative problem-solving under constraints, frugality mindset, and ability to deliver outsized impact with limited resources."
+        },
+        {
+          "id": "beh-039-c2",
+          "front": "What is assessed: When you had to think outside the box to meet a business goal with ...?",
+          "back": "Resourcefulness, creative problem-solving under constraints, frugality mindset, and ability to deliver outsized impact with limited resources."
+        }
+      ]
+    },
+    {
+      "id": "beh-040",
+      "title": "You went above and beyond to solve a customer's problem or improve ...",
+      "difficulty": "Medium",
+      "pattern": "customer-obsession",
+      "category": "behavioral",
+      "description": "Tell me about a time you went above and beyond to solve a customer's problem or improve their experience.",
+      "question": "Tell me about a time you went above and beyond to solve a customer's problem or improve their experience.",
+      "assessing": "Customer-first thinking, empathy for end users, willingness to go the extra mile, and whether you consider customer impact in your technical decisions.",
+      "starHints": {
+        "situation": "Describe the customer problem and how you became aware of it",
+        "task": "What the customer needed and what the expected or standard response would have been",
+        "action": "What you did that went beyond expectations -- personal outreach, custom fix, systemic improvement, escalation on their behalf",
+        "result": "The customer outcome and any broader improvements that resulted"
+      },
+      "tips": [
+        "Show genuine empathy for the customer's situation",
+        "Demonstrate that you did more than the minimum expected",
+        "For engineers, the 'customer' can be internal users, API consumers, or end users",
+        "Show that you thought about the systemic fix, not just the individual case"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the customer problem and how you became aware of it",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What the customer needed and what the expected or standard response would have been",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "What you did that went beyond expectations -- personal outreach, custom fix, systemic improvement, escalation on their behalf",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The customer outcome and any broader improvements that resulted",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-040-c1",
+          "front": "Tell me about a time you went above and beyond to solve a customer's problem or improve their experience.",
+          "back": "Assessing: Customer-first thinking, empathy for end users, willingness to go the extra mile, and whether you consider customer impact in your technical decisions."
+        },
+        {
+          "id": "beh-040-c2",
+          "front": "What is assessed: You went above and beyond to solve a customer's problem or improve ...?",
+          "back": "Customer-first thinking, empathy for end users, willingness to go the extra mile, and whether you consider customer impact in your technical decisions."
+        }
+      ]
+    },
+    {
+      "id": "beh-041",
+      "title": "When you had to make a tradeoff between what was best for the custo...",
+      "difficulty": "Hard",
+      "pattern": "customer-obsession",
+      "category": "behavioral",
+      "description": "Describe a time when you had to make a tradeoff between what was best for the customer and what was best for the business.",
+      "question": "Describe a time when you had to make a tradeoff between what was best for the customer and what was best for the business.",
+      "assessing": "Nuanced thinking about customer vs. business needs, ethical judgment, long-term thinking about customer trust, and ability to navigate competing priorities.",
+      "starHints": {
+        "situation": "Describe the tension between customer interest and business interest",
+        "task": "What decision needed to be made and what the competing pressures were",
+        "action": "How you analyzed the tradeoff, who you consulted, what framework you used, and the decision you advocated for",
+        "result": "The outcome for both the customer and the business, and whether it was the right call in hindsight"
+      },
+      "tips": [
+        "Show that you considered both sides seriously",
+        "Demonstrate long-term thinking about customer trust and retention",
+        "Avoid being naive about business realities",
+        "Show that you advocated for the customer when it was the right thing to do",
+        "This is a core Amazon LP question -- they generally expect you to favor the customer"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the tension between customer interest and business interest",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What decision needed to be made and what the competing pressures were",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you analyzed the tradeoff, who you consulted, what framework you used, and the decision you advocated for",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The outcome for both the customer and the business, and whether it was the right call in hindsight",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-041-c1",
+          "front": "Describe a time when you had to make a tradeoff between what was best for the customer and what was best for the business.",
+          "back": "Assessing: Nuanced thinking about customer vs. business needs, ethical judgment, long-term thinking about customer trust, and ability to navigate competing priorities."
+        },
+        {
+          "id": "beh-041-c2",
+          "front": "What is assessed: When you had to make a tradeoff between what was best for the custo...?",
+          "back": "Nuanced thinking about customer vs. business needs, ethical judgment, long-term thinking about customer trust, and ability to navigate competing priorities."
+        }
+      ]
+    },
+    {
+      "id": "beh-042",
+      "title": "You used customer or user data to drive a technical decision.",
+      "difficulty": "Medium",
+      "pattern": "customer-obsession",
+      "category": "behavioral",
+      "description": "Tell me about a time you used customer or user data to drive a technical decision.",
+      "question": "Tell me about a time you used customer or user data to drive a technical decision.",
+      "assessing": "Data-driven decision making, customer empathy through data, ability to translate user signals into technical action, and whether you build based on evidence rather than assumptions.",
+      "starHints": {
+        "situation": "Describe the technical decision and the user data available",
+        "task": "What you needed to decide and why customer data was relevant",
+        "action": "How you gathered and analyzed the data, what insights you derived, and how those insights influenced the technical approach",
+        "result": "The decision made, its impact on the user experience, and validation through subsequent data"
+      },
+      "tips": [
+        "Show that you proactively sought user data, not just used what was handed to you",
+        "Demonstrate ability to connect user behavior to technical implications",
+        "Mention specific metrics and how they changed",
+        "Show iterative improvement based on data feedback loops"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the technical decision and the user data available",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What you needed to decide and why customer data was relevant",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you gathered and analyzed the data, what insights you derived, and how those insights influenced the technical approach",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The decision made, its impact on the user experience, and validation through subsequent data",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-042-c1",
+          "front": "Tell me about a time you used customer or user data to drive a technical decision.",
+          "back": "Assessing: Data-driven decision making, customer empathy through data, ability to translate user signals into technical action, and whether you build based on evidence rather than assumptions."
+        },
+        {
+          "id": "beh-042-c2",
+          "front": "What is assessed: You used customer or user data to drive a technical decision.?",
+          "back": "Data-driven decision making, customer empathy through data, ability to translate user signals into technical action, and whether you build based on evidence rather than assumptions."
+        }
+      ]
+    },
+    {
+      "id": "beh-043",
+      "title": "When you anticipated a customer need before they expressed it.",
+      "difficulty": "Hard",
+      "pattern": "customer-obsession",
+      "category": "behavioral",
+      "description": "Describe a time when you anticipated a customer need before they expressed it.",
+      "question": "Describe a time when you anticipated a customer need before they expressed it.",
+      "assessing": "Proactive customer thinking, deep understanding of user behavior, product sense, and ability to build for future needs rather than just reacting to current requests.",
+      "starHints": {
+        "situation": "Describe the customer segment and what you observed about their behavior or pain points",
+        "task": "What need you identified that had not been explicitly requested",
+        "action": "How you validated your hypothesis, built the solution, and measured whether you were right",
+        "result": "Customer adoption or feedback that confirmed you correctly anticipated the need"
+      },
+      "tips": [
+        "Show deep engagement with understanding your users",
+        "Demonstrate that your anticipation was based on data and observation, not just guessing",
+        "Mention how you validated the assumption before investing heavily",
+        "Quantify the impact on user satisfaction or engagement"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the customer segment and what you observed about their behavior or pain points",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What need you identified that had not been explicitly requested",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you validated your hypothesis, built the solution, and measured whether you were right",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Customer adoption or feedback that confirmed you correctly anticipated the need",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-043-c1",
+          "front": "Describe a time when you anticipated a customer need before they expressed it.",
+          "back": "Assessing: Proactive customer thinking, deep understanding of user behavior, product sense, and ability to build for future needs rather than just reacting to current requests."
+        },
+        {
+          "id": "beh-043-c2",
+          "front": "What is assessed: When you anticipated a customer need before they expressed it.?",
+          "back": "Proactive customer thinking, deep understanding of user behavior, product sense, and ability to build for future needs rather than just reacting to current requests."
+        }
+      ]
+    },
+    {
+      "id": "beh-044",
+      "title": "You took ownership of something outside your normal responsibilitie...",
+      "difficulty": "Medium",
+      "pattern": "ownership-and-accountability",
+      "category": "behavioral",
+      "description": "Tell me about a time you took ownership of something outside your normal responsibilities because you saw it needed to be done.",
+      "question": "Tell me about a time you took ownership of something outside your normal responsibilities because you saw it needed to be done.",
+      "assessing": "Initiative, sense of ownership beyond job description, bias for action, and whether you see problems as 'someone else's job' or as opportunities to help.",
+      "starHints": {
+        "situation": "Describe what you noticed that was not being handled and was outside your role",
+        "task": "Why it was important and why you felt compelled to act",
+        "action": "What you did to address it, how you balanced it with your existing responsibilities, and how you coordinated with the 'actual' owner if there was one",
+        "result": "The outcome and any recognition or systemic change that followed"
+      },
+      "tips": [
+        "Show genuine ownership mentality, not credit-seeking",
+        "Demonstrate awareness of when stepping in is helpful vs. stepping on toes",
+        "Mention how you balanced this with your core responsibilities",
+        "This is a cornerstone Amazon LP question -- 'Owners never say that is not my job'"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe what you noticed that was not being handled and was outside your role",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Why it was important and why you felt compelled to act",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "What you did to address it, how you balanced it with your existing responsibilities, and how you coordinated with the 'actual' owner if there was one",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The outcome and any recognition or systemic change that followed",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-044-c1",
+          "front": "Tell me about a time you took ownership of something outside your normal responsibilities because you saw it needed to be done.",
+          "back": "Assessing: Initiative, sense of ownership beyond job description, bias for action, and whether you see problems as 'someone else's job' or as opportunities to help."
+        },
+        {
+          "id": "beh-044-c2",
+          "front": "What is assessed: You took ownership of something outside your normal responsibilitie...?",
+          "back": "Initiative, sense of ownership beyond job description, bias for action, and whether you see problems as 'someone else's job' or as opportunities to help."
+        }
+      ]
+    },
+    {
+      "id": "beh-045",
+      "title": "When you held yourself accountable for a result even when external ...",
+      "difficulty": "Hard",
+      "pattern": "ownership-and-accountability",
+      "category": "behavioral",
+      "description": "Describe a time when you held yourself accountable for a result even when external factors contributed to the problem.",
+      "question": "Describe a time when you held yourself accountable for a result even when external factors contributed to the problem.",
+      "assessing": "True accountability (not just when it is easy), maturity, integrity, and whether you focus on what you can control rather than making excuses.",
+      "starHints": {
+        "situation": "Describe the bad outcome and the external factors that contributed",
+        "task": "What your role was and what you could have controlled",
+        "action": "How you took accountability publicly, what you did to fix things, and how you resisted the temptation to blame external factors",
+        "result": "The resolution, what you learned about your own sphere of control, and how it affected trust with your team"
+      },
+      "tips": [
+        "This question separates genuine accountability from lip service",
+        "Show that you focused on what you could control",
+        "Demonstrate that taking accountability built trust",
+        "Avoid the trap of then explaining why it was not really your fault"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the bad outcome and the external factors that contributed",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What your role was and what you could have controlled",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you took accountability publicly, what you did to fix things, and how you resisted the temptation to blame external factors",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The resolution, what you learned about your own sphere of control, and how it affected trust with your team",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-045-c1",
+          "front": "Describe a time when you held yourself accountable for a result even when external factors contributed to the problem.",
+          "back": "Assessing: True accountability (not just when it is easy), maturity, integrity, and whether you focus on what you can control rather than making excuses."
+        },
+        {
+          "id": "beh-045-c2",
+          "front": "What is assessed: When you held yourself accountable for a result even when external ...?",
+          "back": "True accountability (not just when it is easy), maturity, integrity, and whether you focus on what you can control rather than making excuses."
+        }
+      ]
+    },
+    {
+      "id": "beh-046",
+      "title": "You saw a problem in your team's process and fixed it without being...",
+      "difficulty": "Easy",
+      "pattern": "ownership-and-accountability",
+      "category": "behavioral",
+      "description": "Tell me about a time you saw a problem in your team's process and fixed it without being asked.",
+      "question": "Tell me about a time you saw a problem in your team's process and fixed it without being asked.",
+      "assessing": "Proactiveness, continuous improvement mindset, initiative, and whether you act on problems you see rather than waiting for someone to assign them.",
+      "starHints": {
+        "situation": "Describe the process problem and how you identified it",
+        "task": "The impact of the broken process and what improvement was possible",
+        "action": "How you investigated the root cause, designed an improvement, got buy-in from the team, and implemented it",
+        "result": "The measurable improvement in the process and team adoption"
+      },
+      "tips": [
+        "Show that you are constantly looking for improvements",
+        "Demonstrate that you got buy-in rather than just imposing changes",
+        "Quantify the before and after",
+        "Show that this is a pattern for you, not a one-time event"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the process problem and how you identified it",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "The impact of the broken process and what improvement was possible",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you investigated the root cause, designed an improvement, got buy-in from the team, and implemented it",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The measurable improvement in the process and team adoption",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-046-c1",
+          "front": "Tell me about a time you saw a problem in your team's process and fixed it without being asked.",
+          "back": "Assessing: Proactiveness, continuous improvement mindset, initiative, and whether you act on problems you see rather than waiting for someone to assign them."
+        },
+        {
+          "id": "beh-046-c2",
+          "front": "What is assessed: You saw a problem in your team's process and fixed it without being...?",
+          "back": "Proactiveness, continuous improvement mindset, initiative, and whether you act on problems you see rather than waiting for someone to assign them."
+        }
+      ]
+    },
+    {
+      "id": "beh-047",
+      "title": "When you had to take responsibility for a team's deliverable that w...",
+      "difficulty": "Medium",
+      "pattern": "ownership-and-accountability",
+      "category": "behavioral",
+      "description": "Describe a time when you had to take responsibility for a team's deliverable that was at risk of missing its deadline.",
+      "question": "Describe a time when you had to take responsibility for a team's deliverable that was at risk of missing its deadline.",
+      "assessing": "Willingness to step up in critical moments, leadership under pressure, problem-solving when things are going wrong, and whether you own outcomes rather than just inputs.",
+      "starHints": {
+        "situation": "Describe the project, the deadline risk, and what was going wrong",
+        "task": "What needed to happen to get back on track",
+        "action": "How you assessed the situation, what actions you took (reprioritizing, unblocking, hands-on coding, getting help), and how you communicated the risk upward",
+        "result": "Whether the deadline was met, the quality of the delivery, and any process changes to prevent recurrence"
+      },
+      "tips": [
+        "Show bias for action rather than analysis paralysis",
+        "Demonstrate transparent communication about risk",
+        "Mention if you escalated early rather than hoping things would fix themselves",
+        "Show that you addressed root causes, not just symptoms"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the project, the deadline risk, and what was going wrong",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What needed to happen to get back on track",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you assessed the situation, what actions you took (reprioritizing, unblocking, hands-on coding, getting help), and how you communicated the risk upward",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "Whether the deadline was met, the quality of the delivery, and any process changes to prevent recurrence",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-047-c1",
+          "front": "Describe a time when you had to take responsibility for a team's deliverable that was at risk of missing its deadline.",
+          "back": "Assessing: Willingness to step up in critical moments, leadership under pressure, problem-solving when things are going wrong, and whether you own outcomes rather than just inputs."
+        },
+        {
+          "id": "beh-047-c2",
+          "front": "What is assessed: When you had to take responsibility for a team's deliverable that w...?",
+          "back": "Willingness to step up in critical moments, leadership under pressure, problem-solving when things are going wrong, and whether you own outcomes rather than just inputs."
+        }
+      ]
+    },
+    {
+      "id": "beh-048",
+      "title": "You had to deal with significant ambiguity in a project. How did yo...",
+      "difficulty": "Hard",
+      "pattern": "problem-solving-and-decision-making",
+      "category": "behavioral",
+      "description": "Tell me about a time you had to deal with significant ambiguity in a project. How did you create clarity?",
+      "question": "Tell me about a time you had to deal with significant ambiguity in a project. How did you create clarity?",
+      "assessing": "Comfort with ambiguity, ability to create structure from chaos, leadership in uncertain situations, and whether you drive toward clarity rather than waiting for it.",
+      "starHints": {
+        "situation": "Describe the ambiguous situation -- unclear requirements, undefined scope, conflicting directions, new problem space",
+        "task": "What clarity was needed and why the ambiguity was blocking progress",
+        "action": "How you identified the key questions, gathered information, proposed a framework or direction, built alignment, and moved the team forward",
+        "result": "The clarity achieved, the team's response, and the project outcome"
+      },
+      "tips": [
+        "Google especially values comfort with ambiguity",
+        "Show that you are energized by ambiguity rather than paralyzed by it",
+        "Demonstrate a systematic approach to creating structure",
+        "Mention how you balanced moving fast with getting sufficient clarity"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the ambiguous situation -- unclear requirements, undefined scope, conflicting directions, new problem space",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What clarity was needed and why the ambiguity was blocking progress",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you identified the key questions, gathered information, proposed a framework or direction, built alignment, and moved the team forward",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The clarity achieved, the team's response, and the project outcome",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-048-c1",
+          "front": "Tell me about a time you had to deal with significant ambiguity in a project. How did you create clarity?",
+          "back": "Assessing: Comfort with ambiguity, ability to create structure from chaos, leadership in uncertain situations, and whether you drive toward clarity rather than waiting for it."
+        },
+        {
+          "id": "beh-048-c2",
+          "front": "What is assessed: You had to deal with significant ambiguity in a project. How did yo...?",
+          "back": "Comfort with ambiguity, ability to create structure from chaos, leadership in uncertain situations, and whether you drive toward clarity rather than waiting for it."
+        }
+      ]
+    },
+    {
+      "id": "beh-049",
+      "title": "You disagreed with the direction of a project but had to commit to ...",
+      "difficulty": "Hard",
+      "pattern": "ownership-and-accountability",
+      "category": "behavioral",
+      "description": "Tell me about a time you disagreed with the direction of a project but had to commit to it anyway. How did you handle that?",
+      "question": "Tell me about a time you disagreed with the direction of a project but had to commit to it anyway. How did you handle that?",
+      "assessing": "Disagree and commit principle, professional maturity, ability to separate your ego from decisions, and whether you can give full effort even when it is not your preferred direction.",
+      "starHints": {
+        "situation": "Describe the project direction and your disagreement",
+        "task": "Why the decision was made to go a different way than you recommended",
+        "action": "How you expressed your disagreement constructively, what you did once the decision was final, and how you fully committed despite your reservations",
+        "result": "The project outcome, whether the direction proved correct, and what you learned about when to let go of your position"
+      },
+      "tips": [
+        "This is literally Amazon's 'Have Backbone; Disagree and Commit' principle",
+        "Show that you voiced your concern clearly and with evidence",
+        "Demonstrate that once the decision was made, you gave 100 percent commitment",
+        "Avoid any hint of 'I told you so' if the direction proved wrong",
+        "If the direction proved right, show intellectual humility about your initial assessment"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the project direction and your disagreement",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "Why the decision was made to go a different way than you recommended",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you expressed your disagreement constructively, what you did once the decision was final, and how you fully committed despite your reservations",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The project outcome, whether the direction proved correct, and what you learned about when to let go of your position",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-049-c1",
+          "front": "Tell me about a time you disagreed with the direction of a project but had to commit to it anyway. How did you handle that?",
+          "back": "Assessing: Disagree and commit principle, professional maturity, ability to separate your ego from decisions, and whether you can give full effort even when it is not your preferred direction."
+        },
+        {
+          "id": "beh-049-c2",
+          "front": "What is assessed: You disagreed with the direction of a project but had to commit to ...?",
+          "back": "Disagree and commit principle, professional maturity, ability to separate your ego from decisions, and whether you can give full effort even when it is not your preferred direction."
+        }
+      ]
+    },
+    {
+      "id": "beh-050",
+      "title": "When you had to balance technical excellence with shipping speed. H...",
+      "difficulty": "Medium",
+      "pattern": "problem-solving-and-decision-making",
+      "category": "behavioral",
+      "description": "Describe a time when you had to balance technical excellence with shipping speed. How did you make that tradeoff?",
+      "question": "Describe a time when you had to balance technical excellence with shipping speed. How did you make that tradeoff?",
+      "assessing": "Pragmatism, understanding of technical debt, business awareness, and whether you can make thoughtful tradeoffs between perfection and progress.",
+      "starHints": {
+        "situation": "Describe the project and the tension between quality and speed",
+        "task": "What was driving the urgency and what technical standards were at risk",
+        "action": "How you evaluated the tradeoff, what shortcuts you took knowingly, what you refused to compromise on, and how you planned to address the debt later",
+        "result": "The outcome -- did you ship on time, was the technical debt manageable, and did you follow through on addressing it"
+      },
+      "tips": [
+        "Show awareness that both extremes (shipping broken code vs. never shipping) are harmful",
+        "Demonstrate a framework for deciding what to cut and what to keep",
+        "Mention specific technical debt you intentionally took on and your plan to address it",
+        "Show that you documented the tradeoffs for the team"
+      ],
+      "steps": [
+        {
+          "title": "Situation",
+          "hint": "Describe the project and the tension between quality and speed",
+          "approach": "Set the context in 2-3 sentences."
+        },
+        {
+          "title": "Task",
+          "hint": "What was driving the urgency and what technical standards were at risk",
+          "approach": "Clarify your role and what was expected."
+        },
+        {
+          "title": "Action",
+          "hint": "How you evaluated the tradeoff, what shortcuts you took knowingly, what you refused to compromise on, and how you planned to address the debt later",
+          "approach": "Detail 2-3 concrete actions YOU took."
+        },
+        {
+          "title": "Result",
+          "hint": "The outcome -- did you ship on time, was the technical debt manageable, and did you follow through on addressing it",
+          "approach": "Quantify impact. Share what you learned."
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "beh-050-c1",
+          "front": "Describe a time when you had to balance technical excellence with shipping speed. How did you make that tradeoff?",
+          "back": "Assessing: Pragmatism, understanding of technical debt, business awareness, and whether you can make thoughtful tradeoffs between perfection and progress."
+        },
+        {
+          "id": "beh-050-c2",
+          "front": "What is assessed: When you had to balance technical excellence with shipping speed. H...?",
+          "back": "Pragmatism, understanding of technical debt, business awareness, and whether you can make thoughtful tradeoffs between perfection and progress."
+        }
+      ]
+    }
+  ]
+}

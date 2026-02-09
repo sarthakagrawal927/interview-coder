@@ -1,0 +1,1878 @@
+{
+  "patterns": [
+    {
+      "id": "object-modeling",
+      "name": "Object Modeling & Relationships",
+      "icon": "Boxes",
+      "description": "Core OOP design: identifying classes, attributes, methods, and relationships (has-a, is-a, uses-a)"
+    },
+    {
+      "id": "state-management",
+      "name": "State Machine & Lifecycle",
+      "icon": "ToggleLeft",
+      "description": "Systems where objects transition through well-defined states with specific triggers and guards"
+    },
+    {
+      "id": "strategy-pattern",
+      "name": "Strategy & Policy",
+      "icon": "GitBranch",
+      "description": "Interchangeable algorithms or policies selected at runtime (pricing, allocation, scheduling)"
+    },
+    {
+      "id": "observer-pattern",
+      "name": "Observer & Event-Driven",
+      "icon": "Bell",
+      "description": "Publish-subscribe, event listeners, and notification systems with decoupled producers and consumers"
+    },
+    {
+      "id": "factory-creational",
+      "name": "Factory & Creational",
+      "icon": "Factory",
+      "description": "Object creation patterns: Factory Method, Abstract Factory, Builder, Singleton, Prototype"
+    },
+    {
+      "id": "decorator-structural",
+      "name": "Decorator & Structural",
+      "icon": "Layers",
+      "description": "Composing objects to extend behavior dynamically: Decorator, Adapter, Composite, Proxy"
+    },
+    {
+      "id": "concurrency-design",
+      "name": "Concurrency & Synchronization",
+      "icon": "Cpu",
+      "description": "Thread safety, locks, producer-consumer, connection pools, and concurrent data structures"
+    },
+    {
+      "id": "game-design",
+      "name": "Game & Simulation Design",
+      "icon": "Gamepad2",
+      "description": "Turn-based or real-time game logic: board state, players, rules engine, move validation"
+    },
+    {
+      "id": "booking-inventory",
+      "name": "Booking & Inventory Systems",
+      "icon": "CalendarCheck",
+      "description": "Reservation management, availability tracking, conflict detection, and capacity planning"
+    },
+    {
+      "id": "command-chain",
+      "name": "Command & Chain of Responsibility",
+      "icon": "Link",
+      "description": "Encapsulating requests as objects, undo/redo, and passing requests through handler chains"
+    }
+  ],
+  "problems": [
+    {
+      "id": "lld-parking-lot",
+      "title": "Design a Parking Lot",
+      "difficulty": "Easy",
+      "pattern": "strategy-pattern",
+      "category": "lld",
+      "description": "Design an object-oriented system for a multi-floor parking lot that supports different vehicle types (car, motorcycle, truck), tracks available spots in real time, handles entry/exit ticketing, and calculates parking fees based on duration. This is the single most commonly asked LLD interview question.",
+      "requirements": [
+        "Support multiple floors with rows and columns of spots",
+        "Handle different vehicle types: motorcycle, car, truck",
+        "Different spot sizes: small, medium, large",
+        "Assign nearest available spot using a strategy",
+        "Generate entry ticket with timestamp",
+        "Calculate fee on exit based on duration and vehicle type",
+        "Track real-time availability per floor",
+        "Support multiple entry and exit points"
+      ],
+      "keyClasses": [
+        "ParkingLot",
+        "ParkingFloor",
+        "ParkingSpot",
+        "Vehicle",
+        "Car",
+        "Motorcycle",
+        "Truck",
+        "Ticket",
+        "ParkingFeeCalculator",
+        "SlotAssignmentStrategy",
+        "EntryPanel",
+        "ExitPanel"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Factory",
+        "Singleton"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-elevator-system",
+      "title": "Design an Elevator System",
+      "difficulty": "Medium",
+      "pattern": "state-management",
+      "category": "lld",
+      "description": "Design an elevator system for a multi-story building with multiple elevator cars. The system should handle floor requests from both inside and outside the elevator, schedule elevator movement efficiently, and manage door open/close states. Focuses on the State pattern for elevator states and Strategy for scheduling.",
+      "requirements": [
+        "Support multiple elevator cars in a building",
+        "Handle internal requests (from inside elevator) and external requests (from floor buttons)",
+        "Elevator states: Idle, Moving Up, Moving Down, Door Open",
+        "Implement scheduling algorithm (e.g., SCAN, LOOK, nearest-first)",
+        "Manage door open/close with timeout",
+        "Display current floor on each floor panel",
+        "Handle edge cases: overweight, door obstruction",
+        "Support priority/emergency mode"
+      ],
+      "keyClasses": [
+        "ElevatorSystem",
+        "Elevator",
+        "ElevatorState",
+        "IdleState",
+        "MovingUpState",
+        "MovingDownState",
+        "DoorOpenState",
+        "Floor",
+        "Request",
+        "InternalRequest",
+        "ExternalRequest",
+        "ElevatorScheduler",
+        "ElevatorSelectionStrategy",
+        "FloorPanel",
+        "ElevatorPanel"
+      ],
+      "designPatterns": [
+        "State",
+        "Strategy",
+        "Observer"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-vending-machine",
+      "title": "Design a Vending Machine",
+      "difficulty": "Easy",
+      "pattern": "state-management",
+      "category": "lld",
+      "description": "Design a vending machine that sells products at various prices. The machine accepts coins and bills, dispenses products, and returns change. This is a classic State pattern problem where the machine transitions between states like Idle, HasMoney, Dispensing, and OutOfStock.",
+      "requirements": [
+        "Support multiple product types with different prices",
+        "Accept various denominations of coins and bills",
+        "Track inventory per product slot",
+        "Dispense correct product after payment",
+        "Return change if overpaid",
+        "Handle insufficient funds gracefully",
+        "States: Idle, HasMoney, Dispensing, OutOfStock",
+        "Allow admin to refill inventory and collect money"
+      ],
+      "keyClasses": [
+        "VendingMachine",
+        "VendingMachineState",
+        "IdleState",
+        "HasMoneyState",
+        "DispensingState",
+        "Product",
+        "Slot",
+        "Inventory",
+        "Coin",
+        "Payment",
+        "ChangeCalculator"
+      ],
+      "designPatterns": [
+        "State",
+        "Singleton",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-library-management",
+      "title": "Design a Library Management System",
+      "difficulty": "Medium",
+      "pattern": "object-modeling",
+      "category": "lld",
+      "description": "Design a system that manages a library's operations including book catalog management, member registration, book borrowing and returning, fine calculation for overdue books, and search functionality. Tests core OOP modeling with many entities and relationships.",
+      "requirements": [
+        "Manage book catalog with multiple copies per title",
+        "Member registration and membership types",
+        "Borrow and return books with due dates",
+        "Calculate fines for overdue returns",
+        "Search books by title, author, ISBN, or category",
+        "Reserve books that are currently checked out",
+        "Track borrowing history per member",
+        "Limit concurrent borrows per membership type"
+      ],
+      "keyClasses": [
+        "Library",
+        "Book",
+        "BookCopy",
+        "Author",
+        "Member",
+        "Librarian",
+        "Loan",
+        "Reservation",
+        "Fine",
+        "Catalog",
+        "SearchService",
+        "NotificationService"
+      ],
+      "designPatterns": [
+        "Factory",
+        "Observer",
+        "Strategy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-chess",
+      "title": "Design a Chess Game",
+      "difficulty": "Hard",
+      "pattern": "game-design",
+      "category": "lld",
+      "description": "Design an object-oriented chess game that supports two players, validates moves for each piece type, detects check/checkmate/stalemate, and maintains game history. Uses Strategy pattern for piece movement rules and demonstrates polymorphism through different piece behaviors.",
+      "requirements": [
+        "8x8 board with proper initial piece placement",
+        "Six piece types with unique movement rules",
+        "Validate legal moves per piece type",
+        "Detect check, checkmate, and stalemate",
+        "Support special moves: castling, en passant, pawn promotion",
+        "Alternate turns between white and black",
+        "Maintain move history for undo functionality",
+        "Handle game states: Active, Check, Checkmate, Stalemate, Resigned"
+      ],
+      "keyClasses": [
+        "Game",
+        "Board",
+        "Cell",
+        "Piece",
+        "King",
+        "Queen",
+        "Rook",
+        "Bishop",
+        "Knight",
+        "Pawn",
+        "Player",
+        "Move",
+        "MoveValidator",
+        "GameStatus"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Factory",
+        "Command"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-tic-tac-toe",
+      "title": "Design Tic-Tac-Toe",
+      "difficulty": "Easy",
+      "pattern": "game-design",
+      "category": "lld",
+      "description": "Design a Tic-Tac-Toe game that supports two players on an NxN board. The system should validate moves, detect win conditions (row, column, diagonal), handle draws, and support variable board sizes. A good starter game design problem.",
+      "requirements": [
+        "Support NxN configurable board size",
+        "Two players alternate turns (X and O)",
+        "Validate move placement on empty cells",
+        "Detect win condition: row, column, or diagonal",
+        "Detect draw when board is full with no winner",
+        "Track game state: In Progress, Won, Draw",
+        "Support reset/new game functionality",
+        "Display board state after each move"
+      ],
+      "keyClasses": [
+        "Game",
+        "Board",
+        "Cell",
+        "Player",
+        "Symbol",
+        "Move",
+        "WinChecker",
+        "GameState"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-movie-ticket-booking",
+      "title": "Design a Movie Ticket Booking System",
+      "difficulty": "Hard",
+      "pattern": "booking-inventory",
+      "category": "lld",
+      "description": "Design a movie ticket booking system like BookMyShow. Users can browse movies, select theaters and showtimes, choose seats, and make payments. Handles concurrent seat selection, booking confirmation, and cancellation with refunds.",
+      "requirements": [
+        "Browse movies by city, genre, or language",
+        "View available shows for a movie at various theaters",
+        "Select seats from a seat map with different categories",
+        "Handle concurrent seat locking to prevent double booking",
+        "Process payment with multiple payment methods",
+        "Generate booking confirmation with QR code",
+        "Support booking cancellation with refund policy",
+        "Apply discount coupons and offers"
+      ],
+      "keyClasses": [
+        "Movie",
+        "Theater",
+        "Screen",
+        "Show",
+        "Seat",
+        "SeatCategory",
+        "Booking",
+        "Payment",
+        "User",
+        "City",
+        "BookingService",
+        "SeatLock",
+        "Coupon",
+        "NotificationService"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Observer",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-hotel-management",
+      "title": "Design a Hotel Booking System",
+      "difficulty": "Medium",
+      "pattern": "booking-inventory",
+      "category": "lld",
+      "description": "Design a hotel management system that handles room inventory, guest reservations, check-in/check-out, billing, and housekeeping. The system must track room availability across dates, prevent overbooking, and manage different room types and pricing.",
+      "requirements": [
+        "Manage different room types (Single, Double, Suite, Deluxe)",
+        "Search room availability by date range and type",
+        "Make, modify, and cancel reservations",
+        "Handle check-in and check-out processes",
+        "Generate itemized bills with room charges and extras",
+        "Track room status: Available, Occupied, Reserved, Under Maintenance",
+        "Manage housekeeping assignments",
+        "Handle seasonal and dynamic pricing"
+      ],
+      "keyClasses": [
+        "Hotel",
+        "Room",
+        "RoomType",
+        "Guest",
+        "Reservation",
+        "Booking",
+        "Bill",
+        "Payment",
+        "HousekeepingService",
+        "RoomInventory",
+        "PricingStrategy",
+        "ReceptionService"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "State",
+        "Observer",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-atm",
+      "title": "Design an ATM",
+      "difficulty": "Medium",
+      "pattern": "state-management",
+      "category": "lld",
+      "description": "Design an ATM system that handles user authentication, balance inquiry, cash withdrawal, deposits, and fund transfers. The ATM transitions through states (Idle, CardInserted, Authenticated, Transaction) and must manage cash denominations and dispensing.",
+      "requirements": [
+        "Authenticate user via card and PIN",
+        "Support balance inquiry, withdrawal, deposit, and transfer",
+        "ATM states: Idle, CardInserted, Authenticated, TransactionSelected",
+        "Manage cash denominations and dispensing strategy",
+        "Handle insufficient funds (account and ATM)",
+        "Print transaction receipt",
+        "Daily withdrawal limits per account",
+        "Communicate with bank backend for authorization"
+      ],
+      "keyClasses": [
+        "ATM",
+        "ATMState",
+        "IdleState",
+        "CardInsertedState",
+        "AuthenticatedState",
+        "Card",
+        "Account",
+        "Transaction",
+        "CashDispenser",
+        "CashDenomination",
+        "BankService",
+        "Receipt",
+        "WithdrawalStrategy"
+      ],
+      "designPatterns": [
+        "State",
+        "Strategy",
+        "Chain of Responsibility"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-online-shopping",
+      "title": "Design an Online Shopping System (Amazon)",
+      "difficulty": "Hard",
+      "pattern": "object-modeling",
+      "category": "lld",
+      "description": "Design an e-commerce platform like Amazon with product catalog, shopping cart, order management, payment processing, and shipping. Covers extensive object modeling with many interacting subsystems, strategy pattern for sorting/filtering, and observer for order status updates.",
+      "requirements": [
+        "Product catalog with categories, search, and filters",
+        "Shopping cart: add, remove, update quantities",
+        "Multiple sort strategies: price, rating, popularity",
+        "User accounts with addresses and payment methods",
+        "Order placement with inventory reservation",
+        "Payment processing with multiple payment methods",
+        "Order tracking with status updates (Placed, Shipped, Delivered)",
+        "Product reviews and ratings"
+      ],
+      "keyClasses": [
+        "Product",
+        "Category",
+        "Catalog",
+        "ShoppingCart",
+        "CartItem",
+        "Order",
+        "OrderItem",
+        "OrderStatus",
+        "User",
+        "Address",
+        "Payment",
+        "PaymentMethod",
+        "ShippingService",
+        "Review",
+        "SearchService",
+        "SortStrategy"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Observer",
+        "Factory",
+        "Decorator"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-ride-sharing",
+      "title": "Design a Ride-Sharing Service (Uber)",
+      "difficulty": "Hard",
+      "pattern": "strategy-pattern",
+      "category": "lld",
+      "description": "Design a ride-sharing application like Uber/Lyft. Riders request rides, the system matches them with nearby drivers using a matching strategy, tracks ride progress, calculates fare using a pricing strategy, and handles payments and ratings.",
+      "requirements": [
+        "Rider can request a ride with pickup and dropoff locations",
+        "Match rider with nearest available driver (strategy pattern)",
+        "Driver can accept or reject ride requests",
+        "Track ride status: Requested, Matched, InProgress, Completed, Cancelled",
+        "Calculate fare based on distance, time, and surge pricing",
+        "Process payment and split between driver and platform",
+        "Rider and driver mutual rating system",
+        "Support different ride types: Economy, Premium, Pool"
+      ],
+      "keyClasses": [
+        "Rider",
+        "Driver",
+        "Ride",
+        "RideRequest",
+        "RideStatus",
+        "Location",
+        "DriverMatchingStrategy",
+        "NearestDriverStrategy",
+        "FareCalculator",
+        "SurgePricingStrategy",
+        "Payment",
+        "Rating",
+        "RideType",
+        "TripService"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Observer",
+        "State",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-food-delivery",
+      "title": "Design a Food Delivery Service (Swiggy/DoorDash)",
+      "difficulty": "Hard",
+      "pattern": "strategy-pattern",
+      "category": "lld",
+      "description": "Design a food delivery platform where customers browse restaurants, place orders, and receive delivery. The system manages restaurant menus, order lifecycle, delivery agent assignment, real-time tracking, and payment processing.",
+      "requirements": [
+        "Browse restaurants by location, cuisine, and rating",
+        "View restaurant menus with item details and prices",
+        "Place order with multiple items from one restaurant",
+        "Assign delivery agent based on proximity and availability",
+        "Track order status: Placed, Preparing, PickedUp, InTransit, Delivered",
+        "Calculate delivery fee based on distance",
+        "Process payment with multiple methods",
+        "Restaurant and delivery agent rating system"
+      ],
+      "keyClasses": [
+        "Customer",
+        "Restaurant",
+        "Menu",
+        "MenuItem",
+        "Order",
+        "OrderItem",
+        "OrderStatus",
+        "DeliveryAgent",
+        "DeliveryAssignmentStrategy",
+        "Location",
+        "Payment",
+        "Rating",
+        "DeliveryFeeCalculator",
+        "NotificationService"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Observer",
+        "State",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-splitwise",
+      "title": "Design Splitwise (Expense Sharing)",
+      "difficulty": "Hard",
+      "pattern": "strategy-pattern",
+      "category": "lld",
+      "description": "Design an expense sharing application like Splitwise where users can create groups, add expenses, split bills using different strategies (equal, exact, percentage), track balances, and simplify debts between group members.",
+      "requirements": [
+        "Create groups with multiple users",
+        "Add expenses with a payer and participants",
+        "Split strategies: Equal, Exact Amount, Percentage",
+        "Track balance between every pair of users",
+        "Simplify debts to minimize number of transactions",
+        "View expense history and per-group summaries",
+        "Support multi-currency expenses",
+        "Send settlement reminders"
+      ],
+      "keyClasses": [
+        "User",
+        "Group",
+        "Expense",
+        "SplitStrategy",
+        "EqualSplit",
+        "ExactSplit",
+        "PercentageSplit",
+        "Balance",
+        "BalanceSheet",
+        "Settlement",
+        "DebtSimplifier",
+        "ExpenseService"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Observer",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-snake-and-ladder",
+      "title": "Design Snake and Ladder Game",
+      "difficulty": "Medium",
+      "pattern": "game-design",
+      "category": "lld",
+      "description": "Design a Snake and Ladder board game for multiple players. Players roll dice, move across a numbered board, climb ladders, and slide down snakes. The first player to reach or exceed the final square wins. Tests object modeling for game entities and turn management.",
+      "requirements": [
+        "Configurable board size (default 100 squares)",
+        "Place snakes and ladders at configurable positions",
+        "Support 2-4 players taking turns",
+        "Roll one or two dice per turn",
+        "Move player forward by dice value",
+        "Apply snake (move down) or ladder (move up) on landing",
+        "Player must reach exactly the last square to win",
+        "Detect winner and end game"
+      ],
+      "keyClasses": [
+        "Game",
+        "Board",
+        "Cell",
+        "Snake",
+        "Ladder",
+        "Player",
+        "Dice",
+        "GameState",
+        "BoardEntity"
+      ],
+      "designPatterns": [
+        "Factory",
+        "Strategy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-lru-cache",
+      "title": "Design an LRU Cache",
+      "difficulty": "Medium",
+      "pattern": "concurrency-design",
+      "category": "lld",
+      "description": "Design a Least Recently Used (LRU) cache with O(1) get and put operations. The cache has a fixed capacity and evicts the least recently used item when full. A classic data structure design problem that tests understanding of hash maps and doubly linked lists.",
+      "requirements": [
+        "Fixed capacity cache with configurable size",
+        "O(1) time complexity for get and put operations",
+        "Evict least recently used item when capacity exceeded",
+        "get(key) returns value and marks as recently used",
+        "put(key, value) inserts or updates and marks as recently used",
+        "Support TTL (time-to-live) for cache entries",
+        "Thread-safe operations for concurrent access",
+        "Support cache statistics: hit rate, miss rate"
+      ],
+      "keyClasses": [
+        "LRUCache",
+        "CacheEntry",
+        "DoublyLinkedList",
+        "Node",
+        "EvictionPolicy",
+        "LRUEvictionPolicy",
+        "LFUEvictionPolicy",
+        "CacheStats"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Singleton",
+        "Proxy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-logging-framework",
+      "title": "Design a Logging Framework",
+      "difficulty": "Easy",
+      "pattern": "decorator-structural",
+      "category": "lld",
+      "description": "Design a logging framework similar to Log4j that supports multiple log levels (DEBUG, INFO, WARN, ERROR, FATAL), multiple output destinations (console, file, database), and configurable formatting. Demonstrates Chain of Responsibility for log level filtering and Strategy for output destinations.",
+      "requirements": [
+        "Support log levels: DEBUG, INFO, WARN, ERROR, FATAL",
+        "Filter logs based on configured minimum level",
+        "Multiple output sinks: Console, File, Database, Remote",
+        "Configurable log message format with timestamp, level, source",
+        "Support structured logging with key-value metadata",
+        "Asynchronous logging with buffer queue for high throughput",
+        "Thread-safe singleton logger instance",
+        "Support log rotation for file-based logging"
+      ],
+      "keyClasses": [
+        "Logger",
+        "LogLevel",
+        "LogEntry",
+        "LogSink",
+        "ConsoleSink",
+        "FileSink",
+        "DatabaseSink",
+        "LogFormatter",
+        "LogConfig",
+        "AsyncLogProcessor"
+      ],
+      "designPatterns": [
+        "Singleton",
+        "Chain of Responsibility",
+        "Strategy",
+        "Observer"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-notification-system",
+      "title": "Design a Notification System",
+      "difficulty": "Medium",
+      "pattern": "observer-pattern",
+      "category": "lld",
+      "description": "Design a notification system that sends notifications via multiple channels (email, SMS, push notification, in-app). Users can set preferences for notification types and channels. Classic Observer pattern problem with Factory for creating channel-specific notifications.",
+      "requirements": [
+        "Support multiple channels: Email, SMS, Push, In-App",
+        "Users configure notification preferences per event type",
+        "Template-based notification content with variable substitution",
+        "Priority levels: Low, Medium, High, Urgent",
+        "Rate limiting to prevent notification spam",
+        "Retry failed notifications with exponential backoff",
+        "Track delivery status per notification",
+        "Batch notifications for digest delivery"
+      ],
+      "keyClasses": [
+        "NotificationService",
+        "Notification",
+        "NotificationChannel",
+        "EmailChannel",
+        "SMSChannel",
+        "PushChannel",
+        "InAppChannel",
+        "NotificationTemplate",
+        "UserPreference",
+        "NotificationPriority",
+        "RateLimiter",
+        "RetryPolicy"
+      ],
+      "designPatterns": [
+        "Observer",
+        "Factory",
+        "Strategy",
+        "Decorator"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-pub-sub",
+      "title": "Design a Pub-Sub Messaging System",
+      "difficulty": "Medium",
+      "pattern": "observer-pattern",
+      "category": "lld",
+      "description": "Design a publish-subscribe messaging system where publishers send messages to topics and subscribers receive messages from topics they are subscribed to. Handles message ordering, filtering, and delivery guarantees.",
+      "requirements": [
+        "Create and manage named topics",
+        "Publishers publish messages to specific topics",
+        "Subscribers subscribe to one or more topics",
+        "Deliver messages to all subscribers of a topic",
+        "Support message filtering based on attributes",
+        "Guarantee at-least-once delivery",
+        "Handle subscriber offline scenarios with message queuing",
+        "Support message acknowledgment and redelivery"
+      ],
+      "keyClasses": [
+        "MessageBroker",
+        "Topic",
+        "Publisher",
+        "Subscriber",
+        "Message",
+        "Subscription",
+        "MessageQueue",
+        "MessageFilter",
+        "DeliveryService",
+        "AcknowledgmentTracker"
+      ],
+      "designPatterns": [
+        "Observer",
+        "Factory",
+        "Strategy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-car-rental",
+      "title": "Design a Car Rental System",
+      "difficulty": "Medium",
+      "pattern": "booking-inventory",
+      "category": "lld",
+      "description": "Design a car rental system where customers can search for available vehicles, make reservations, pick up and return cars, and process payments. Manages vehicle inventory across multiple locations with different vehicle categories and pricing.",
+      "requirements": [
+        "Vehicle catalog with types: Sedan, SUV, Van, Luxury",
+        "Search available vehicles by location, date range, and type",
+        "Make, modify, and cancel reservations",
+        "Pick up and return vehicles at different locations",
+        "Calculate rental cost based on duration and vehicle type",
+        "Optional add-ons: insurance, GPS, child seat",
+        "Handle late returns with penalty charges",
+        "Manage vehicle maintenance scheduling"
+      ],
+      "keyClasses": [
+        "CarRentalSystem",
+        "Vehicle",
+        "VehicleType",
+        "Location",
+        "Reservation",
+        "Customer",
+        "RentalAgreement",
+        "Bill",
+        "Payment",
+        "AddOn",
+        "PricingStrategy",
+        "VehicleInventory"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Factory",
+        "State"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-social-network",
+      "title": "Design a Social Network (Facebook)",
+      "difficulty": "Hard",
+      "pattern": "observer-pattern",
+      "category": "lld",
+      "description": "Design a social networking platform with user profiles, friend connections, posts, news feed generation, likes/comments, and notifications. Demonstrates Observer pattern for feed updates and Strategy for feed ranking algorithms.",
+      "requirements": [
+        "User registration and profile management",
+        "Send, accept, and reject friend requests",
+        "Create posts with text, images, and videos",
+        "News feed generation from friends' activities",
+        "Like and comment on posts",
+        "Notification on friend activity (Observer pattern)",
+        "Privacy settings: Public, Friends Only, Private",
+        "Search users by name or email"
+      ],
+      "keyClasses": [
+        "User",
+        "Profile",
+        "FriendRequest",
+        "Post",
+        "Comment",
+        "Like",
+        "NewsFeed",
+        "FeedRankingStrategy",
+        "NotificationService",
+        "PrivacySetting",
+        "SearchService",
+        "MediaContent"
+      ],
+      "designPatterns": [
+        "Observer",
+        "Strategy",
+        "Factory",
+        "Iterator"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-stack-overflow",
+      "title": "Design Stack Overflow",
+      "difficulty": "Medium",
+      "pattern": "object-modeling",
+      "category": "lld",
+      "description": "Design a Q&A platform like Stack Overflow with questions, answers, voting, tags, reputation system, and moderation. Users earn reputation through community votes and unlock privileges at certain thresholds.",
+      "requirements": [
+        "Post questions with title, body, and tags",
+        "Post answers to questions",
+        "Upvote and downvote questions and answers",
+        "Accept an answer as the best answer",
+        "Tag-based categorization and search",
+        "Reputation system based on votes received",
+        "Privileges unlocked at reputation thresholds",
+        "Comment on questions and answers"
+      ],
+      "keyClasses": [
+        "User",
+        "Question",
+        "Answer",
+        "Comment",
+        "Tag",
+        "Vote",
+        "Reputation",
+        "Privilege",
+        "SearchService",
+        "ModerationService",
+        "Badge"
+      ],
+      "designPatterns": [
+        "Observer",
+        "Strategy",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-airline-management",
+      "title": "Design an Airline Management System",
+      "difficulty": "Medium",
+      "pattern": "booking-inventory",
+      "category": "lld",
+      "description": "Design an airline booking system that manages flights, seat inventory, passenger bookings, check-in, and boarding. Handles multiple fare classes, seat selection, and flight status tracking.",
+      "requirements": [
+        "Manage flights with routes, schedules, and aircraft",
+        "Search flights by origin, destination, and date",
+        "Multiple fare classes: Economy, Business, First",
+        "Seat selection from seat map",
+        "Book tickets for one or more passengers",
+        "Online check-in with boarding pass generation",
+        "Handle flight delays, cancellations, and rebooking",
+        "Frequent flyer program with miles tracking"
+      ],
+      "keyClasses": [
+        "Flight",
+        "Aircraft",
+        "Route",
+        "Seat",
+        "FareClass",
+        "Passenger",
+        "Booking",
+        "BoardingPass",
+        "FlightSchedule",
+        "FlightStatus",
+        "FrequentFlyerAccount",
+        "SearchService"
+      ],
+      "designPatterns": [
+        "Factory",
+        "Strategy",
+        "State",
+        "Observer"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-concert-ticket-booking",
+      "title": "Design a Concert Ticket Booking System",
+      "difficulty": "Medium",
+      "pattern": "booking-inventory",
+      "category": "lld",
+      "description": "Design a concert/event ticket booking system that handles event listing, venue seat maps, ticket categories, booking with seat selection, and payment. Must handle high concurrency during popular event releases.",
+      "requirements": [
+        "List events with venue, date, and artist details",
+        "Venue seat map with sections and seat categories",
+        "Ticket categories: VIP, Premium, General, Standing",
+        "Temporary seat locking during booking flow",
+        "Handle concurrent booking attempts for same seats",
+        "Process payment and generate e-tickets",
+        "Support booking cancellation with refund policy",
+        "Waitlist for sold-out events"
+      ],
+      "keyClasses": [
+        "Event",
+        "Venue",
+        "Section",
+        "Seat",
+        "TicketCategory",
+        "Ticket",
+        "Booking",
+        "User",
+        "Payment",
+        "SeatLock",
+        "Waitlist",
+        "EventService"
+      ],
+      "designPatterns": [
+        "Factory",
+        "Strategy",
+        "Observer"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-restaurant-management",
+      "title": "Design a Restaurant Management System",
+      "difficulty": "Medium",
+      "pattern": "state-management",
+      "category": "lld",
+      "description": "Design a restaurant management system handling table reservations, order management, menu management, kitchen order routing, and billing. Orders transition through states from placed to served, and tables have their own lifecycle.",
+      "requirements": [
+        "Manage tables with different capacities and sections",
+        "Table reservation with time slots",
+        "Menu management with categories and item availability",
+        "Take customer orders linked to tables",
+        "Order states: Placed, InPreparation, Ready, Served",
+        "Route orders to appropriate kitchen stations",
+        "Generate itemized bills with taxes and tips",
+        "Track table status: Available, Occupied, Reserved, Cleaning"
+      ],
+      "keyClasses": [
+        "Restaurant",
+        "Table",
+        "TableStatus",
+        "Reservation",
+        "Menu",
+        "MenuItem",
+        "Order",
+        "OrderItem",
+        "OrderStatus",
+        "KitchenStation",
+        "Bill",
+        "Waiter",
+        "Chef"
+      ],
+      "designPatterns": [
+        "State",
+        "Observer",
+        "Factory",
+        "Strategy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-traffic-signal",
+      "title": "Design a Traffic Signal Control System",
+      "difficulty": "Easy",
+      "pattern": "state-management",
+      "category": "lld",
+      "description": "Design a traffic signal control system for an intersection. Traffic lights cycle through Red, Yellow, and Green states with configurable durations. Must coordinate signals across intersections to prevent conflicts and support emergency override.",
+      "requirements": [
+        "Traffic light states: Red, Yellow, Green",
+        "Configurable duration per state",
+        "Coordinate signals at an intersection (opposing lanes)",
+        "Emergency vehicle override to green",
+        "Pedestrian crossing request button integration",
+        "Handle sensor-based adaptive timing",
+        "Fault detection for malfunctioning signals",
+        "Support multiple intersection coordination"
+      ],
+      "keyClasses": [
+        "Intersection",
+        "TrafficLight",
+        "TrafficLightState",
+        "RedState",
+        "YellowState",
+        "GreenState",
+        "Lane",
+        "SignalController",
+        "EmergencyOverride",
+        "PedestrianCrossing",
+        "Timer"
+      ],
+      "designPatterns": [
+        "State",
+        "Observer",
+        "Singleton"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-file-system",
+      "title": "Design a File System",
+      "difficulty": "Medium",
+      "pattern": "decorator-structural",
+      "category": "lld",
+      "description": "Design an in-memory file system supporting files and directories with hierarchical structure. Supports CRUD operations, permissions, and path navigation. Demonstrates the Composite pattern where both files and directories share a common interface.",
+      "requirements": [
+        "Create, read, update, and delete files and directories",
+        "Hierarchical directory structure with nesting",
+        "Navigate using absolute and relative paths",
+        "File metadata: name, size, created/modified timestamps",
+        "Permission system: read, write, execute per user/group",
+        "Search files by name or extension",
+        "Calculate directory size recursively",
+        "Support symbolic links"
+      ],
+      "keyClasses": [
+        "FileSystem",
+        "FileSystemEntity",
+        "File",
+        "Directory",
+        "Permission",
+        "User",
+        "Path",
+        "FileMetadata",
+        "SymbolicLink",
+        "SearchService"
+      ],
+      "designPatterns": [
+        "Composite",
+        "Factory",
+        "Iterator",
+        "Proxy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-task-management",
+      "title": "Design a Task Management System (Jira/Trello)",
+      "difficulty": "Medium",
+      "pattern": "state-management",
+      "category": "lld",
+      "description": "Design a task management system like Jira or Trello with projects, task boards, task creation, assignment, status tracking, and sprint management. Tasks move through customizable workflow states.",
+      "requirements": [
+        "Create projects with team members",
+        "Create tasks with title, description, priority, and assignee",
+        "Task types: Story, Bug, Task, Epic",
+        "Customizable workflow: To Do, In Progress, In Review, Done",
+        "Assign and reassign tasks to team members",
+        "Sprint planning with task estimation",
+        "Filter and search tasks by status, assignee, priority",
+        "Comment and activity log on tasks"
+      ],
+      "keyClasses": [
+        "Project",
+        "Board",
+        "Column",
+        "Task",
+        "TaskType",
+        "TaskStatus",
+        "Sprint",
+        "User",
+        "Comment",
+        "ActivityLog",
+        "Priority",
+        "SearchFilter"
+      ],
+      "designPatterns": [
+        "State",
+        "Observer",
+        "Factory",
+        "Strategy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-rate-limiter",
+      "title": "Design a Rate Limiter",
+      "difficulty": "Medium",
+      "pattern": "strategy-pattern",
+      "category": "lld",
+      "description": "Design a rate limiter that controls the rate of requests a client can make. Support multiple algorithms (Token Bucket, Leaky Bucket, Fixed Window, Sliding Window) and configurable limits per user or API endpoint.",
+      "requirements": [
+        "Limit requests per user/API key within a time window",
+        "Multiple algorithms: Token Bucket, Leaky Bucket, Fixed Window, Sliding Window",
+        "Configurable rate limits per endpoint or user tier",
+        "Return appropriate response when limit exceeded (429)",
+        "Thread-safe for concurrent request handling",
+        "Support distributed rate limiting across servers",
+        "Track and expose rate limit headers (remaining, reset time)",
+        "Allow burst capacity within limits"
+      ],
+      "keyClasses": [
+        "RateLimiter",
+        "RateLimitAlgorithm",
+        "TokenBucketLimiter",
+        "LeakyBucketLimiter",
+        "FixedWindowLimiter",
+        "SlidingWindowLimiter",
+        "RateLimitConfig",
+        "RateLimitResult",
+        "ClientIdentifier",
+        "RateLimitStore"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Factory",
+        "Singleton"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-music-streaming",
+      "title": "Design a Music Streaming Service (Spotify)",
+      "difficulty": "Hard",
+      "pattern": "observer-pattern",
+      "category": "lld",
+      "description": "Design a music streaming platform with user accounts, song library, playlists, playback controls, recommendations, and subscription tiers. Demonstrates Observer for playback events, Strategy for recommendation algorithms, and State for player states.",
+      "requirements": [
+        "Browse and search songs by title, artist, album, genre",
+        "Create, edit, and share playlists",
+        "Playback controls: play, pause, skip, shuffle, repeat",
+        "Player states: Playing, Paused, Stopped, Buffering",
+        "Subscription tiers: Free (with ads), Premium",
+        "Personalized recommendations based on listening history",
+        "Follow artists and receive new release notifications",
+        "Offline download for premium users"
+      ],
+      "keyClasses": [
+        "MusicService",
+        "Song",
+        "Album",
+        "Artist",
+        "Playlist",
+        "User",
+        "Subscription",
+        "MusicPlayer",
+        "PlayerState",
+        "PlaybackQueue",
+        "RecommendationEngine",
+        "RecommendationStrategy",
+        "SearchService"
+      ],
+      "designPatterns": [
+        "State",
+        "Observer",
+        "Strategy",
+        "Factory",
+        "Iterator"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-stock-brokerage",
+      "title": "Design an Online Stock Brokerage System",
+      "difficulty": "Hard",
+      "pattern": "observer-pattern",
+      "category": "lld",
+      "description": "Design a stock trading platform where users can view stock quotes, place buy/sell orders, manage portfolios, and receive real-time price alerts. Heavy use of Observer for price updates and Strategy for order execution strategies.",
+      "requirements": [
+        "View real-time stock quotes and charts",
+        "Place market, limit, and stop-loss orders",
+        "Buy and sell stocks from user portfolio",
+        "Order states: Pending, Partially Filled, Filled, Cancelled",
+        "Portfolio tracking with profit/loss calculation",
+        "Price alerts and watchlists",
+        "Transaction history and account statements",
+        "Support multiple account types: Individual, Joint, Corporate"
+      ],
+      "keyClasses": [
+        "StockExchange",
+        "Stock",
+        "StockQuote",
+        "Order",
+        "MarketOrder",
+        "LimitOrder",
+        "StopLossOrder",
+        "Portfolio",
+        "Holding",
+        "Account",
+        "Watchlist",
+        "PriceAlert",
+        "OrderExecutionStrategy",
+        "TransactionHistory"
+      ],
+      "designPatterns": [
+        "Observer",
+        "Strategy",
+        "Factory",
+        "State"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-online-auction",
+      "title": "Design an Online Auction System",
+      "difficulty": "Medium",
+      "pattern": "observer-pattern",
+      "category": "lld",
+      "description": "Design an online auction platform where sellers list items with a starting price and duration, buyers place bids, and the highest bidder wins when the auction ends. Demonstrates Observer for bid notifications and State for auction lifecycle.",
+      "requirements": [
+        "Sellers create auction listings with starting price and duration",
+        "Buyers browse and search active auctions",
+        "Place bids higher than current highest bid",
+        "Auction states: Scheduled, Active, Ended, Cancelled",
+        "Notify outbid users in real time",
+        "Auto-end auction at scheduled time",
+        "Winner determination and payment processing",
+        "Reserve price (minimum selling price) support"
+      ],
+      "keyClasses": [
+        "AuctionSystem",
+        "Auction",
+        "AuctionState",
+        "Item",
+        "Bid",
+        "Seller",
+        "Buyer",
+        "AuctionScheduler",
+        "NotificationService",
+        "Payment",
+        "AuctionResult"
+      ],
+      "designPatterns": [
+        "Observer",
+        "State",
+        "Strategy",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-digital-wallet",
+      "title": "Design a Digital Wallet Service",
+      "difficulty": "Medium",
+      "pattern": "command-chain",
+      "category": "lld",
+      "description": "Design a digital wallet system where users can add money, make payments, transfer funds to other users, and view transaction history. Must handle concurrent transactions safely and support multiple funding sources.",
+      "requirements": [
+        "Create wallet linked to user account",
+        "Add money from bank account or card",
+        "Make payments to merchants",
+        "Peer-to-peer fund transfers",
+        "Transaction history with filtering",
+        "Concurrent transaction handling with proper locking",
+        "Support multiple currencies",
+        "Refund and chargeback handling"
+      ],
+      "keyClasses": [
+        "Wallet",
+        "User",
+        "Transaction",
+        "TransactionType",
+        "FundingSource",
+        "BankAccount",
+        "Card",
+        "Payment",
+        "Transfer",
+        "TransactionHistory",
+        "CurrencyConverter",
+        "WalletService"
+      ],
+      "designPatterns": [
+        "Command",
+        "Strategy",
+        "Observer",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-coffee-vending",
+      "title": "Design a Coffee Vending Machine",
+      "difficulty": "Easy",
+      "pattern": "factory-creational",
+      "category": "lld",
+      "description": "Design a coffee vending machine that can prepare different types of coffee (espresso, latte, cappuccino) using a recipe-based approach. Demonstrates Factory pattern for coffee creation and Builder pattern for customizing drinks with add-ons.",
+      "requirements": [
+        "Support multiple coffee types: Espresso, Latte, Cappuccino, Americano",
+        "Customizable add-ons: extra sugar, milk options, flavor shots",
+        "Track ingredient inventory (coffee beans, milk, sugar, water)",
+        "Alert when ingredients are low",
+        "Accept payment before dispensing",
+        "Recipe-based drink preparation",
+        "Clean and maintain machine",
+        "Display available drinks based on ingredients"
+      ],
+      "keyClasses": [
+        "CoffeeMachine",
+        "Coffee",
+        "CoffeeType",
+        "Recipe",
+        "Ingredient",
+        "IngredientInventory",
+        "CoffeeFactory",
+        "CoffeeBuilder",
+        "AddOn",
+        "Payment"
+      ],
+      "designPatterns": [
+        "Factory",
+        "Builder",
+        "Strategy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-course-registration",
+      "title": "Design a Course Registration System",
+      "difficulty": "Medium",
+      "pattern": "object-modeling",
+      "category": "lld",
+      "description": "Design a university course registration system where students can browse courses, register for classes with seat limits, manage schedules, and handle waitlists. Covers prerequisite checking, time conflict detection, and enrollment management.",
+      "requirements": [
+        "Browse course catalog by department and semester",
+        "Register for courses with available seats",
+        "Enforce prerequisite requirements",
+        "Detect and prevent time slot conflicts",
+        "Waitlist when course is full with auto-enrollment",
+        "Drop courses within add/drop deadline",
+        "Maximum credit hour limits per semester",
+        "View and print student schedule"
+      ],
+      "keyClasses": [
+        "CourseRegistrationSystem",
+        "Course",
+        "Section",
+        "TimeSlot",
+        "Student",
+        "Professor",
+        "Enrollment",
+        "Waitlist",
+        "Schedule",
+        "Department",
+        "Semester",
+        "PrerequisiteChecker"
+      ],
+      "designPatterns": [
+        "Observer",
+        "Strategy",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-linkedin",
+      "title": "Design LinkedIn",
+      "difficulty": "Hard",
+      "pattern": "object-modeling",
+      "category": "lld",
+      "description": "Design a professional networking platform like LinkedIn with user profiles, connections, job postings, messaging, feed, and endorsements. Complex object modeling with multiple interconnected features and search capabilities.",
+      "requirements": [
+        "User profiles with work experience and skills",
+        "Send and accept connection requests",
+        "Post updates and articles to feed",
+        "Job posting, search, and application",
+        "Messaging between connected users",
+        "Endorse skills and write recommendations",
+        "Search users by name, company, skill, or title",
+        "Company pages with employee listings"
+      ],
+      "keyClasses": [
+        "User",
+        "Profile",
+        "Experience",
+        "Skill",
+        "Connection",
+        "Post",
+        "Job",
+        "JobApplication",
+        "Message",
+        "Conversation",
+        "Company",
+        "Endorsement",
+        "Recommendation",
+        "SearchService",
+        "Feed"
+      ],
+      "designPatterns": [
+        "Observer",
+        "Strategy",
+        "Factory",
+        "Iterator"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-cricket-scoreboard",
+      "title": "Design CricInfo (Cricket Scoreboard)",
+      "difficulty": "Hard",
+      "pattern": "observer-pattern",
+      "category": "lld",
+      "description": "Design a cricket scoring and information system that tracks live match scores, player statistics, ball-by-ball commentary, and match history. Heavy use of Observer pattern for live score updates to multiple display clients.",
+      "requirements": [
+        "Track live match score: runs, wickets, overs",
+        "Ball-by-ball scoring with commentary",
+        "Player statistics: batting average, bowling figures",
+        "Match states: Not Started, In Progress, Innings Break, Completed",
+        "Multiple innings support (Test, ODI, T20 formats)",
+        "Real-time score updates to multiple subscribers",
+        "Historical match data and player records",
+        "Team and player management"
+      ],
+      "keyClasses": [
+        "Match",
+        "MatchFormat",
+        "Innings",
+        "Over",
+        "Ball",
+        "Team",
+        "Player",
+        "Batsman",
+        "Bowler",
+        "Scoreboard",
+        "Commentary",
+        "ScoreUpdateListener",
+        "MatchState",
+        "PlayerStats"
+      ],
+      "designPatterns": [
+        "Observer",
+        "State",
+        "Factory",
+        "Strategy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-inventory-management",
+      "title": "Design an Inventory Management System",
+      "difficulty": "Medium",
+      "pattern": "object-modeling",
+      "category": "lld",
+      "description": "Design an inventory management system for a warehouse that tracks products, stock levels, purchase orders, sales orders, and stock movements. Handles multiple warehouses, low-stock alerts, and audit trails.",
+      "requirements": [
+        "Manage products with SKU, name, category, and price",
+        "Track stock levels per product per warehouse",
+        "Create purchase orders for restocking",
+        "Process sales orders that deduct inventory",
+        "Low-stock threshold alerts",
+        "Stock movement audit trail (in, out, transfer)",
+        "Support multiple warehouse locations",
+        "Barcode/SKU-based lookup"
+      ],
+      "keyClasses": [
+        "Product",
+        "SKU",
+        "Warehouse",
+        "StockEntry",
+        "PurchaseOrder",
+        "SalesOrder",
+        "StockMovement",
+        "Supplier",
+        "Category",
+        "Alert",
+        "AuditLog",
+        "InventoryService"
+      ],
+      "designPatterns": [
+        "Observer",
+        "Factory",
+        "Strategy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-text-editor",
+      "title": "Design a Text Editor",
+      "difficulty": "Hard",
+      "pattern": "command-chain",
+      "category": "lld",
+      "description": "Design a text editor with basic editing operations, undo/redo functionality, copy/paste, find and replace, and cursor management. Classic Command pattern problem for undo/redo and Memento for state snapshots.",
+      "requirements": [
+        "Insert, delete, and replace text",
+        "Cursor positioning and selection",
+        "Undo and redo operations (Command pattern)",
+        "Copy, cut, and paste with clipboard",
+        "Find and replace text",
+        "Line and word wrapping",
+        "Character styling: bold, italic, underline (Flyweight for styles)",
+        "File open and save operations"
+      ],
+      "keyClasses": [
+        "TextEditor",
+        "Document",
+        "Cursor",
+        "Selection",
+        "Command",
+        "InsertCommand",
+        "DeleteCommand",
+        "ReplaceCommand",
+        "CommandHistory",
+        "Clipboard",
+        "CharacterStyle",
+        "SearchEngine"
+      ],
+      "designPatterns": [
+        "Command",
+        "Memento",
+        "Flyweight",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-chat-application",
+      "title": "Design a Chat Application",
+      "difficulty": "Medium",
+      "pattern": "observer-pattern",
+      "category": "lld",
+      "description": "Design a real-time chat application supporting one-to-one and group messaging, online status tracking, message delivery receipts, and media sharing. Uses Observer for message delivery and presence updates.",
+      "requirements": [
+        "One-to-one private messaging",
+        "Group chat with multiple participants",
+        "Online/offline presence tracking",
+        "Message delivery status: Sent, Delivered, Read",
+        "Support text, image, and file messages",
+        "Message history and search",
+        "Typing indicator notifications",
+        "Block and mute users"
+      ],
+      "keyClasses": [
+        "ChatService",
+        "User",
+        "Conversation",
+        "PrivateChat",
+        "GroupChat",
+        "Message",
+        "TextMessage",
+        "MediaMessage",
+        "MessageStatus",
+        "PresenceService",
+        "NotificationService",
+        "MessageStore"
+      ],
+      "designPatterns": [
+        "Observer",
+        "Factory",
+        "Strategy",
+        "State"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-thread-pool",
+      "title": "Design a Thread Pool",
+      "difficulty": "Hard",
+      "pattern": "concurrency-design",
+      "category": "lld",
+      "description": "Design a thread pool that manages a fixed number of worker threads, accepts tasks via a queue, and executes them concurrently. Handles task submission, scheduling priorities, graceful shutdown, and thread lifecycle management.",
+      "requirements": [
+        "Fixed or configurable number of worker threads",
+        "Submit tasks (Runnable/Callable) for execution",
+        "Task queue with configurable capacity",
+        "Priority-based task scheduling",
+        "Graceful shutdown: finish pending tasks then stop",
+        "Handle task exceptions without killing threads",
+        "Support Future/Promise for async result retrieval",
+        "Thread lifecycle: idle timeout and recycling"
+      ],
+      "keyClasses": [
+        "ThreadPool",
+        "WorkerThread",
+        "Task",
+        "TaskQueue",
+        "PriorityTaskQueue",
+        "Future",
+        "ThreadPoolConfig",
+        "RejectionPolicy",
+        "TaskScheduler",
+        "ThreadFactory"
+      ],
+      "designPatterns": [
+        "Factory",
+        "Strategy",
+        "Observer",
+        "Command"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-url-shortener",
+      "title": "Design a URL Shortener",
+      "difficulty": "Easy",
+      "pattern": "factory-creational",
+      "category": "lld",
+      "description": "Design a URL shortening service like bit.ly that generates short aliases for long URLs, redirects short URLs to originals, tracks click analytics, and supports custom aliases and expiration.",
+      "requirements": [
+        "Generate unique short URL from long URL",
+        "Redirect short URL to original long URL",
+        "Support custom short aliases",
+        "URL expiration with configurable TTL",
+        "Click analytics: count, referrer, location",
+        "Handle hash collisions in encoding",
+        "Rate limiting on URL creation",
+        "User accounts to manage created URLs"
+      ],
+      "keyClasses": [
+        "URLShortener",
+        "URL",
+        "ShortURL",
+        "URLMapping",
+        "EncodingStrategy",
+        "Base62Encoder",
+        "HashEncoder",
+        "ClickAnalytics",
+        "User",
+        "URLStore",
+        "ExpirationService"
+      ],
+      "designPatterns": [
+        "Factory",
+        "Strategy",
+        "Singleton"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-customer-support",
+      "title": "Design a Customer Support Ticket System",
+      "difficulty": "Medium",
+      "pattern": "strategy-pattern",
+      "category": "lld",
+      "description": "Design a customer support system where customers create issues and agents are assigned to resolve them. Agent assignment uses different strategies based on expertise, availability, and workload. Commonly asked at companies like PhonePe.",
+      "requirements": [
+        "Customers create support tickets with category and priority",
+        "Agent assignment strategies: round-robin, expertise-based, load-balanced",
+        "Ticket states: Open, Assigned, InProgress, Resolved, Closed",
+        "Agent expertise matching to ticket category",
+        "SLA tracking with escalation on breach",
+        "Internal notes and customer communication on tickets",
+        "Ticket priority: Low, Medium, High, Critical",
+        "Reporting on resolution time and agent performance"
+      ],
+      "keyClasses": [
+        "SupportSystem",
+        "Ticket",
+        "TicketStatus",
+        "TicketPriority",
+        "Customer",
+        "Agent",
+        "AgentExpertise",
+        "AssignmentStrategy",
+        "RoundRobinStrategy",
+        "ExpertiseBasedStrategy",
+        "SLAPolicy",
+        "Escalation",
+        "Comment"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "State",
+        "Observer",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-meeting-scheduler",
+      "title": "Design a Meeting Room Scheduler",
+      "difficulty": "Medium",
+      "pattern": "booking-inventory",
+      "category": "lld",
+      "description": "Design a meeting room booking system for an office building. Users can view room availability, book rooms for time slots, invite participants, and manage recurring meetings. Must detect and prevent scheduling conflicts.",
+      "requirements": [
+        "View available meeting rooms with capacity and amenities",
+        "Book a room for a specific date and time range",
+        "Prevent double-booking of rooms",
+        "Invite participants and send calendar invites",
+        "Support recurring meetings (daily, weekly, monthly)",
+        "Cancel or modify existing bookings",
+        "Room amenities filtering: projector, whiteboard, video conferencing",
+        "Usage analytics and popular time slot reporting"
+      ],
+      "keyClasses": [
+        "MeetingScheduler",
+        "Room",
+        "RoomAmenity",
+        "Meeting",
+        "TimeSlot",
+        "Participant",
+        "RecurrenceRule",
+        "Booking",
+        "ConflictDetector",
+        "CalendarService",
+        "NotificationService"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "Observer",
+        "Factory"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-payment-gateway",
+      "title": "Design a Payment Processing System",
+      "difficulty": "Hard",
+      "pattern": "strategy-pattern",
+      "category": "lld",
+      "description": "Design a payment processing system that supports multiple payment methods (credit card, debit card, UPI, net banking), handles transaction lifecycle, manages refunds, and provides reconciliation. Strategy pattern for payment method processing.",
+      "requirements": [
+        "Support multiple payment methods: Card, UPI, Net Banking, Wallet",
+        "Transaction lifecycle: Initiated, Processing, Success, Failed, Refunded",
+        "Validate payment details before processing",
+        "Idempotent transaction processing",
+        "Refund full or partial amounts",
+        "Retry failed transactions with backoff",
+        "Transaction logging and audit trail",
+        "Fraud detection hooks"
+      ],
+      "keyClasses": [
+        "PaymentGateway",
+        "Transaction",
+        "TransactionStatus",
+        "PaymentMethod",
+        "CardPayment",
+        "UPIPayment",
+        "NetBankingPayment",
+        "PaymentProcessor",
+        "Refund",
+        "FraudDetector",
+        "AuditLog",
+        "IdempotencyManager"
+      ],
+      "designPatterns": [
+        "Strategy",
+        "State",
+        "Factory",
+        "Chain of Responsibility"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-spreadsheet",
+      "title": "Design a Spreadsheet (Excel)",
+      "difficulty": "Hard",
+      "pattern": "observer-pattern",
+      "category": "lld",
+      "description": "Design a spreadsheet application with cells arranged in rows and columns, formula evaluation, cell dependencies, and auto-recalculation. When a cell value changes, all dependent cells must recalculate. Classic Observer pattern with dependency graph.",
+      "requirements": [
+        "Grid of cells with row/column addressing (A1, B2, etc.)",
+        "Cell types: text, number, formula",
+        "Formula evaluation with references to other cells",
+        "Auto-recalculation when referenced cells change",
+        "Detect and handle circular dependencies",
+        "Support basic functions: SUM, AVG, MIN, MAX, COUNT",
+        "Cell formatting: font, color, borders",
+        "Undo/redo for cell edits"
+      ],
+      "keyClasses": [
+        "Spreadsheet",
+        "Sheet",
+        "Cell",
+        "CellValue",
+        "Formula",
+        "FormulaParser",
+        "DependencyGraph",
+        "EvaluationEngine",
+        "CellFormat",
+        "Command",
+        "CommandHistory",
+        "CircularDependencyDetector"
+      ],
+      "designPatterns": [
+        "Observer",
+        "Command",
+        "Composite",
+        "Strategy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    },
+    {
+      "id": "lld-connection-pool",
+      "title": "Design a Database Connection Pool",
+      "difficulty": "Medium",
+      "pattern": "concurrency-design",
+      "category": "lld",
+      "description": "Design a connection pool that manages reusable database connections. The pool creates connections up to a maximum, hands them out on request, reclaims them on release, and handles idle timeouts. Tests concurrency and resource management.",
+      "requirements": [
+        "Configurable minimum and maximum pool size",
+        "Acquire connection (create or reuse from pool)",
+        "Release connection back to pool",
+        "Block or reject when pool is exhausted (configurable)",
+        "Idle connection timeout and cleanup",
+        "Connection health check before handing out",
+        "Thread-safe acquire and release operations",
+        "Pool statistics: active, idle, waiting counts"
+      ],
+      "keyClasses": [
+        "ConnectionPool",
+        "Connection",
+        "ConnectionFactory",
+        "PoolConfig",
+        "ConnectionWrapper",
+        "HealthChecker",
+        "IdleConnectionReaper",
+        "WaitQueue",
+        "PoolStats",
+        "AcquisitionPolicy"
+      ],
+      "designPatterns": [
+        "Factory",
+        "Singleton",
+        "Proxy",
+        "Strategy"
+      ],
+      "steps": [],
+      "ankiCards": []
+    }
+  ]
+}

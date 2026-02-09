@@ -1,0 +1,3223 @@
+{
+  "patterns": [
+    {
+      "id": "storage-retrieval",
+      "name": "Storage & Retrieval",
+      "description": "Systems focused on efficient data storage, retrieval, indexing, and URL/content management",
+      "icon": "💾"
+    },
+    {
+      "id": "social-media",
+      "name": "Social Media & Feeds",
+      "description": "Social platforms with feeds, timelines, content sharing, and user interactions",
+      "icon": "📱"
+    },
+    {
+      "id": "messaging-realtime",
+      "name": "Messaging & Real-Time",
+      "description": "Real-time communication systems including chat, notifications, and live updates",
+      "icon": "🏗️"
+    },
+    {
+      "id": "streaming-media",
+      "name": "Streaming & Media",
+      "description": "Video/audio streaming, content delivery, and media processing pipelines",
+      "icon": "🎬"
+    },
+    {
+      "id": "distributed-infra",
+      "name": "Distributed Infrastructure",
+      "description": "Core infrastructure components like caches, queues, rate limiters, and coordination services",
+      "icon": "🏗️"
+    },
+    {
+      "id": "search-discovery",
+      "name": "Search & Discovery",
+      "description": "Search engines, autocomplete, recommendation systems, and content discovery",
+      "icon": "🔍"
+    },
+    {
+      "id": "location-transport",
+      "name": "Location & Transportation",
+      "description": "Location-based services, mapping, ride-sharing, and delivery systems",
+      "icon": "🏗️"
+    },
+    {
+      "id": "ecommerce-payments",
+      "name": "E-Commerce & Payments",
+      "description": "Online marketplaces, payment processing, booking systems, and financial platforms",
+      "icon": "🏗️"
+    },
+    {
+      "id": "collaboration-productivity",
+      "name": "Collaboration & Productivity",
+      "description": "File sharing, collaborative editing, cloud storage, and productivity tools",
+      "icon": "📝"
+    },
+    {
+      "id": "monitoring-analytics",
+      "name": "Monitoring & Analytics",
+      "description": "Logging, metrics collection, analytics pipelines, and observability platforms",
+      "icon": "🏗️"
+    }
+  ],
+  "problems": [
+    {
+      "id": "hld-url-shortener",
+      "title": "Design URL Shortener (TinyURL / Bit.ly)",
+      "difficulty": "Easy",
+      "pattern": "storage-retrieval",
+      "description": "Design a URL shortening service that takes long URLs and generates short, unique aliases. Users can use the short URL to be redirected to the original. The system should handle billions of redirections with low latency and high availability.",
+      "keyComponents": [
+        "Application Server",
+        "Database (NoSQL)",
+        "Cache (Redis/Memcached)",
+        "Load Balancer",
+        "Key Generation Service"
+      ],
+      "concepts": [
+        "Base62 Encoding",
+        "Consistent Hashing",
+        "Read-heavy system (1000:1 read/write)",
+        "MD5/SHA-256 Hashing",
+        "Key collision handling",
+        "Database sharding"
+      ],
+      "requirements": [
+        "Generate short URLs from long URLs",
+        "Redirect short URL to original URL",
+        "Custom alias support",
+        "Link expiration / TTL",
+        "Analytics (click count, geographic data)",
+        "High availability and low-latency redirects"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Generate short URLs from long URLs; Redirect short URL to original URL; Custom alias support"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Application Server, Database (NoSQL), Cache (Redis/Memcached), Load Balancer"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Base62 Encoding, Consistent Hashing, Read-heavy system (1000:1 read/write)"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-url-shortener-c1",
+          "front": "What are key components of Design URL Shortener (TinyURL / Bit.ly)?",
+          "back": "Application Server, Database (NoSQL), Cache (Redis/Memcached), Load Balancer, Key Generation Service"
+        },
+        {
+          "id": "hld-url-shortener-c2",
+          "front": "What concepts are important for Design URL Shortener (TinyURL / Bit.ly)?",
+          "back": "Base62 Encoding, Consistent Hashing, Read-heavy system (1000:1 read/write), MD5/SHA-256 Hashing, Key collision handling, Database sharding"
+        }
+      ]
+    },
+    {
+      "id": "hld-pastebin",
+      "title": "Design Pastebin",
+      "difficulty": "Easy",
+      "pattern": "storage-retrieval",
+      "description": "Design a web service where users can store plain text or code snippets and get a unique URL to share them. Similar to Pastebin.com. The system should support paste creation, retrieval, and expiration.",
+      "keyComponents": [
+        "Application Server",
+        "Object Storage (S3)",
+        "Metadata Database",
+        "Cache Layer",
+        "CDN"
+      ],
+      "concepts": [
+        "Object storage vs database storage",
+        "Content addressing",
+        "TTL-based expiration",
+        "Read-heavy workload",
+        "Data cleanup jobs"
+      ],
+      "requirements": [
+        "Create and store text pastes",
+        "Generate unique shareable URLs",
+        "Support paste expiration",
+        "Syntax highlighting metadata",
+        "Size limits per paste",
+        "Handle high read traffic"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Create and store text pastes; Generate unique shareable URLs; Support paste expiration"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Application Server, Object Storage (S3), Metadata Database, Cache Layer"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Object storage vs database storage, Content addressing, TTL-based expiration"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-pastebin-c1",
+          "front": "What are key components of Design Pastebin?",
+          "back": "Application Server, Object Storage (S3), Metadata Database, Cache Layer, CDN"
+        },
+        {
+          "id": "hld-pastebin-c2",
+          "front": "What concepts are important for Design Pastebin?",
+          "back": "Object storage vs database storage, Content addressing, TTL-based expiration, Read-heavy workload, Data cleanup jobs"
+        }
+      ]
+    },
+    {
+      "id": "hld-rate-limiter",
+      "title": "Design Rate Limiter",
+      "difficulty": "Easy",
+      "pattern": "distributed-infra",
+      "description": "Design a rate limiting service that controls the rate of requests a client can send to an API. It should throttle requests exceeding a defined threshold and work across distributed servers.",
+      "keyComponents": [
+        "API Gateway",
+        "Redis/In-Memory Store",
+        "Rule Engine",
+        "Request Counter",
+        "Middleware Layer"
+      ],
+      "concepts": [
+        "Token Bucket algorithm",
+        "Sliding Window Log",
+        "Sliding Window Counter",
+        "Fixed Window Counter",
+        "Leaky Bucket algorithm",
+        "Distributed rate limiting with Redis",
+        "Race conditions in distributed counters"
+      ],
+      "requirements": [
+        "Limit requests per user/IP/API key",
+        "Support different rate limits per API",
+        "Distributed rate limiting across servers",
+        "Return appropriate HTTP 429 responses",
+        "Low latency overhead",
+        "Configurable rules and thresholds"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Limit requests per user/IP/API key; Support different rate limits per API; Distributed rate limiting across servers"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: API Gateway, Redis/In-Memory Store, Rule Engine, Request Counter"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Token Bucket algorithm, Sliding Window Log, Sliding Window Counter"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-rate-limiter-c1",
+          "front": "What are key components of Design Rate Limiter?",
+          "back": "API Gateway, Redis/In-Memory Store, Rule Engine, Request Counter, Middleware Layer"
+        },
+        {
+          "id": "hld-rate-limiter-c2",
+          "front": "What concepts are important for Design Rate Limiter?",
+          "back": "Token Bucket algorithm, Sliding Window Log, Sliding Window Counter, Fixed Window Counter, Leaky Bucket algorithm, Distributed rate limiting with Redis, Race conditions in distributed counters"
+        }
+      ]
+    },
+    {
+      "id": "hld-key-value-store",
+      "title": "Design Distributed Key-Value Store",
+      "difficulty": "Medium",
+      "pattern": "distributed-infra",
+      "description": "Design a distributed key-value store similar to DynamoDB or Redis Cluster that supports put(key, value) and get(key) operations. The system should be highly available, partition-tolerant, and scalable.",
+      "keyComponents": [
+        "Storage Nodes",
+        "Consistent Hash Ring",
+        "Replication Manager",
+        "Conflict Resolution",
+        "Gossip Protocol",
+        "Coordinator Node"
+      ],
+      "concepts": [
+        "CAP Theorem trade-offs",
+        "Consistent Hashing with virtual nodes",
+        "Data replication (quorum reads/writes)",
+        "Vector clocks for conflict resolution",
+        "Gossip protocol for failure detection",
+        "Merkle trees for anti-entropy",
+        "Sloppy quorum and hinted handoff"
+      ],
+      "requirements": [
+        "Put and Get operations with low latency",
+        "Tunable consistency (strong vs eventual)",
+        "Automatic data partitioning",
+        "Replication across nodes",
+        "Failure detection and recovery",
+        "Support for large-scale data"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Put and Get operations with low latency; Tunable consistency (strong vs eventual); Automatic data partitioning"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Storage Nodes, Consistent Hash Ring, Replication Manager, Conflict Resolution"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: CAP Theorem trade-offs, Consistent Hashing with virtual nodes, Data replication (quorum reads/writes)"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-key-value-store-c1",
+          "front": "What are key components of Design Distributed Key-Value Store?",
+          "back": "Storage Nodes, Consistent Hash Ring, Replication Manager, Conflict Resolution, Gossip Protocol, Coordinator Node"
+        },
+        {
+          "id": "hld-key-value-store-c2",
+          "front": "What concepts are important for Design Distributed Key-Value Store?",
+          "back": "CAP Theorem trade-offs, Consistent Hashing with virtual nodes, Data replication (quorum reads/writes), Vector clocks for conflict resolution, Gossip protocol for failure detection, Merkle trees for anti-entropy, Sloppy quorum and hinted handoff"
+        }
+      ]
+    },
+    {
+      "id": "hld-distributed-cache",
+      "title": "Design Distributed Cache (Memcached / Redis)",
+      "difficulty": "Medium",
+      "pattern": "distributed-infra",
+      "description": "Design a distributed caching system that stores frequently accessed data in memory across multiple nodes to reduce database load and improve response times.",
+      "keyComponents": [
+        "Cache Nodes",
+        "Hash Ring / Partitioner",
+        "Eviction Manager",
+        "Replication Layer",
+        "Client Library",
+        "Health Monitor"
+      ],
+      "concepts": [
+        "Consistent hashing for data distribution",
+        "Cache eviction policies (LRU, LFU, FIFO)",
+        "Cache-aside vs Write-through vs Write-behind",
+        "Cache stampede / thundering herd problem",
+        "Data serialization",
+        "Hot key problem",
+        "Cache invalidation strategies"
+      ],
+      "requirements": [
+        "Sub-millisecond read/write latency",
+        "Horizontal scalability",
+        "Even data distribution",
+        "Cache eviction policies",
+        "High availability with replication",
+        "Support for TTL on cache entries"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Sub-millisecond read/write latency; Horizontal scalability; Even data distribution"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Cache Nodes, Hash Ring / Partitioner, Eviction Manager, Replication Layer"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Consistent hashing for data distribution, Cache eviction policies (LRU, LFU, FIFO), Cache-aside vs Write-through vs Write-behind"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-distributed-cache-c1",
+          "front": "What are key components of Design Distributed Cache (Memcached / Redis)?",
+          "back": "Cache Nodes, Hash Ring / Partitioner, Eviction Manager, Replication Layer, Client Library, Health Monitor"
+        },
+        {
+          "id": "hld-distributed-cache-c2",
+          "front": "What concepts are important for Design Distributed Cache (Memcached / Redis)?",
+          "back": "Consistent hashing for data distribution, Cache eviction policies (LRU, LFU, FIFO), Cache-aside vs Write-through vs Write-behind, Cache stampede / thundering herd problem, Data serialization, Hot key problem, Cache invalidation strategies"
+        }
+      ]
+    },
+    {
+      "id": "hld-twitter",
+      "title": "Design Twitter / X",
+      "difficulty": "Medium",
+      "pattern": "social-media",
+      "description": "Design a social media platform similar to Twitter where users can post tweets, follow other users, and view a personalized home timeline (news feed). The system must handle hundreds of millions of users.",
+      "keyComponents": [
+        "Tweet Service",
+        "Timeline Service",
+        "Fan-out Service",
+        "User Graph Service",
+        "Search Service",
+        "Notification Service",
+        "Cache Layer",
+        "Message Queue"
+      ],
+      "concepts": [
+        "Fan-out on write vs Fan-out on read",
+        "Celebrity problem (hybrid approach)",
+        "Timeline caching with Redis sorted sets",
+        "Eventual consistency for feeds",
+        "Sharding by user ID",
+        "Pub/Sub for real-time updates",
+        "Snowflake ID generation"
+      ],
+      "requirements": [
+        "Post tweets (text, images, videos)",
+        "Home timeline / news feed",
+        "Follow/unfollow users",
+        "Like, retweet, reply",
+        "Search tweets and users",
+        "Trending topics",
+        "Handle celebrity accounts with millions of followers"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Post tweets (text, images, videos); Home timeline / news feed; Follow/unfollow users"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Tweet Service, Timeline Service, Fan-out Service, User Graph Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Fan-out on write vs Fan-out on read, Celebrity problem (hybrid approach), Timeline caching with Redis sorted sets"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-twitter-c1",
+          "front": "What are key components of Design Twitter / X?",
+          "back": "Tweet Service, Timeline Service, Fan-out Service, User Graph Service, Search Service, Notification Service, Cache Layer, Message Queue"
+        },
+        {
+          "id": "hld-twitter-c2",
+          "front": "What concepts are important for Design Twitter / X?",
+          "back": "Fan-out on write vs Fan-out on read, Celebrity problem (hybrid approach), Timeline caching with Redis sorted sets, Eventual consistency for feeds, Sharding by user ID, Pub/Sub for real-time updates, Snowflake ID generation"
+        }
+      ]
+    },
+    {
+      "id": "hld-instagram",
+      "title": "Design Instagram",
+      "difficulty": "Medium",
+      "pattern": "social-media",
+      "description": "Design a photo and video sharing social network similar to Instagram. Users can upload media, follow others, view a feed, like/comment on posts, and explore trending content.",
+      "keyComponents": [
+        "Media Upload Service",
+        "Feed Generation Service",
+        "User Service",
+        "CDN for Media Delivery",
+        "Object Storage (S3)",
+        "Search/Explore Service",
+        "Notification Service"
+      ],
+      "concepts": [
+        "Image/video processing pipeline",
+        "CDN for media delivery",
+        "News feed generation (pre-computed vs on-demand)",
+        "Object storage for media files",
+        "Image resizing and thumbnail generation",
+        "Sharding strategy for posts and users",
+        "Ranking algorithm for explore feed"
+      ],
+      "requirements": [
+        "Upload photos and videos",
+        "View personalized feed",
+        "Follow/unfollow users",
+        "Like and comment on posts",
+        "Stories (ephemeral content)",
+        "Explore/discover page",
+        "Push notifications"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Upload photos and videos; View personalized feed; Follow/unfollow users"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Media Upload Service, Feed Generation Service, User Service, CDN for Media Delivery"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Image/video processing pipeline, CDN for media delivery, News feed generation (pre-computed vs on-demand)"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-instagram-c1",
+          "front": "What are key components of Design Instagram?",
+          "back": "Media Upload Service, Feed Generation Service, User Service, CDN for Media Delivery, Object Storage (S3), Search/Explore Service, Notification Service"
+        },
+        {
+          "id": "hld-instagram-c2",
+          "front": "What concepts are important for Design Instagram?",
+          "back": "Image/video processing pipeline, CDN for media delivery, News feed generation (pre-computed vs on-demand), Object storage for media files, Image resizing and thumbnail generation, Sharding strategy for posts and users, Ranking algorithm for explore feed"
+        }
+      ]
+    },
+    {
+      "id": "hld-facebook-newsfeed",
+      "title": "Design Facebook News Feed",
+      "difficulty": "Hard",
+      "pattern": "social-media",
+      "description": "Design the news feed system for a social network like Facebook. The feed should display a ranked, personalized stream of posts from friends, pages, and groups the user follows.",
+      "keyComponents": [
+        "Feed Generation Service",
+        "Feed Ranking Service",
+        "Post Storage",
+        "Social Graph Service",
+        "Fan-out Service",
+        "Cache Layer (Redis)",
+        "ML Ranking Model"
+      ],
+      "concepts": [
+        "Fan-out on write vs read (hybrid)",
+        "Feed ranking with ML models",
+        "EdgeRank algorithm concepts",
+        "Pull vs Push model trade-offs",
+        "Social graph traversal",
+        "Content deduplication",
+        "Real-time feed updates via long polling/SSE"
+      ],
+      "requirements": [
+        "Generate personalized feed for each user",
+        "Rank posts by relevance and recency",
+        "Support posts from friends, pages, groups",
+        "Near real-time feed updates",
+        "Handle billions of users and posts",
+        "Efficient pagination and infinite scroll",
+        "Support multimedia content types"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Generate personalized feed for each user; Rank posts by relevance and recency; Support posts from friends, pages, groups"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Feed Generation Service, Feed Ranking Service, Post Storage, Social Graph Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Fan-out on write vs read (hybrid), Feed ranking with ML models, EdgeRank algorithm concepts"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-facebook-newsfeed-c1",
+          "front": "What are key components of Design Facebook News Feed?",
+          "back": "Feed Generation Service, Feed Ranking Service, Post Storage, Social Graph Service, Fan-out Service, Cache Layer (Redis), ML Ranking Model"
+        },
+        {
+          "id": "hld-facebook-newsfeed-c2",
+          "front": "What concepts are important for Design Facebook News Feed?",
+          "back": "Fan-out on write vs read (hybrid), Feed ranking with ML models, EdgeRank algorithm concepts, Pull vs Push model trade-offs, Social graph traversal, Content deduplication, Real-time feed updates via long polling/SSE"
+        }
+      ]
+    },
+    {
+      "id": "hld-tiktok",
+      "title": "Design TikTok / Short Video Platform",
+      "difficulty": "Hard",
+      "pattern": "social-media",
+      "description": "Design a short-form video platform like TikTok with a recommendation-driven feed. The system must handle massive video uploads, processing, and a highly personalized For You Page.",
+      "keyComponents": [
+        "Video Upload/Processing Pipeline",
+        "Recommendation Engine",
+        "CDN",
+        "User Service",
+        "Content Moderation Service",
+        "Analytics Pipeline",
+        "Object Storage"
+      ],
+      "concepts": [
+        "Video transcoding pipeline (multiple resolutions)",
+        "Recommendation algorithm (collaborative + content-based filtering)",
+        "Content-based ranking",
+        "Adaptive bitrate streaming (ABR)",
+        "User engagement signals for recommendation",
+        "Content moderation (AI-based)",
+        "Cold start problem for new users"
+      ],
+      "requirements": [
+        "Upload and process short videos",
+        "For You Page (recommendation feed)",
+        "Follow creators and view their content",
+        "Like, comment, share, duet",
+        "Video effects and filters",
+        "Content moderation",
+        "Live streaming support"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Upload and process short videos; For You Page (recommendation feed); Follow creators and view their content"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Video Upload/Processing Pipeline, Recommendation Engine, CDN, User Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Video transcoding pipeline (multiple resolutions), Recommendation algorithm (collaborative + content-based filtering), Content-based ranking"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-tiktok-c1",
+          "front": "What are key components of Design TikTok / Short Video Platform?",
+          "back": "Video Upload/Processing Pipeline, Recommendation Engine, CDN, User Service, Content Moderation Service, Analytics Pipeline, Object Storage"
+        },
+        {
+          "id": "hld-tiktok-c2",
+          "front": "What concepts are important for Design TikTok / Short Video Platform?",
+          "back": "Video transcoding pipeline (multiple resolutions), Recommendation algorithm (collaborative + content-based filtering), Content-based ranking, Adaptive bitrate streaming (ABR), User engagement signals for recommendation, Content moderation (AI-based), Cold start problem for new users"
+        }
+      ]
+    },
+    {
+      "id": "hld-reddit",
+      "title": "Design Reddit",
+      "difficulty": "Medium",
+      "pattern": "social-media",
+      "description": "Design a community-driven discussion platform like Reddit. Users can create communities (subreddits), post content, upvote/downvote, and participate in threaded discussions.",
+      "keyComponents": [
+        "Post Service",
+        "Comment Service (tree structure)",
+        "Voting Service",
+        "Subreddit Service",
+        "Feed Ranking Service",
+        "Moderation Service",
+        "Search Service"
+      ],
+      "concepts": [
+        "Threaded comments (tree/forest data structure)",
+        "Hot/Top/New ranking algorithms",
+        "Vote counting with anti-abuse",
+        "Subreddit-level sharding",
+        "Karma system",
+        "Content moderation tools",
+        "Rate limiting for spam prevention"
+      ],
+      "requirements": [
+        "Create communities (subreddits)",
+        "Post text, links, images, videos",
+        "Upvote/downvote system",
+        "Nested/threaded comments",
+        "Multiple feed sorting algorithms",
+        "Community moderation tools",
+        "User karma and reputation"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Create communities (subreddits); Post text, links, images, videos; Upvote/downvote system"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Post Service, Comment Service (tree structure), Voting Service, Subreddit Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Threaded comments (tree/forest data structure), Hot/Top/New ranking algorithms, Vote counting with anti-abuse"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-reddit-c1",
+          "front": "What are key components of Design Reddit?",
+          "back": "Post Service, Comment Service (tree structure), Voting Service, Subreddit Service, Feed Ranking Service, Moderation Service, Search Service"
+        },
+        {
+          "id": "hld-reddit-c2",
+          "front": "What concepts are important for Design Reddit?",
+          "back": "Threaded comments (tree/forest data structure), Hot/Top/New ranking algorithms, Vote counting with anti-abuse, Subreddit-level sharding, Karma system, Content moderation tools, Rate limiting for spam prevention"
+        }
+      ]
+    },
+    {
+      "id": "hld-whatsapp",
+      "title": "Design WhatsApp / Messenger",
+      "difficulty": "Medium",
+      "pattern": "messaging-realtime",
+      "description": "Design an instant messaging service like WhatsApp that supports one-on-one and group messaging, media sharing, and real-time message delivery with read receipts.",
+      "keyComponents": [
+        "Chat Server (WebSocket)",
+        "Message Queue",
+        "Message Storage",
+        "User Presence Service",
+        "Media Storage (S3)",
+        "Push Notification Service",
+        "Group Service"
+      ],
+      "concepts": [
+        "WebSocket for real-time bidirectional communication",
+        "Message delivery guarantees (at-least-once)",
+        "End-to-end encryption",
+        "Message ordering and sequencing",
+        "Online/offline status tracking",
+        "Fan-out for group messages",
+        "Message acknowledgment (sent/delivered/read)"
+      ],
+      "requirements": [
+        "One-on-one messaging",
+        "Group messaging (up to 1000+ members)",
+        "Media sharing (images, video, audio)",
+        "Real-time message delivery",
+        "Read receipts and typing indicators",
+        "Offline message queuing",
+        "End-to-end encryption"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "One-on-one messaging; Group messaging (up to 1000+ members); Media sharing (images, video, audio)"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Chat Server (WebSocket), Message Queue, Message Storage, User Presence Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: WebSocket for real-time bidirectional communication, Message delivery guarantees (at-least-once), End-to-end encryption"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-whatsapp-c1",
+          "front": "What are key components of Design WhatsApp / Messenger?",
+          "back": "Chat Server (WebSocket), Message Queue, Message Storage, User Presence Service, Media Storage (S3), Push Notification Service, Group Service"
+        },
+        {
+          "id": "hld-whatsapp-c2",
+          "front": "What concepts are important for Design WhatsApp / Messenger?",
+          "back": "WebSocket for real-time bidirectional communication, Message delivery guarantees (at-least-once), End-to-end encryption, Message ordering and sequencing, Online/offline status tracking, Fan-out for group messages, Message acknowledgment (sent/delivered/read)"
+        }
+      ]
+    },
+    {
+      "id": "hld-slack",
+      "title": "Design Slack / Teams",
+      "difficulty": "Hard",
+      "pattern": "messaging-realtime",
+      "description": "Design a team collaboration and messaging platform like Slack with channels, direct messages, threads, file sharing, and integrations. Must support workspace-level isolation.",
+      "keyComponents": [
+        "Real-time Messaging Server",
+        "Channel Service",
+        "Thread Service",
+        "File Storage Service",
+        "Search Service (Elasticsearch)",
+        "Integration/Bot Service",
+        "Notification Service"
+      ],
+      "concepts": [
+        "WebSocket connection management at scale",
+        "Channel-based pub/sub",
+        "Full-text search over message history",
+        "Workspace-level multi-tenancy",
+        "Message threading model",
+        "Presence and typing indicators",
+        "Webhook and bot integrations"
+      ],
+      "requirements": [
+        "Channels (public and private)",
+        "Direct messages and group DMs",
+        "Threaded replies",
+        "File sharing and previews",
+        "Full-text message search",
+        "App integrations and bots",
+        "Workspace-level data isolation"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Channels (public and private); Direct messages and group DMs; Threaded replies"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Real-time Messaging Server, Channel Service, Thread Service, File Storage Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: WebSocket connection management at scale, Channel-based pub/sub, Full-text search over message history"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-slack-c1",
+          "front": "What are key components of Design Slack / Teams?",
+          "back": "Real-time Messaging Server, Channel Service, Thread Service, File Storage Service, Search Service (Elasticsearch), Integration/Bot Service, Notification Service"
+        },
+        {
+          "id": "hld-slack-c2",
+          "front": "What concepts are important for Design Slack / Teams?",
+          "back": "WebSocket connection management at scale, Channel-based pub/sub, Full-text search over message history, Workspace-level multi-tenancy, Message threading model, Presence and typing indicators, Webhook and bot integrations"
+        }
+      ]
+    },
+    {
+      "id": "hld-notification-service",
+      "title": "Design Notification Service",
+      "difficulty": "Medium",
+      "pattern": "messaging-realtime",
+      "description": "Design a scalable notification system that can deliver push notifications, SMS, emails, and in-app notifications to millions of users with high reliability and minimal latency.",
+      "keyComponents": [
+        "Notification Router",
+        "Message Queue (Kafka/SQS)",
+        "Push Notification Provider (APNs/FCM)",
+        "Email Service (SES)",
+        "SMS Gateway",
+        "Template Service",
+        "User Preferences Store"
+      ],
+      "concepts": [
+        "Priority queues for notification urgency",
+        "Fan-out pattern for broadcast notifications",
+        "Deduplication of notifications",
+        "Rate limiting per user",
+        "Retry with exponential backoff",
+        "Template rendering",
+        "Device token management"
+      ],
+      "requirements": [
+        "Support push, SMS, email, and in-app notifications",
+        "User preference management (opt-in/out)",
+        "Priority-based delivery",
+        "Batch and scheduled notifications",
+        "Delivery tracking and analytics",
+        "Template-based notification content",
+        "Handle millions of notifications per minute"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Support push, SMS, email, and in-app notifications; User preference management (opt-in/out); Priority-based delivery"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Notification Router, Message Queue (Kafka/SQS), Push Notification Provider (APNs/FCM), Email Service (SES)"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Priority queues for notification urgency, Fan-out pattern for broadcast notifications, Deduplication of notifications"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-notification-service-c1",
+          "front": "What are key components of Design Notification Service?",
+          "back": "Notification Router, Message Queue (Kafka/SQS), Push Notification Provider (APNs/FCM), Email Service (SES), SMS Gateway, Template Service, User Preferences Store"
+        },
+        {
+          "id": "hld-notification-service-c2",
+          "front": "What concepts are important for Design Notification Service?",
+          "back": "Priority queues for notification urgency, Fan-out pattern for broadcast notifications, Deduplication of notifications, Rate limiting per user, Retry with exponential backoff, Template rendering, Device token management"
+        }
+      ]
+    },
+    {
+      "id": "hld-zoom",
+      "title": "Design Zoom / Video Conferencing",
+      "difficulty": "Hard",
+      "pattern": "messaging-realtime",
+      "description": "Design a video conferencing platform like Zoom that supports real-time video/audio calls, screen sharing, chat, and recording for meetings with hundreds of participants.",
+      "keyComponents": [
+        "Signaling Server",
+        "Media Server (SFU/MCU)",
+        "TURN/STUN Servers",
+        "Recording Service",
+        "Chat Service",
+        "Scheduling Service",
+        "CDN for recordings"
+      ],
+      "concepts": [
+        "WebRTC for peer-to-peer communication",
+        "SFU vs MCU architecture",
+        "Selective Forwarding Unit for large meetings",
+        "Adaptive bitrate for varying network conditions",
+        "SRTP for encrypted media transport",
+        "Jitter buffer and packet loss concealment",
+        "Simulcast for multi-quality streams"
+      ],
+      "requirements": [
+        "One-on-one and group video calls",
+        "Screen sharing",
+        "In-meeting chat",
+        "Meeting recording and playback",
+        "Meeting scheduling and calendar integration",
+        "Breakout rooms",
+        "Support 100+ participants per meeting"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "One-on-one and group video calls; Screen sharing; In-meeting chat"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Signaling Server, Media Server (SFU/MCU), TURN/STUN Servers, Recording Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: WebRTC for peer-to-peer communication, SFU vs MCU architecture, Selective Forwarding Unit for large meetings"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-zoom-c1",
+          "front": "What are key components of Design Zoom / Video Conferencing?",
+          "back": "Signaling Server, Media Server (SFU/MCU), TURN/STUN Servers, Recording Service, Chat Service, Scheduling Service, CDN for recordings"
+        },
+        {
+          "id": "hld-zoom-c2",
+          "front": "What concepts are important for Design Zoom / Video Conferencing?",
+          "back": "WebRTC for peer-to-peer communication, SFU vs MCU architecture, Selective Forwarding Unit for large meetings, Adaptive bitrate for varying network conditions, SRTP for encrypted media transport, Jitter buffer and packet loss concealment, Simulcast for multi-quality streams"
+        }
+      ]
+    },
+    {
+      "id": "hld-youtube",
+      "title": "Design YouTube / Video Streaming Platform",
+      "difficulty": "Hard",
+      "pattern": "streaming-media",
+      "description": "Design a video-sharing and streaming platform like YouTube. Users can upload, transcode, store, and stream videos. The system must handle billions of daily views with adaptive streaming quality.",
+      "keyComponents": [
+        "Video Upload Service",
+        "Transcoding Pipeline",
+        "CDN (Content Delivery Network)",
+        "Video Metadata Service",
+        "Recommendation Engine",
+        "Comment/Like Service",
+        "Object Storage",
+        "Search Service"
+      ],
+      "concepts": [
+        "Video transcoding (multiple resolutions/codecs)",
+        "Adaptive bitrate streaming (HLS/DASH)",
+        "CDN for global video delivery",
+        "Video chunking and segmentation",
+        "Thumbnail generation pipeline",
+        "Copyright detection (Content ID)",
+        "DAG-based video processing pipeline"
+      ],
+      "requirements": [
+        "Upload videos of various formats and sizes",
+        "Transcode to multiple resolutions (144p to 4K)",
+        "Stream videos with adaptive quality",
+        "Search and discover videos",
+        "Like, comment, subscribe",
+        "Video recommendations",
+        "Monetization (ads, premium)"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Upload videos of various formats and sizes; Transcode to multiple resolutions (144p to 4K); Stream videos with adaptive quality"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Video Upload Service, Transcoding Pipeline, CDN (Content Delivery Network), Video Metadata Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Video transcoding (multiple resolutions/codecs), Adaptive bitrate streaming (HLS/DASH), CDN for global video delivery"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-youtube-c1",
+          "front": "What are key components of Design YouTube / Video Streaming Platform?",
+          "back": "Video Upload Service, Transcoding Pipeline, CDN (Content Delivery Network), Video Metadata Service, Recommendation Engine, Comment/Like Service, Object Storage, Search Service"
+        },
+        {
+          "id": "hld-youtube-c2",
+          "front": "What concepts are important for Design YouTube / Video Streaming Platform?",
+          "back": "Video transcoding (multiple resolutions/codecs), Adaptive bitrate streaming (HLS/DASH), CDN for global video delivery, Video chunking and segmentation, Thumbnail generation pipeline, Copyright detection (Content ID), DAG-based video processing pipeline"
+        }
+      ]
+    },
+    {
+      "id": "hld-netflix",
+      "title": "Design Netflix / Video Streaming Service",
+      "difficulty": "Hard",
+      "pattern": "streaming-media",
+      "description": "Design a subscription-based video streaming service like Netflix. Focus on content delivery, recommendation engine, and handling millions of concurrent streams worldwide.",
+      "keyComponents": [
+        "Content Delivery Network (Open Connect)",
+        "Recommendation Service",
+        "User Profile Service",
+        "Transcoding Pipeline",
+        "Playback Service",
+        "Billing Service",
+        "Content Catalog Service"
+      ],
+      "concepts": [
+        "CDN architecture and edge caching",
+        "Collaborative filtering for recommendations",
+        "Adaptive bitrate streaming",
+        "Microservices architecture",
+        "Circuit breaker pattern",
+        "A/B testing framework",
+        "Predictive pre-caching of content"
+      ],
+      "requirements": [
+        "Stream high-quality video content",
+        "Personalized recommendation engine",
+        "Multiple user profiles per account",
+        "Continue watching across devices",
+        "Download for offline viewing",
+        "Subscription and billing management",
+        "Support millions of concurrent streams"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Stream high-quality video content; Personalized recommendation engine; Multiple user profiles per account"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Content Delivery Network (Open Connect), Recommendation Service, User Profile Service, Transcoding Pipeline"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: CDN architecture and edge caching, Collaborative filtering for recommendations, Adaptive bitrate streaming"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-netflix-c1",
+          "front": "What are key components of Design Netflix / Video Streaming Service?",
+          "back": "Content Delivery Network (Open Connect), Recommendation Service, User Profile Service, Transcoding Pipeline, Playback Service, Billing Service, Content Catalog Service"
+        },
+        {
+          "id": "hld-netflix-c2",
+          "front": "What concepts are important for Design Netflix / Video Streaming Service?",
+          "back": "CDN architecture and edge caching, Collaborative filtering for recommendations, Adaptive bitrate streaming, Microservices architecture, Circuit breaker pattern, A/B testing framework, Predictive pre-caching of content"
+        }
+      ]
+    },
+    {
+      "id": "hld-spotify",
+      "title": "Design Spotify / Music Streaming Service",
+      "difficulty": "Medium",
+      "pattern": "streaming-media",
+      "description": "Design a music streaming service like Spotify with features including music playback, playlists, search, and personalized recommendations (Discover Weekly).",
+      "keyComponents": [
+        "Audio Streaming Service",
+        "Music Catalog Service",
+        "Playlist Service",
+        "Recommendation Engine",
+        "Search Service",
+        "User Service",
+        "CDN",
+        "Ads Service"
+      ],
+      "concepts": [
+        "Audio streaming protocols",
+        "Content-based and collaborative filtering",
+        "Audio fingerprinting",
+        "Playlist graph data model",
+        "Gapless playback",
+        "Offline caching strategy",
+        "Freemium model with ad insertion"
+      ],
+      "requirements": [
+        "Stream music with low latency",
+        "Create and manage playlists",
+        "Personalized recommendations (Discover Weekly)",
+        "Search songs, artists, albums",
+        "Offline download support",
+        "Cross-device playback sync",
+        "Social features (share, collaborative playlists)"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Stream music with low latency; Create and manage playlists; Personalized recommendations (Discover Weekly)"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Audio Streaming Service, Music Catalog Service, Playlist Service, Recommendation Engine"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Audio streaming protocols, Content-based and collaborative filtering, Audio fingerprinting"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-spotify-c1",
+          "front": "What are key components of Design Spotify / Music Streaming Service?",
+          "back": "Audio Streaming Service, Music Catalog Service, Playlist Service, Recommendation Engine, Search Service, User Service, CDN, Ads Service"
+        },
+        {
+          "id": "hld-spotify-c2",
+          "front": "What concepts are important for Design Spotify / Music Streaming Service?",
+          "back": "Audio streaming protocols, Content-based and collaborative filtering, Audio fingerprinting, Playlist graph data model, Gapless playback, Offline caching strategy, Freemium model with ad insertion"
+        }
+      ]
+    },
+    {
+      "id": "hld-uber",
+      "title": "Design Uber / Lyft (Ride-Sharing)",
+      "difficulty": "Hard",
+      "pattern": "location-transport",
+      "description": "Design a ride-sharing platform like Uber. The system matches riders with nearby drivers in real-time, handles pricing, tracks rides, and processes payments.",
+      "keyComponents": [
+        "Ride Matching Service",
+        "Location Service",
+        "Pricing/Surge Service",
+        "Driver Supply Service",
+        "Trip Service",
+        "Payment Service",
+        "Notification Service",
+        "WebSocket Servers"
+      ],
+      "concepts": [
+        "Geospatial indexing (Geohash, Quadtree)",
+        "Real-time location tracking via WebSockets",
+        "Supply-demand matching algorithm",
+        "Surge pricing based on demand",
+        "ETA estimation with map APIs",
+        "Sharding by geographic region",
+        "Event-driven architecture"
+      ],
+      "requirements": [
+        "Request a ride with pickup/dropoff",
+        "Match riders with nearby drivers",
+        "Real-time driver location tracking",
+        "Dynamic/surge pricing",
+        "ETA estimation",
+        "Trip history and receipts",
+        "Rating system for drivers and riders"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Request a ride with pickup/dropoff; Match riders with nearby drivers; Real-time driver location tracking"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Ride Matching Service, Location Service, Pricing/Surge Service, Driver Supply Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Geospatial indexing (Geohash, Quadtree), Real-time location tracking via WebSockets, Supply-demand matching algorithm"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-uber-c1",
+          "front": "What are key components of Design Uber / Lyft (Ride-Sharing)?",
+          "back": "Ride Matching Service, Location Service, Pricing/Surge Service, Driver Supply Service, Trip Service, Payment Service, Notification Service, WebSocket Servers"
+        },
+        {
+          "id": "hld-uber-c2",
+          "front": "What concepts are important for Design Uber / Lyft (Ride-Sharing)?",
+          "back": "Geospatial indexing (Geohash, Quadtree), Real-time location tracking via WebSockets, Supply-demand matching algorithm, Surge pricing based on demand, ETA estimation with map APIs, Sharding by geographic region, Event-driven architecture"
+        }
+      ]
+    },
+    {
+      "id": "hld-google-maps",
+      "title": "Design Google Maps",
+      "difficulty": "Hard",
+      "pattern": "location-transport",
+      "description": "Design a mapping and navigation service like Google Maps. The system should provide map rendering, route calculation, real-time traffic, and location search.",
+      "keyComponents": [
+        "Map Tile Service",
+        "Routing Engine",
+        "Traffic Service",
+        "Geocoding Service",
+        "Place/POI Service",
+        "Location Search Service",
+        "Navigation Service"
+      ],
+      "concepts": [
+        "Map tiling (vector and raster tiles)",
+        "Geospatial indexing (Quadtree, R-tree, Geohash)",
+        "Graph algorithms for routing (Dijkstra, A*)",
+        "Road segment graph model",
+        "Real-time traffic data aggregation",
+        "ETL pipeline for map data",
+        "Hierarchical routing (local vs highway)"
+      ],
+      "requirements": [
+        "Render interactive maps at multiple zoom levels",
+        "Calculate routes (driving, walking, transit)",
+        "Real-time traffic overlay",
+        "Turn-by-turn navigation",
+        "Search for places and addresses",
+        "Estimated time of arrival (ETA)",
+        "Offline map download"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Render interactive maps at multiple zoom levels; Calculate routes (driving, walking, transit); Real-time traffic overlay"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Map Tile Service, Routing Engine, Traffic Service, Geocoding Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Map tiling (vector and raster tiles), Geospatial indexing (Quadtree, R-tree, Geohash), Graph algorithms for routing (Dijkstra, A*)"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-google-maps-c1",
+          "front": "What are key components of Design Google Maps?",
+          "back": "Map Tile Service, Routing Engine, Traffic Service, Geocoding Service, Place/POI Service, Location Search Service, Navigation Service"
+        },
+        {
+          "id": "hld-google-maps-c2",
+          "front": "What concepts are important for Design Google Maps?",
+          "back": "Map tiling (vector and raster tiles), Geospatial indexing (Quadtree, R-tree, Geohash), Graph algorithms for routing (Dijkstra, A*), Road segment graph model, Real-time traffic data aggregation, ETL pipeline for map data, Hierarchical routing (local vs highway)"
+        }
+      ]
+    },
+    {
+      "id": "hld-doordash",
+      "title": "Design DoorDash / Food Delivery",
+      "difficulty": "Hard",
+      "pattern": "location-transport",
+      "description": "Design a food delivery platform like DoorDash connecting customers, restaurants, and delivery drivers. The system must handle order management, real-time delivery tracking, and driver dispatch.",
+      "keyComponents": [
+        "Order Service",
+        "Restaurant Service",
+        "Driver Dispatch Service",
+        "Real-time Tracking Service",
+        "Payment Service",
+        "Menu/Catalog Service",
+        "Notification Service"
+      ],
+      "concepts": [
+        "Three-sided marketplace (customer, restaurant, driver)",
+        "Delivery time estimation",
+        "Batching orders for driver efficiency",
+        "Geospatial driver matching",
+        "Order state machine",
+        "Kitchen capacity management",
+        "Surge pricing and delivery fees"
+      ],
+      "requirements": [
+        "Browse restaurants and menus",
+        "Place and track orders",
+        "Real-time delivery tracking",
+        "Driver assignment and dispatch",
+        "Payment processing with tips",
+        "Restaurant order management",
+        "Rating and review system"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Browse restaurants and menus; Place and track orders; Real-time delivery tracking"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Order Service, Restaurant Service, Driver Dispatch Service, Real-time Tracking Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Three-sided marketplace (customer, restaurant, driver), Delivery time estimation, Batching orders for driver efficiency"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-doordash-c1",
+          "front": "What are key components of Design DoorDash / Food Delivery?",
+          "back": "Order Service, Restaurant Service, Driver Dispatch Service, Real-time Tracking Service, Payment Service, Menu/Catalog Service, Notification Service"
+        },
+        {
+          "id": "hld-doordash-c2",
+          "front": "What concepts are important for Design DoorDash / Food Delivery?",
+          "back": "Three-sided marketplace (customer, restaurant, driver), Delivery time estimation, Batching orders for driver efficiency, Geospatial driver matching, Order state machine, Kitchen capacity management, Surge pricing and delivery fees"
+        }
+      ]
+    },
+    {
+      "id": "hld-yelp",
+      "title": "Design Yelp / Nearby Places",
+      "difficulty": "Medium",
+      "pattern": "location-transport",
+      "description": "Design a proximity-based service like Yelp that allows users to search for nearby businesses, read/write reviews, and view business details with ratings.",
+      "keyComponents": [
+        "Location Service",
+        "Business Catalog",
+        "Review Service",
+        "Search Service",
+        "Geospatial Index",
+        "Photo Service",
+        "Recommendation Service"
+      ],
+      "concepts": [
+        "Geohashing for proximity search",
+        "Quadtree spatial indexing",
+        "Elasticsearch for full-text + geo queries",
+        "Read-heavy system optimization",
+        "Review aggregation and ranking",
+        "Cache-heavy architecture",
+        "Business data ETL pipeline"
+      ],
+      "requirements": [
+        "Search businesses by location and category",
+        "View business details and photos",
+        "Read and write reviews with ratings",
+        "Filter and sort results",
+        "Map view of nearby places",
+        "Business owner management portal",
+        "Handle millions of business listings"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Search businesses by location and category; View business details and photos; Read and write reviews with ratings"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Location Service, Business Catalog, Review Service, Search Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Geohashing for proximity search, Quadtree spatial indexing, Elasticsearch for full-text + geo queries"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-yelp-c1",
+          "front": "What are key components of Design Yelp / Nearby Places?",
+          "back": "Location Service, Business Catalog, Review Service, Search Service, Geospatial Index, Photo Service, Recommendation Service"
+        },
+        {
+          "id": "hld-yelp-c2",
+          "front": "What concepts are important for Design Yelp / Nearby Places?",
+          "back": "Geohashing for proximity search, Quadtree spatial indexing, Elasticsearch for full-text + geo queries, Read-heavy system optimization, Review aggregation and ranking, Cache-heavy architecture, Business data ETL pipeline"
+        }
+      ]
+    },
+    {
+      "id": "hld-amazon",
+      "title": "Design Amazon / E-Commerce Platform",
+      "difficulty": "Hard",
+      "pattern": "ecommerce-payments",
+      "description": "Design a large-scale e-commerce platform like Amazon supporting product catalog, cart, checkout, order management, and seller marketplace with millions of products.",
+      "keyComponents": [
+        "Product Catalog Service",
+        "Cart Service",
+        "Order Service",
+        "Inventory Service",
+        "Payment Service",
+        "Search Service",
+        "Recommendation Engine",
+        "Seller Service",
+        "Warehouse/Fulfillment Service"
+      ],
+      "concepts": [
+        "Microservices architecture",
+        "Distributed transactions (Saga pattern)",
+        "Inventory reservation with TTL",
+        "Eventual consistency for catalog",
+        "Search with faceted filtering (Elasticsearch)",
+        "Recommendation engine (collaborative filtering)",
+        "Event-driven order processing"
+      ],
+      "requirements": [
+        "Browse and search product catalog",
+        "Add items to cart and checkout",
+        "Order processing and tracking",
+        "Inventory management across warehouses",
+        "Payment processing",
+        "Seller onboarding and management",
+        "Product reviews and ratings",
+        "Personalized recommendations"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Browse and search product catalog; Add items to cart and checkout; Order processing and tracking"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Product Catalog Service, Cart Service, Order Service, Inventory Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Microservices architecture, Distributed transactions (Saga pattern), Inventory reservation with TTL"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-amazon-c1",
+          "front": "What are key components of Design Amazon / E-Commerce Platform?",
+          "back": "Product Catalog Service, Cart Service, Order Service, Inventory Service, Payment Service, Search Service, Recommendation Engine, Seller Service, Warehouse/Fulfillment Service"
+        },
+        {
+          "id": "hld-amazon-c2",
+          "front": "What concepts are important for Design Amazon / E-Commerce Platform?",
+          "back": "Microservices architecture, Distributed transactions (Saga pattern), Inventory reservation with TTL, Eventual consistency for catalog, Search with faceted filtering (Elasticsearch), Recommendation engine (collaborative filtering), Event-driven order processing"
+        }
+      ]
+    },
+    {
+      "id": "hld-payment-system",
+      "title": "Design Payment System (Stripe / PayPal)",
+      "difficulty": "Hard",
+      "pattern": "ecommerce-payments",
+      "description": "Design a payment processing system like Stripe that handles credit card payments, refunds, and settlements. The system must ensure exactly-once payment processing with high reliability.",
+      "keyComponents": [
+        "Payment Gateway",
+        "Payment Processor",
+        "Ledger Service",
+        "Fraud Detection Service",
+        "Settlement Service",
+        "Reconciliation Service",
+        "Webhook/Notification Service"
+      ],
+      "concepts": [
+        "Idempotency for payment operations",
+        "Double-entry bookkeeping / ledger",
+        "Payment state machine",
+        "PCI DSS compliance",
+        "Exactly-once semantics",
+        "Distributed transactions",
+        "Reconciliation processes",
+        "Retry with idempotency keys"
+      ],
+      "requirements": [
+        "Process credit/debit card payments",
+        "Handle refunds and chargebacks",
+        "Idempotent payment processing",
+        "Fraud detection and prevention",
+        "Multi-currency support",
+        "Settlement and payout to merchants",
+        "Audit trail and compliance logging"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Process credit/debit card payments; Handle refunds and chargebacks; Idempotent payment processing"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Payment Gateway, Payment Processor, Ledger Service, Fraud Detection Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Idempotency for payment operations, Double-entry bookkeeping / ledger, Payment state machine"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-payment-system-c1",
+          "front": "What are key components of Design Payment System (Stripe / PayPal)?",
+          "back": "Payment Gateway, Payment Processor, Ledger Service, Fraud Detection Service, Settlement Service, Reconciliation Service, Webhook/Notification Service"
+        },
+        {
+          "id": "hld-payment-system-c2",
+          "front": "What concepts are important for Design Payment System (Stripe / PayPal)?",
+          "back": "Idempotency for payment operations, Double-entry bookkeeping / ledger, Payment state machine, PCI DSS compliance, Exactly-once semantics, Distributed transactions, Reconciliation processes, Retry with idempotency keys"
+        }
+      ]
+    },
+    {
+      "id": "hld-ticketmaster",
+      "title": "Design Ticketmaster / Ticket Booking System",
+      "difficulty": "Hard",
+      "pattern": "ecommerce-payments",
+      "description": "Design a ticket booking platform like Ticketmaster for events with venue seating maps. The system must handle extreme traffic spikes during popular event launches and prevent double-booking.",
+      "keyComponents": [
+        "Event Catalog Service",
+        "Seat Inventory Service",
+        "Booking Service",
+        "Waiting Room/Queue",
+        "Payment Service",
+        "Notification Service",
+        "Venue Map Service"
+      ],
+      "concepts": [
+        "Distributed locking for seat reservation",
+        "Optimistic vs pessimistic locking",
+        "Virtual waiting room for traffic spikes",
+        "Seat hold with TTL (temporary reservation)",
+        "Eventual consistency vs strong consistency for inventory",
+        "Traffic spike handling (queue-based load leveling)",
+        "Anti-bot and anti-scalping measures"
+      ],
+      "requirements": [
+        "Browse events and venue seating maps",
+        "Select and temporarily hold seats",
+        "Complete purchase within time limit",
+        "Handle massive concurrent traffic spikes",
+        "Prevent double-booking of seats",
+        "Waitlist for sold-out events",
+        "QR code / digital ticket generation"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Browse events and venue seating maps; Select and temporarily hold seats; Complete purchase within time limit"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Event Catalog Service, Seat Inventory Service, Booking Service, Waiting Room/Queue"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Distributed locking for seat reservation, Optimistic vs pessimistic locking, Virtual waiting room for traffic spikes"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-ticketmaster-c1",
+          "front": "What are key components of Design Ticketmaster / Ticket Booking System?",
+          "back": "Event Catalog Service, Seat Inventory Service, Booking Service, Waiting Room/Queue, Payment Service, Notification Service, Venue Map Service"
+        },
+        {
+          "id": "hld-ticketmaster-c2",
+          "front": "What concepts are important for Design Ticketmaster / Ticket Booking System?",
+          "back": "Distributed locking for seat reservation, Optimistic vs pessimistic locking, Virtual waiting room for traffic spikes, Seat hold with TTL (temporary reservation), Eventual consistency vs strong consistency for inventory, Traffic spike handling (queue-based load leveling), Anti-bot and anti-scalping measures"
+        }
+      ]
+    },
+    {
+      "id": "hld-hotel-booking",
+      "title": "Design Airbnb / Hotel Booking System",
+      "difficulty": "Medium",
+      "pattern": "ecommerce-payments",
+      "description": "Design a booking platform like Airbnb where hosts list properties and guests search, book, and review stays. The system must handle availability management and reservation conflicts.",
+      "keyComponents": [
+        "Property Listing Service",
+        "Search/Discovery Service",
+        "Booking/Reservation Service",
+        "Availability Calendar Service",
+        "Payment Service",
+        "Review Service",
+        "Messaging Service"
+      ],
+      "concepts": [
+        "Calendar-based availability management",
+        "Search with geo-filtering and date ranges",
+        "Reservation conflict resolution",
+        "Two-phase booking (hold then confirm)",
+        "Dynamic pricing",
+        "Trust and safety (identity verification)",
+        "Elasticsearch for property search"
+      ],
+      "requirements": [
+        "List properties with photos and details",
+        "Search by location, dates, guests, price",
+        "Book and manage reservations",
+        "Availability calendar management",
+        "Host and guest messaging",
+        "Review and rating system",
+        "Payment with host payout scheduling"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "List properties with photos and details; Search by location, dates, guests, price; Book and manage reservations"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Property Listing Service, Search/Discovery Service, Booking/Reservation Service, Availability Calendar Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Calendar-based availability management, Search with geo-filtering and date ranges, Reservation conflict resolution"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-hotel-booking-c1",
+          "front": "What are key components of Design Airbnb / Hotel Booking System?",
+          "back": "Property Listing Service, Search/Discovery Service, Booking/Reservation Service, Availability Calendar Service, Payment Service, Review Service, Messaging Service"
+        },
+        {
+          "id": "hld-hotel-booking-c2",
+          "front": "What concepts are important for Design Airbnb / Hotel Booking System?",
+          "back": "Calendar-based availability management, Search with geo-filtering and date ranges, Reservation conflict resolution, Two-phase booking (hold then confirm), Dynamic pricing, Trust and safety (identity verification), Elasticsearch for property search"
+        }
+      ]
+    },
+    {
+      "id": "hld-stock-exchange",
+      "title": "Design Stock Exchange / Trading Platform",
+      "difficulty": "Hard",
+      "pattern": "ecommerce-payments",
+      "description": "Design a stock exchange or trading platform like Robinhood with an order matching engine, real-time price feeds, and portfolio management. The system requires ultra-low latency.",
+      "keyComponents": [
+        "Order Matching Engine",
+        "Order Book Service",
+        "Market Data Feed",
+        "Portfolio Service",
+        "Risk Management Service",
+        "Settlement Service",
+        "WebSocket Price Feed"
+      ],
+      "concepts": [
+        "Order matching algorithms (price-time priority)",
+        "In-memory order book data structure",
+        "FIFO queue for order processing",
+        "Event sourcing for trade history",
+        "Real-time price dissemination",
+        "Circuit breakers for market halts",
+        "Regulatory compliance and audit logs"
+      ],
+      "requirements": [
+        "Place market and limit orders",
+        "Real-time order matching",
+        "Live price feeds and charts",
+        "Portfolio tracking and P&L",
+        "Order history and trade confirmations",
+        "Risk checks before order execution",
+        "Handle millions of orders per second"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Place market and limit orders; Real-time order matching; Live price feeds and charts"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Order Matching Engine, Order Book Service, Market Data Feed, Portfolio Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Order matching algorithms (price-time priority), In-memory order book data structure, FIFO queue for order processing"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-stock-exchange-c1",
+          "front": "What are key components of Design Stock Exchange / Trading Platform?",
+          "back": "Order Matching Engine, Order Book Service, Market Data Feed, Portfolio Service, Risk Management Service, Settlement Service, WebSocket Price Feed"
+        },
+        {
+          "id": "hld-stock-exchange-c2",
+          "front": "What concepts are important for Design Stock Exchange / Trading Platform?",
+          "back": "Order matching algorithms (price-time priority), In-memory order book data structure, FIFO queue for order processing, Event sourcing for trade history, Real-time price dissemination, Circuit breakers for market halts, Regulatory compliance and audit logs"
+        }
+      ]
+    },
+    {
+      "id": "hld-search-engine",
+      "title": "Design Search Engine (Google Search)",
+      "difficulty": "Hard",
+      "pattern": "search-discovery",
+      "description": "Design a web search engine that crawls the web, indexes pages, and returns ranked search results in milliseconds. Focus on the indexing pipeline and query serving architecture.",
+      "keyComponents": [
+        "Web Crawler",
+        "Indexer Service",
+        "Index Storage (Inverted Index)",
+        "Query Parser",
+        "Ranking Service",
+        "Spell Checker",
+        "Cache Layer"
+      ],
+      "concepts": [
+        "Inverted index data structure",
+        "PageRank algorithm",
+        "TF-IDF scoring",
+        "Distributed crawling and indexing",
+        "Index partitioning (document vs term)",
+        "Query parsing and expansion",
+        "Snippet generation"
+      ],
+      "requirements": [
+        "Crawl and index billions of web pages",
+        "Return relevant results in <200ms",
+        "Rank results by relevance",
+        "Handle natural language queries",
+        "Spell correction and suggestions",
+        "Snippet preview in results",
+        "Fresh index with regular re-crawling"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Crawl and index billions of web pages; Return relevant results in <200ms; Rank results by relevance"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Web Crawler, Indexer Service, Index Storage (Inverted Index), Query Parser"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Inverted index data structure, PageRank algorithm, TF-IDF scoring"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-search-engine-c1",
+          "front": "What are key components of Design Search Engine (Google Search)?",
+          "back": "Web Crawler, Indexer Service, Index Storage (Inverted Index), Query Parser, Ranking Service, Spell Checker, Cache Layer"
+        },
+        {
+          "id": "hld-search-engine-c2",
+          "front": "What concepts are important for Design Search Engine (Google Search)?",
+          "back": "Inverted index data structure, PageRank algorithm, TF-IDF scoring, Distributed crawling and indexing, Index partitioning (document vs term), Query parsing and expansion, Snippet generation"
+        }
+      ]
+    },
+    {
+      "id": "hld-web-crawler",
+      "title": "Design Web Crawler",
+      "difficulty": "Medium",
+      "pattern": "search-discovery",
+      "description": "Design a distributed web crawler that systematically browses and downloads web pages across the internet. It should be polite, efficient, and handle duplicate content.",
+      "keyComponents": [
+        "URL Frontier (Priority Queue)",
+        "HTML Fetcher",
+        "DNS Resolver Cache",
+        "Content Parser",
+        "Duplicate Detector",
+        "URL Filter",
+        "Blob Storage"
+      ],
+      "concepts": [
+        "BFS vs DFS crawling strategy",
+        "URL frontier with politeness policy",
+        "Consistent hashing for URL distribution",
+        "Bloom filter for duplicate URL detection",
+        "Content fingerprinting (SimHash)",
+        "Robots.txt compliance",
+        "DNS caching for performance"
+      ],
+      "requirements": [
+        "Crawl billions of web pages",
+        "Respect robots.txt and crawl delays",
+        "Detect and skip duplicate content",
+        "Prioritize important/fresh pages",
+        "Handle various content types",
+        "Distributed across multiple machines",
+        "Fault-tolerant (resume after failure)"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Crawl billions of web pages; Respect robots.txt and crawl delays; Detect and skip duplicate content"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: URL Frontier (Priority Queue), HTML Fetcher, DNS Resolver Cache, Content Parser"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: BFS vs DFS crawling strategy, URL frontier with politeness policy, Consistent hashing for URL distribution"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-web-crawler-c1",
+          "front": "What are key components of Design Web Crawler?",
+          "back": "URL Frontier (Priority Queue), HTML Fetcher, DNS Resolver Cache, Content Parser, Duplicate Detector, URL Filter, Blob Storage"
+        },
+        {
+          "id": "hld-web-crawler-c2",
+          "front": "What concepts are important for Design Web Crawler?",
+          "back": "BFS vs DFS crawling strategy, URL frontier with politeness policy, Consistent hashing for URL distribution, Bloom filter for duplicate URL detection, Content fingerprinting (SimHash), Robots.txt compliance, DNS caching for performance"
+        }
+      ]
+    },
+    {
+      "id": "hld-typeahead",
+      "title": "Design Typeahead / Autocomplete",
+      "difficulty": "Medium",
+      "pattern": "search-discovery",
+      "description": "Design an autocomplete system that suggests search queries as users type. It should return top suggestions in under 100ms based on popularity and relevance.",
+      "keyComponents": [
+        "Trie Data Structure",
+        "Suggestion Service",
+        "Data Collection Service",
+        "Aggregation Pipeline",
+        "Cache Layer (CDN/Redis)",
+        "Analytics Pipeline"
+      ],
+      "concepts": [
+        "Trie (prefix tree) data structure",
+        "Top-K frequent queries per prefix",
+        "Data sampling for query frequency",
+        "Trie serialization and distribution",
+        "CDN caching for common prefixes",
+        "Offline pipeline for trie updates",
+        "Personalization layer"
+      ],
+      "requirements": [
+        "Return top suggestions as user types each character",
+        "Sub-100ms response time",
+        "Suggestions ranked by popularity",
+        "Handle misspellings gracefully",
+        "Update suggestions based on trending queries",
+        "Multi-language support",
+        "Filter inappropriate suggestions"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Return top suggestions as user types each character; Sub-100ms response time; Suggestions ranked by popularity"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Trie Data Structure, Suggestion Service, Data Collection Service, Aggregation Pipeline"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Trie (prefix tree) data structure, Top-K frequent queries per prefix, Data sampling for query frequency"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-typeahead-c1",
+          "front": "What are key components of Design Typeahead / Autocomplete?",
+          "back": "Trie Data Structure, Suggestion Service, Data Collection Service, Aggregation Pipeline, Cache Layer (CDN/Redis), Analytics Pipeline"
+        },
+        {
+          "id": "hld-typeahead-c2",
+          "front": "What concepts are important for Design Typeahead / Autocomplete?",
+          "back": "Trie (prefix tree) data structure, Top-K frequent queries per prefix, Data sampling for query frequency, Trie serialization and distribution, CDN caching for common prefixes, Offline pipeline for trie updates, Personalization layer"
+        }
+      ]
+    },
+    {
+      "id": "hld-recommendation-system",
+      "title": "Design Recommendation System",
+      "difficulty": "Hard",
+      "pattern": "search-discovery",
+      "description": "Design a recommendation engine (like Netflix recommendations or Amazon product suggestions) that provides personalized recommendations based on user behavior, preferences, and item similarities.",
+      "keyComponents": [
+        "User Profile Service",
+        "Item Catalog Service",
+        "Feature Store",
+        "ML Model Serving",
+        "Candidate Generation Service",
+        "Ranking Service",
+        "A/B Testing Framework"
+      ],
+      "concepts": [
+        "Collaborative filtering (user-based, item-based)",
+        "Content-based filtering",
+        "Matrix factorization",
+        "Two-stage recommendation (candidate generation + ranking)",
+        "Feature engineering for ML models",
+        "Cold start problem",
+        "Online vs offline model training"
+      ],
+      "requirements": [
+        "Generate personalized recommendations",
+        "Handle cold start for new users/items",
+        "Real-time and batch recommendation modes",
+        "A/B testing for model evaluation",
+        "Support multiple recommendation contexts",
+        "Diversity and novelty in recommendations",
+        "Scalable to millions of users and items"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Generate personalized recommendations; Handle cold start for new users/items; Real-time and batch recommendation modes"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: User Profile Service, Item Catalog Service, Feature Store, ML Model Serving"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Collaborative filtering (user-based, item-based), Content-based filtering, Matrix factorization"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-recommendation-system-c1",
+          "front": "What are key components of Design Recommendation System?",
+          "back": "User Profile Service, Item Catalog Service, Feature Store, ML Model Serving, Candidate Generation Service, Ranking Service, A/B Testing Framework"
+        },
+        {
+          "id": "hld-recommendation-system-c2",
+          "front": "What concepts are important for Design Recommendation System?",
+          "back": "Collaborative filtering (user-based, item-based), Content-based filtering, Matrix factorization, Two-stage recommendation (candidate generation + ranking), Feature engineering for ML models, Cold start problem, Online vs offline model training"
+        }
+      ]
+    },
+    {
+      "id": "hld-dropbox",
+      "title": "Design Dropbox / Google Drive",
+      "difficulty": "Hard",
+      "pattern": "collaboration-productivity",
+      "description": "Design a cloud file storage and synchronization service like Dropbox. Users can upload, download, and sync files across devices with version history and sharing capabilities.",
+      "keyComponents": [
+        "Block Storage Server",
+        "Metadata Service",
+        "Sync Service",
+        "Chunking Client",
+        "Notification Service (Long Polling)",
+        "Object Storage (S3)",
+        "Deduplication Service"
+      ],
+      "concepts": [
+        "File chunking (4MB blocks) for efficient sync",
+        "Block-level deduplication",
+        "Delta sync (only changed blocks)",
+        "Conflict resolution for concurrent edits",
+        "Long polling for real-time notifications",
+        "Content-addressable storage",
+        "Consistent hashing for metadata storage"
+      ],
+      "requirements": [
+        "Upload and download files",
+        "Sync files across multiple devices",
+        "File versioning and rollback",
+        "Share files and folders with permissions",
+        "Detect and resolve conflicts",
+        "Minimize bandwidth usage (delta sync)",
+        "Support large files (multi-GB)"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Upload and download files; Sync files across multiple devices; File versioning and rollback"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Block Storage Server, Metadata Service, Sync Service, Chunking Client"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: File chunking (4MB blocks) for efficient sync, Block-level deduplication, Delta sync (only changed blocks)"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-dropbox-c1",
+          "front": "What are key components of Design Dropbox / Google Drive?",
+          "back": "Block Storage Server, Metadata Service, Sync Service, Chunking Client, Notification Service (Long Polling), Object Storage (S3), Deduplication Service"
+        },
+        {
+          "id": "hld-dropbox-c2",
+          "front": "What concepts are important for Design Dropbox / Google Drive?",
+          "back": "File chunking (4MB blocks) for efficient sync, Block-level deduplication, Delta sync (only changed blocks), Conflict resolution for concurrent edits, Long polling for real-time notifications, Content-addressable storage, Consistent hashing for metadata storage"
+        }
+      ]
+    },
+    {
+      "id": "hld-google-docs",
+      "title": "Design Google Docs / Collaborative Editor",
+      "difficulty": "Hard",
+      "pattern": "collaboration-productivity",
+      "description": "Design a real-time collaborative document editor like Google Docs where multiple users can simultaneously edit the same document and see each other's changes in real-time.",
+      "keyComponents": [
+        "Document Service",
+        "Collaboration Engine (OT/CRDT)",
+        "WebSocket Server",
+        "Cursor/Presence Service",
+        "Version History Service",
+        "Permission Service",
+        "Comment Service"
+      ],
+      "concepts": [
+        "Operational Transformation (OT)",
+        "Conflict-free Replicated Data Types (CRDTs)",
+        "Real-time cursor position sharing",
+        "Document versioning and snapshots",
+        "WebSocket for real-time collaboration",
+        "Eventual consistency in document state",
+        "Undo/redo in collaborative context"
+      ],
+      "requirements": [
+        "Real-time collaborative editing",
+        "Multiple concurrent editors on same document",
+        "Cursor and selection visibility",
+        "Version history and rollback",
+        "Rich text formatting",
+        "Comments and suggestions",
+        "Offline editing with sync"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Real-time collaborative editing; Multiple concurrent editors on same document; Cursor and selection visibility"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Document Service, Collaboration Engine (OT/CRDT), WebSocket Server, Cursor/Presence Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Operational Transformation (OT), Conflict-free Replicated Data Types (CRDTs), Real-time cursor position sharing"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-google-docs-c1",
+          "front": "What are key components of Design Google Docs / Collaborative Editor?",
+          "back": "Document Service, Collaboration Engine (OT/CRDT), WebSocket Server, Cursor/Presence Service, Version History Service, Permission Service, Comment Service"
+        },
+        {
+          "id": "hld-google-docs-c2",
+          "front": "What concepts are important for Design Google Docs / Collaborative Editor?",
+          "back": "Operational Transformation (OT), Conflict-free Replicated Data Types (CRDTs), Real-time cursor position sharing, Document versioning and snapshots, WebSocket for real-time collaboration, Eventual consistency in document state, Undo/redo in collaborative context"
+        }
+      ]
+    },
+    {
+      "id": "hld-distributed-message-queue",
+      "title": "Design Distributed Message Queue (Kafka)",
+      "difficulty": "Hard",
+      "pattern": "distributed-infra",
+      "description": "Design a distributed message queue system like Apache Kafka that supports high-throughput, fault-tolerant, and ordered message delivery between producers and consumers.",
+      "keyComponents": [
+        "Broker Nodes",
+        "Topic/Partition Manager",
+        "Producer Client",
+        "Consumer Client",
+        "ZooKeeper/Controller",
+        "Replication Manager",
+        "Log Storage Engine"
+      ],
+      "concepts": [
+        "Append-only log data structure",
+        "Partitioning for parallelism",
+        "Consumer groups and offset management",
+        "Replication with leader-follower",
+        "At-least-once / at-most-once / exactly-once delivery",
+        "Log compaction",
+        "Zero-copy data transfer"
+      ],
+      "requirements": [
+        "Publish messages to topics",
+        "Subscribe and consume messages",
+        "Guaranteed message ordering within partitions",
+        "High throughput (millions of messages/sec)",
+        "Message persistence and replay",
+        "Consumer group load balancing",
+        "Fault tolerance with replication"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Publish messages to topics; Subscribe and consume messages; Guaranteed message ordering within partitions"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Broker Nodes, Topic/Partition Manager, Producer Client, Consumer Client"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Append-only log data structure, Partitioning for parallelism, Consumer groups and offset management"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-distributed-message-queue-c1",
+          "front": "What are key components of Design Distributed Message Queue (Kafka)?",
+          "back": "Broker Nodes, Topic/Partition Manager, Producer Client, Consumer Client, ZooKeeper/Controller, Replication Manager, Log Storage Engine"
+        },
+        {
+          "id": "hld-distributed-message-queue-c2",
+          "front": "What concepts are important for Design Distributed Message Queue (Kafka)?",
+          "back": "Append-only log data structure, Partitioning for parallelism, Consumer groups and offset management, Replication with leader-follower, At-least-once / at-most-once / exactly-once delivery, Log compaction, Zero-copy data transfer"
+        }
+      ]
+    },
+    {
+      "id": "hld-task-scheduler",
+      "title": "Design Distributed Task Scheduler",
+      "difficulty": "Medium",
+      "pattern": "distributed-infra",
+      "description": "Design a distributed task scheduling system that can execute one-time and recurring tasks reliably across a cluster of worker nodes. Similar to cron at scale or systems like Airflow.",
+      "keyComponents": [
+        "Scheduler Service",
+        "Task Queue",
+        "Worker Pool",
+        "Task Store (Database)",
+        "Heartbeat Monitor",
+        "Result Store",
+        "Retry Handler"
+      ],
+      "concepts": [
+        "Leader election for scheduler",
+        "Consistent hashing for task distribution",
+        "Dead letter queue for failed tasks",
+        "Idempotent task execution",
+        "Cron expression parsing",
+        "Priority-based scheduling",
+        "Worker health monitoring and rebalancing"
+      ],
+      "requirements": [
+        "Schedule one-time and recurring tasks",
+        "Distribute tasks across worker nodes",
+        "Retry failed tasks with backoff",
+        "Ensure exactly-once execution",
+        "Monitor task status and history",
+        "Support task dependencies (DAG)",
+        "Handle worker failures gracefully"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Schedule one-time and recurring tasks; Distribute tasks across worker nodes; Retry failed tasks with backoff"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Scheduler Service, Task Queue, Worker Pool, Task Store (Database)"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Leader election for scheduler, Consistent hashing for task distribution, Dead letter queue for failed tasks"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-task-scheduler-c1",
+          "front": "What are key components of Design Distributed Task Scheduler?",
+          "back": "Scheduler Service, Task Queue, Worker Pool, Task Store (Database), Heartbeat Monitor, Result Store, Retry Handler"
+        },
+        {
+          "id": "hld-task-scheduler-c2",
+          "front": "What concepts are important for Design Distributed Task Scheduler?",
+          "back": "Leader election for scheduler, Consistent hashing for task distribution, Dead letter queue for failed tasks, Idempotent task execution, Cron expression parsing, Priority-based scheduling, Worker health monitoring and rebalancing"
+        }
+      ]
+    },
+    {
+      "id": "hld-unique-id-generator",
+      "title": "Design Unique ID Generator",
+      "difficulty": "Easy",
+      "pattern": "distributed-infra",
+      "description": "Design a distributed system that generates globally unique IDs at scale. IDs should be sortable by time, compact, and generated without coordination between nodes.",
+      "keyComponents": [
+        "ID Generator Service",
+        "Clock/Timestamp Service",
+        "Sequence Counter",
+        "Node Registry"
+      ],
+      "concepts": [
+        "Snowflake ID format (timestamp + node + sequence)",
+        "UUID vs auto-increment vs Snowflake",
+        "Clock synchronization (NTP)",
+        "Logical clocks",
+        "Database ticket servers (Flickr approach)",
+        "Multi-datacenter ID generation",
+        "ID format trade-offs (compactness vs information)"
+      ],
+      "requirements": [
+        "Generate globally unique IDs",
+        "IDs should be sortable by time",
+        "High throughput (10K+ IDs/sec per node)",
+        "No single point of failure",
+        "Low latency generation",
+        "Compact ID format (64-bit)",
+        "Work across multiple data centers"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Generate globally unique IDs; IDs should be sortable by time; High throughput (10K+ IDs/sec per node)"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: ID Generator Service, Clock/Timestamp Service, Sequence Counter, Node Registry"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Snowflake ID format (timestamp + node + sequence), UUID vs auto-increment vs Snowflake, Clock synchronization (NTP)"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-unique-id-generator-c1",
+          "front": "What are key components of Design Unique ID Generator?",
+          "back": "ID Generator Service, Clock/Timestamp Service, Sequence Counter, Node Registry"
+        },
+        {
+          "id": "hld-unique-id-generator-c2",
+          "front": "What concepts are important for Design Unique ID Generator?",
+          "back": "Snowflake ID format (timestamp + node + sequence), UUID vs auto-increment vs Snowflake, Clock synchronization (NTP), Logical clocks, Database ticket servers (Flickr approach), Multi-datacenter ID generation, ID format trade-offs (compactness vs information)"
+        }
+      ]
+    },
+    {
+      "id": "hld-api-gateway",
+      "title": "Design API Gateway",
+      "difficulty": "Medium",
+      "pattern": "distributed-infra",
+      "description": "Design an API Gateway that serves as a single entry point for microservices, handling routing, authentication, rate limiting, load balancing, and request transformation.",
+      "keyComponents": [
+        "Request Router",
+        "Authentication/Authorization Module",
+        "Rate Limiter",
+        "Load Balancer",
+        "Circuit Breaker",
+        "Request/Response Transformer",
+        "Service Registry"
+      ],
+      "concepts": [
+        "Reverse proxy pattern",
+        "Service discovery and registration",
+        "Circuit breaker pattern",
+        "Request routing and versioning",
+        "API composition (aggregate multiple services)",
+        "TLS termination",
+        "Request/response transformation"
+      ],
+      "requirements": [
+        "Route requests to appropriate microservices",
+        "Authenticate and authorize requests",
+        "Rate limiting per client/API",
+        "Load balancing across service instances",
+        "Circuit breaking for failing services",
+        "API versioning support",
+        "Request logging and monitoring"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Route requests to appropriate microservices; Authenticate and authorize requests; Rate limiting per client/API"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Request Router, Authentication/Authorization Module, Rate Limiter, Load Balancer"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Reverse proxy pattern, Service discovery and registration, Circuit breaker pattern"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-api-gateway-c1",
+          "front": "What are key components of Design API Gateway?",
+          "back": "Request Router, Authentication/Authorization Module, Rate Limiter, Load Balancer, Circuit Breaker, Request/Response Transformer, Service Registry"
+        },
+        {
+          "id": "hld-api-gateway-c2",
+          "front": "What concepts are important for Design API Gateway?",
+          "back": "Reverse proxy pattern, Service discovery and registration, Circuit breaker pattern, Request routing and versioning, API composition (aggregate multiple services), TLS termination, Request/response transformation"
+        }
+      ]
+    },
+    {
+      "id": "hld-metrics-logging",
+      "title": "Design Metrics & Logging System (Datadog / ELK)",
+      "difficulty": "Hard",
+      "pattern": "monitoring-analytics",
+      "description": "Design a distributed metrics collection and logging platform like Datadog or the ELK stack. The system ingests, stores, and queries massive volumes of time-series data and log events.",
+      "keyComponents": [
+        "Data Ingestion Service",
+        "Stream Processing (Kafka)",
+        "Time-Series Database",
+        "Log Storage",
+        "Query Engine",
+        "Alerting Service",
+        "Dashboard/Visualization Service"
+      ],
+      "concepts": [
+        "Time-series database design (write-optimized)",
+        "Log-structured merge tree (LSM)",
+        "Data downsampling and retention policies",
+        "Push vs pull metrics collection",
+        "Stream processing for real-time alerts",
+        "Inverted index for log search",
+        "Data compression for time-series"
+      ],
+      "requirements": [
+        "Ingest millions of metrics/logs per second",
+        "Store and query time-series data efficiently",
+        "Full-text search over log data",
+        "Real-time alerting on thresholds",
+        "Dashboard creation and visualization",
+        "Data retention policies",
+        "Support custom metric aggregations"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Ingest millions of metrics/logs per second; Store and query time-series data efficiently; Full-text search over log data"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Data Ingestion Service, Stream Processing (Kafka), Time-Series Database, Log Storage"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Time-series database design (write-optimized), Log-structured merge tree (LSM), Data downsampling and retention policies"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-metrics-logging-c1",
+          "front": "What are key components of Design Metrics & Logging System (Datadog / ELK)?",
+          "back": "Data Ingestion Service, Stream Processing (Kafka), Time-Series Database, Log Storage, Query Engine, Alerting Service, Dashboard/Visualization Service"
+        },
+        {
+          "id": "hld-metrics-logging-c2",
+          "front": "What concepts are important for Design Metrics & Logging System (Datadog / ELK)?",
+          "back": "Time-series database design (write-optimized), Log-structured merge tree (LSM), Data downsampling and retention policies, Push vs pull metrics collection, Stream processing for real-time alerts, Inverted index for log search, Data compression for time-series"
+        }
+      ]
+    },
+    {
+      "id": "hld-analytics-platform",
+      "title": "Design Analytics Platform (Google Analytics)",
+      "difficulty": "Hard",
+      "pattern": "monitoring-analytics",
+      "description": "Design a web/app analytics platform like Google Analytics that tracks user events, sessions, page views, and generates real-time and historical reports.",
+      "keyComponents": [
+        "Event Collection SDK/Pixel",
+        "Event Ingestion Service",
+        "Stream Processing Pipeline",
+        "Data Warehouse (BigQuery/Redshift)",
+        "Real-time Analytics Engine",
+        "Report Generation Service",
+        "Dashboard Service"
+      ],
+      "concepts": [
+        "Event tracking and session management",
+        "Lambda architecture (batch + real-time)",
+        "Clickstream data processing",
+        "OLAP vs OLTP databases",
+        "Data warehousing and star schema",
+        "Approximate counting (HyperLogLog)",
+        "Funnel analysis and cohort queries"
+      ],
+      "requirements": [
+        "Track page views, events, and user sessions",
+        "Real-time visitor count and activity",
+        "Historical trend reports",
+        "Funnel and conversion analysis",
+        "User segmentation",
+        "Custom event tracking",
+        "Handle billions of events per day"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Track page views, events, and user sessions; Real-time visitor count and activity; Historical trend reports"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Event Collection SDK/Pixel, Event Ingestion Service, Stream Processing Pipeline, Data Warehouse (BigQuery/Redshift)"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Event tracking and session management, Lambda architecture (batch + real-time), Clickstream data processing"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-analytics-platform-c1",
+          "front": "What are key components of Design Analytics Platform (Google Analytics)?",
+          "back": "Event Collection SDK/Pixel, Event Ingestion Service, Stream Processing Pipeline, Data Warehouse (BigQuery/Redshift), Real-time Analytics Engine, Report Generation Service, Dashboard Service"
+        },
+        {
+          "id": "hld-analytics-platform-c2",
+          "front": "What concepts are important for Design Analytics Platform (Google Analytics)?",
+          "back": "Event tracking and session management, Lambda architecture (batch + real-time), Clickstream data processing, OLAP vs OLTP databases, Data warehousing and star schema, Approximate counting (HyperLogLog), Funnel analysis and cohort queries"
+        }
+      ]
+    },
+    {
+      "id": "hld-top-k",
+      "title": "Design Top-K / Trending System",
+      "difficulty": "Medium",
+      "pattern": "monitoring-analytics",
+      "description": "Design a system that identifies the top-K most frequent or trending items (hashtags, search queries, products) in real-time from a massive stream of events.",
+      "keyComponents": [
+        "Event Stream (Kafka)",
+        "Count-Min Sketch / Heavy Hitters",
+        "Aggregation Service",
+        "Time Window Manager",
+        "Result Cache",
+        "API Service"
+      ],
+      "concepts": [
+        "Count-Min Sketch probabilistic data structure",
+        "Heavy hitters problem",
+        "Sliding window aggregation",
+        "MapReduce for batch counting",
+        "Approximate counting algorithms",
+        "Time-decay weighting for trending",
+        "Distributed counting with merge"
+      ],
+      "requirements": [
+        "Identify top-K items in real-time",
+        "Support multiple time windows (1hr, 24hr, 7d)",
+        "Handle millions of events per second",
+        "Approximate results are acceptable",
+        "Low-latency query response",
+        "Support multiple item types",
+        "Historical trending data"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Identify top-K items in real-time; Support multiple time windows (1hr, 24hr, 7d); Handle millions of events per second"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Event Stream (Kafka), Count-Min Sketch / Heavy Hitters, Aggregation Service, Time Window Manager"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Count-Min Sketch probabilistic data structure, Heavy hitters problem, Sliding window aggregation"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-top-k-c1",
+          "front": "What are key components of Design Top-K / Trending System?",
+          "back": "Event Stream (Kafka), Count-Min Sketch / Heavy Hitters, Aggregation Service, Time Window Manager, Result Cache, API Service"
+        },
+        {
+          "id": "hld-top-k-c2",
+          "front": "What concepts are important for Design Top-K / Trending System?",
+          "back": "Count-Min Sketch probabilistic data structure, Heavy hitters problem, Sliding window aggregation, MapReduce for batch counting, Approximate counting algorithms, Time-decay weighting for trending, Distributed counting with merge"
+        }
+      ]
+    },
+    {
+      "id": "hld-cdn",
+      "title": "Design Content Delivery Network (CDN)",
+      "difficulty": "Hard",
+      "pattern": "distributed-infra",
+      "description": "Design a globally distributed content delivery network that caches and serves static content (images, videos, JS/CSS) from edge servers close to users for minimal latency.",
+      "keyComponents": [
+        "Edge Servers (PoPs)",
+        "Origin Server",
+        "DNS-based Routing",
+        "Cache Manager",
+        "Health Monitor",
+        "Purge/Invalidation Service",
+        "Analytics Service"
+      ],
+      "concepts": [
+        "Anycast DNS for nearest edge routing",
+        "Cache hierarchy (L1 edge, L2 regional, origin)",
+        "Cache invalidation strategies (TTL, purge)",
+        "Consistent hashing for cache distribution",
+        "TLS/SSL termination at edge",
+        "Origin shield pattern",
+        "Geographic load balancing"
+      ],
+      "requirements": [
+        "Serve content from nearest edge location",
+        "Cache static and dynamic content",
+        "Low-latency content delivery globally",
+        "Cache invalidation and purging",
+        "Handle origin server failures",
+        "Support HTTPS termination at edge",
+        "Real-time traffic analytics"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Serve content from nearest edge location; Cache static and dynamic content; Low-latency content delivery globally"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Edge Servers (PoPs), Origin Server, DNS-based Routing, Cache Manager"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Anycast DNS for nearest edge routing, Cache hierarchy (L1 edge, L2 regional, origin), Cache invalidation strategies (TTL, purge)"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-cdn-c1",
+          "front": "What are key components of Design Content Delivery Network (CDN)?",
+          "back": "Edge Servers (PoPs), Origin Server, DNS-based Routing, Cache Manager, Health Monitor, Purge/Invalidation Service, Analytics Service"
+        },
+        {
+          "id": "hld-cdn-c2",
+          "front": "What concepts are important for Design Content Delivery Network (CDN)?",
+          "back": "Anycast DNS for nearest edge routing, Cache hierarchy (L1 edge, L2 regional, origin), Cache invalidation strategies (TTL, purge), Consistent hashing for cache distribution, TLS/SSL termination at edge, Origin shield pattern, Geographic load balancing"
+        }
+      ]
+    },
+    {
+      "id": "hld-load-balancer",
+      "title": "Design Load Balancer",
+      "difficulty": "Medium",
+      "pattern": "distributed-infra",
+      "description": "Design a load balancing system that distributes incoming network traffic across multiple servers. It should support health checking, multiple balancing algorithms, and handle server failures.",
+      "keyComponents": [
+        "Load Balancer (L4/L7)",
+        "Health Check Service",
+        "Server Pool Manager",
+        "Session Store",
+        "Configuration Service",
+        "Metrics Collector"
+      ],
+      "concepts": [
+        "L4 (transport) vs L7 (application) load balancing",
+        "Round-robin, least connections, weighted algorithms",
+        "Consistent hashing for sticky sessions",
+        "Health check mechanisms (TCP, HTTP)",
+        "SSL/TLS termination",
+        "Connection draining",
+        "Global server load balancing (GSLB)"
+      ],
+      "requirements": [
+        "Distribute traffic across backend servers",
+        "Health checking and automatic failover",
+        "Multiple load balancing algorithms",
+        "Session persistence (sticky sessions)",
+        "SSL termination",
+        "Horizontal scaling of load balancers",
+        "Real-time metrics and logging"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Distribute traffic across backend servers; Health checking and automatic failover; Multiple load balancing algorithms"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Load Balancer (L4/L7), Health Check Service, Server Pool Manager, Session Store"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: L4 (transport) vs L7 (application) load balancing, Round-robin, least connections, weighted algorithms, Consistent hashing for sticky sessions"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-load-balancer-c1",
+          "front": "What are key components of Design Load Balancer?",
+          "back": "Load Balancer (L4/L7), Health Check Service, Server Pool Manager, Session Store, Configuration Service, Metrics Collector"
+        },
+        {
+          "id": "hld-load-balancer-c2",
+          "front": "What concepts are important for Design Load Balancer?",
+          "back": "L4 (transport) vs L7 (application) load balancing, Round-robin, least connections, weighted algorithms, Consistent hashing for sticky sessions, Health check mechanisms (TCP, HTTP), SSL/TLS termination, Connection draining, Global server load balancing (GSLB)"
+        }
+      ]
+    },
+    {
+      "id": "hld-twitter-search",
+      "title": "Design Twitter Search / Real-Time Search",
+      "difficulty": "Medium",
+      "pattern": "search-discovery",
+      "description": "Design a real-time search system for a social media platform where users can search through billions of posts/tweets with near-instant indexing of new content.",
+      "keyComponents": [
+        "Ingestion Service",
+        "Real-Time Indexer",
+        "Inverted Index (Elasticsearch)",
+        "Query Service",
+        "Ranking Service",
+        "Cache Layer"
+      ],
+      "concepts": [
+        "Inverted index for full-text search",
+        "Near real-time indexing pipeline",
+        "Elasticsearch/Lucene internals",
+        "Search result ranking (recency + relevance)",
+        "Index sharding and replication",
+        "Query parsing and tokenization",
+        "Scatter-gather query pattern"
+      ],
+      "requirements": [
+        "Search posts in near real-time",
+        "Full-text search with relevance ranking",
+        "Filter by date, user, engagement",
+        "Handle high query volume",
+        "Index new content within seconds",
+        "Auto-suggestions while typing",
+        "Trending and popular results boosted"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Search posts in near real-time; Full-text search with relevance ranking; Filter by date, user, engagement"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Ingestion Service, Real-Time Indexer, Inverted Index (Elasticsearch), Query Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Inverted index for full-text search, Near real-time indexing pipeline, Elasticsearch/Lucene internals"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-twitter-search-c1",
+          "front": "What are key components of Design Twitter Search / Real-Time Search?",
+          "back": "Ingestion Service, Real-Time Indexer, Inverted Index (Elasticsearch), Query Service, Ranking Service, Cache Layer"
+        },
+        {
+          "id": "hld-twitter-search-c2",
+          "front": "What concepts are important for Design Twitter Search / Real-Time Search?",
+          "back": "Inverted index for full-text search, Near real-time indexing pipeline, Elasticsearch/Lucene internals, Search result ranking (recency + relevance), Index sharding and replication, Query parsing and tokenization, Scatter-gather query pattern"
+        }
+      ]
+    },
+    {
+      "id": "hld-online-code-editor",
+      "title": "Design Online Code Editor (LeetCode / CodeSandbox)",
+      "difficulty": "Medium",
+      "pattern": "collaboration-productivity",
+      "description": "Design an online code editor and execution platform where users can write, compile, and run code in multiple languages with sandboxed execution environments.",
+      "keyComponents": [
+        "Code Editor Frontend (Monaco)",
+        "Code Execution Service",
+        "Sandbox/Container Runtime",
+        "Queue Service",
+        "Result Storage",
+        "Test Case Runner",
+        "User/Session Service"
+      ],
+      "concepts": [
+        "Sandboxed code execution (Docker/gVisor)",
+        "Resource limits (CPU, memory, time)",
+        "Container pooling for fast execution",
+        "Security isolation (prevent malicious code)",
+        "WebSocket for real-time output streaming",
+        "Multi-language support with pre-built images",
+        "Queue-based execution for fairness"
+      ],
+      "requirements": [
+        "Write code in multiple languages",
+        "Compile and execute code",
+        "Sandboxed execution environment",
+        "Time and memory limits",
+        "Standard input/output support",
+        "Test case validation",
+        "Real-time output streaming"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Write code in multiple languages; Compile and execute code; Sandboxed execution environment"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Code Editor Frontend (Monaco), Code Execution Service, Sandbox/Container Runtime, Queue Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Sandboxed code execution (Docker/gVisor), Resource limits (CPU, memory, time), Container pooling for fast execution"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-online-code-editor-c1",
+          "front": "What are key components of Design Online Code Editor (LeetCode / CodeSandbox)?",
+          "back": "Code Editor Frontend (Monaco), Code Execution Service, Sandbox/Container Runtime, Queue Service, Result Storage, Test Case Runner, User/Session Service"
+        },
+        {
+          "id": "hld-online-code-editor-c2",
+          "front": "What concepts are important for Design Online Code Editor (LeetCode / CodeSandbox)?",
+          "back": "Sandboxed code execution (Docker/gVisor), Resource limits (CPU, memory, time), Container pooling for fast execution, Security isolation (prevent malicious code), WebSocket for real-time output streaming, Multi-language support with pre-built images, Queue-based execution for fairness"
+        }
+      ]
+    },
+    {
+      "id": "hld-distributed-locking",
+      "title": "Design Distributed Locking Service",
+      "difficulty": "Hard",
+      "pattern": "distributed-infra",
+      "description": "Design a distributed locking service similar to ZooKeeper or etcd that provides mutual exclusion across distributed processes. Used for leader election, resource coordination, and preventing race conditions.",
+      "keyComponents": [
+        "Lock Manager Cluster",
+        "Consensus Module (Raft/Paxos)",
+        "Lease Manager",
+        "Watch/Notification Service",
+        "Client Library",
+        "Session Manager"
+      ],
+      "concepts": [
+        "Consensus algorithms (Raft, Paxos, ZAB)",
+        "Lease-based locking with TTL",
+        "Fencing tokens to prevent stale locks",
+        "Leader election using locks",
+        "Watch mechanism for lock state changes",
+        "Split-brain prevention",
+        "Session and ephemeral nodes"
+      ],
+      "requirements": [
+        "Acquire and release distributed locks",
+        "Automatic lock expiration (TTL/lease)",
+        "Fair lock ordering (FIFO)",
+        "Leader election support",
+        "Watch notifications on lock changes",
+        "High availability (replicated across nodes)",
+        "Prevent stale lock usage (fencing tokens)"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Acquire and release distributed locks; Automatic lock expiration (TTL/lease); Fair lock ordering (FIFO)"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Lock Manager Cluster, Consensus Module (Raft/Paxos), Lease Manager, Watch/Notification Service"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Consensus algorithms (Raft, Paxos, ZAB), Lease-based locking with TTL, Fencing tokens to prevent stale locks"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-distributed-locking-c1",
+          "front": "What are key components of Design Distributed Locking Service?",
+          "back": "Lock Manager Cluster, Consensus Module (Raft/Paxos), Lease Manager, Watch/Notification Service, Client Library, Session Manager"
+        },
+        {
+          "id": "hld-distributed-locking-c2",
+          "front": "What concepts are important for Design Distributed Locking Service?",
+          "back": "Consensus algorithms (Raft, Paxos, ZAB), Lease-based locking with TTL, Fencing tokens to prevent stale locks, Leader election using locks, Watch mechanism for lock state changes, Split-brain prevention, Session and ephemeral nodes"
+        }
+      ]
+    },
+    {
+      "id": "hld-distributed-file-system",
+      "title": "Design Distributed File System (GFS / HDFS)",
+      "difficulty": "Hard",
+      "pattern": "distributed-infra",
+      "description": "Design a distributed file system like Google File System (GFS) or HDFS that stores large files across a cluster of commodity machines with fault tolerance and high throughput.",
+      "keyComponents": [
+        "Master/Name Node",
+        "Chunk/Data Nodes",
+        "Chunk Manager",
+        "Replication Controller",
+        "Client Library",
+        "Metadata Store",
+        "Heartbeat Monitor"
+      ],
+      "concepts": [
+        "Large file chunking (64MB/128MB chunks)",
+        "Chunk replication (3x by default)",
+        "Master-worker architecture",
+        "Rack-aware replica placement",
+        "Write-ahead log for metadata",
+        "Chunk lease management",
+        "Garbage collection for orphaned chunks"
+      ],
+      "requirements": [
+        "Store files across distributed nodes",
+        "Automatic chunk replication",
+        "Handle node failures transparently",
+        "High throughput for large sequential reads/writes",
+        "Support append operations",
+        "Metadata management with single master",
+        "Scalable to petabytes of data"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Store files across distributed nodes; Automatic chunk replication; Handle node failures transparently"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Master/Name Node, Chunk/Data Nodes, Chunk Manager, Replication Controller"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Large file chunking (64MB/128MB chunks), Chunk replication (3x by default), Master-worker architecture"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-distributed-file-system-c1",
+          "front": "What are key components of Design Distributed File System (GFS / HDFS)?",
+          "back": "Master/Name Node, Chunk/Data Nodes, Chunk Manager, Replication Controller, Client Library, Metadata Store, Heartbeat Monitor"
+        },
+        {
+          "id": "hld-distributed-file-system-c2",
+          "front": "What concepts are important for Design Distributed File System (GFS / HDFS)?",
+          "back": "Large file chunking (64MB/128MB chunks), Chunk replication (3x by default), Master-worker architecture, Rack-aware replica placement, Write-ahead log for metadata, Chunk lease management, Garbage collection for orphaned chunks"
+        }
+      ]
+    },
+    {
+      "id": "hld-proximity-service",
+      "title": "Design Proximity Service / Nearby Friends",
+      "difficulty": "Medium",
+      "pattern": "location-transport",
+      "description": "Design a service that identifies and shows nearby friends or users in real-time, similar to Facebook Nearby Friends. Users share their location and see who is nearby.",
+      "keyComponents": [
+        "Location Ingestion Service",
+        "Geospatial Index",
+        "Pub/Sub System",
+        "WebSocket Server",
+        "Location History Store",
+        "Privacy Service"
+      ],
+      "concepts": [
+        "Geohashing for proximity detection",
+        "Pub/Sub for real-time location updates",
+        "Redis with geospatial commands (GEOADD, GEORADIUS)",
+        "Location update frequency optimization",
+        "Privacy zones and location fuzzing",
+        "Battery-efficient location sharing",
+        "Fan-out of location updates to friends"
+      ],
+      "requirements": [
+        "Real-time nearby friend detection",
+        "Configurable proximity radius",
+        "Location sharing opt-in/opt-out",
+        "Battery-efficient location updates",
+        "Privacy controls and location fuzzing",
+        "Location history (optional)",
+        "Support millions of concurrent users"
+      ],
+      "category": "hld",
+      "steps": [
+        {
+          "title": "Requirements",
+          "hint": "Clarify functional and non-functional requirements",
+          "approach": "Real-time nearby friend detection; Configurable proximity radius; Location sharing opt-in/opt-out"
+        },
+        {
+          "title": "High-Level Architecture",
+          "hint": "Draw the system components",
+          "approach": "Components: Location Ingestion Service, Geospatial Index, Pub/Sub System, WebSocket Server"
+        },
+        {
+          "title": "Deep Dive",
+          "hint": "Discuss key design decisions",
+          "approach": "Key concepts: Geohashing for proximity detection, Pub/Sub for real-time location updates, Redis with geospatial commands (GEOADD, GEORADIUS)"
+        },
+        {
+          "title": "Scale & Trade-offs",
+          "hint": "Address bottlenecks and scaling",
+          "approach": "Consider caching, sharding, replication"
+        }
+      ],
+      "ankiCards": [
+        {
+          "id": "hld-proximity-service-c1",
+          "front": "What are key components of Design Proximity Service / Nearby Friends?",
+          "back": "Location Ingestion Service, Geospatial Index, Pub/Sub System, WebSocket Server, Location History Store, Privacy Service"
+        },
+        {
+          "id": "hld-proximity-service-c2",
+          "front": "What concepts are important for Design Proximity Service / Nearby Friends?",
+          "back": "Geohashing for proximity detection, Pub/Sub for real-time location updates, Redis with geospatial commands (GEOADD, GEORADIUS), Location update frequency optimization, Privacy zones and location fuzzing, Battery-efficient location sharing, Fan-out of location updates to friends"
+        }
+      ]
+    }
+  ]
+}

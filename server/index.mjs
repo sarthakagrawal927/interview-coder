@@ -13,26 +13,21 @@ const CLI_TOOLS = {
   claude: {
     command: 'claude',
     buildArgs: (systemPrompt) => {
-      const args = ['-p', '--output-format', 'stream-json'];
+      const args = ['-p', '--output-format', 'stream-json', '--verbose'];
       if (systemPrompt) args.push('--system-prompt', systemPrompt);
       return args;
     },
-    inputMode: 'stdin', // send prompt via stdin
+    inputMode: 'stdin',
     parseStream: (line, emit) => {
       const json = JSON.parse(line);
-      // claude stream-json: assistant message with content blocks
       if (json.type === 'assistant' && json.message?.content) {
         for (const block of json.message.content) {
           if (block.type === 'text' && block.text) emit(block.text);
         }
+        return;
       }
-      // content_block_delta style
       if (json.type === 'content_block_delta' && json.delta?.text) {
         emit(json.delta.text);
-      }
-      // result type (final)
-      if (json.type === 'result' && json.result) {
-        emit(json.result);
       }
     },
   },
@@ -44,22 +39,12 @@ const CLI_TOOLS = {
       if (systemPrompt) args.push('--instructions', systemPrompt);
       return args;
     },
-    inputMode: 'stdin', // prompt via stdin
+    inputMode: 'stdin',
     parseStream: (line, emit) => {
       const json = JSON.parse(line);
-      // codex JSONL: look for message events with text content
-      if (json.type === 'message' && json.content) {
-        emit(json.content);
-      }
-      // response.output_text style
-      if (json.output_text) {
-        emit(json.output_text);
-      }
-      // handle delta events
-      if (json.type === 'response.output_text.delta' && json.delta) {
-        emit(json.delta);
-      }
-      // final response text
+      if (json.type === 'message' && json.content) emit(json.content);
+      if (json.output_text) emit(json.output_text);
+      if (json.type === 'response.output_text.delta' && json.delta) emit(json.delta);
       if (json.type === 'response.completed' && json.response?.output_text) {
         emit(json.response.output_text);
       }
@@ -73,29 +58,18 @@ const CLI_TOOLS = {
       if (systemPrompt) args.push('--system-instruction', systemPrompt);
       return args;
     },
-    inputMode: 'arg', // prompt as -p flag
+    inputMode: 'arg',
     parseStream: (line, emit) => {
       const json = JSON.parse(line);
-      // gemini stream-json: similar structure to claude
       if (json.type === 'assistant' && json.message?.content) {
         for (const block of json.message.content) {
           if (block.type === 'text' && block.text) emit(block.text);
         }
+        return;
       }
-      if (json.type === 'content_block_delta' && json.delta?.text) {
-        emit(json.delta.text);
-      }
-      if (json.type === 'result' && json.result) {
-        emit(json.result);
-      }
-      // gemini may also emit partialText
-      if (json.partialText) {
-        emit(json.partialText);
-      }
-      // or text field directly
-      if (json.text && !json.type) {
-        emit(json.text);
-      }
+      if (json.type === 'content_block_delta' && json.delta?.text) emit(json.delta.text);
+      if (json.partialText) emit(json.partialText);
+      if (json.text && !json.type) emit(json.text);
     },
   },
 };
@@ -105,42 +79,35 @@ app.get('/api/health', (_req, res) => {
 });
 
 app.post('/api/chat', (req, res) => {
-  const { messages, systemPrompt, tool = 'claude' } = req.body;
+  const { messages, systemPrompt, tool, provider } = req.body;
+  const toolName = provider || tool || 'claude';
 
   if (!messages || !Array.isArray(messages)) {
     return res.status(400).json({ error: 'messages array required' });
   }
 
-  const cliTool = CLI_TOOLS[tool];
+  const cliTool = CLI_TOOLS[toolName];
   if (!cliTool) {
-    return res.status(400).json({ error: `Unknown tool: ${tool}. Available: ${Object.keys(CLI_TOOLS).join(', ')}` });
+    return res.status(400).json({ error: `Unknown provider: ${toolName}. Available: ${Object.keys(CLI_TOOLS).join(', ')}` });
   }
 
-  // Build a single prompt from conversation history
-  const conversationLines = messages.map(m => {
-    const role = m.role === 'user' ? 'User' : 'Assistant';
-    return `${role}: ${m.content}`;
-  });
-  const prompt = conversationLines.join('\n\n');
+  const prompt = messages
+    .map(m => `${m.role === 'user' ? 'User' : 'Assistant'}: ${m.content}`)
+    .join('\n\n');
 
-  // Set up SSE headers
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
   res.flushHeaders();
 
-  // Build CLI args
   const args = cliTool.buildArgs(systemPrompt);
-  if (cliTool.inputMode === 'arg') {
-    args.push('-p', prompt);
-  }
+  if (cliTool.inputMode === 'arg') args.push('-p', prompt);
 
   const proc = spawn(cliTool.command, args, {
     env: { ...process.env },
     stdio: ['pipe', 'pipe', 'pipe'],
   });
 
-  // Send prompt via stdin if needed
   if (cliTool.inputMode === 'stdin') {
     proc.stdin.write(prompt);
     proc.stdin.end();
@@ -162,10 +129,8 @@ app.post('/api/chat', (req, res) => {
           res.write(`data: ${JSON.stringify({ text })}\n\n`);
         });
       } catch {
-        // Not valid JSON or unrecognized format — try plain text fallback
         const trimmed = line.trim();
         if (trimmed && !trimmed.startsWith('{') && !trimmed.startsWith('[')) {
-          // Plain text output (some CLIs may not always output JSON)
           textSent = true;
           res.write(`data: ${JSON.stringify({ text: trimmed + '\n' })}\n\n`);
         }
@@ -174,14 +139,11 @@ app.post('/api/chat', (req, res) => {
   });
 
   proc.stderr.on('data', (data) => {
-    const errText = data.toString();
-    if (errText.trim()) {
-      console.error(`[${tool} stderr]`, errText);
-    }
+    const errText = data.toString().trim();
+    if (errText) console.error(`[${toolName} stderr]`, errText);
   });
 
   proc.on('close', (code) => {
-    // Flush remaining buffer
     if (buffer.trim()) {
       try {
         cliTool.parseStream(buffer, (text) => {
@@ -190,30 +152,24 @@ app.post('/api/chat', (req, res) => {
         });
       } catch {
         if (!textSent) {
-          // If nothing was sent, try the raw buffer as plain text
           res.write(`data: ${JSON.stringify({ text: buffer.trim() })}\n\n`);
         }
       }
     }
     res.write('data: [DONE]\n\n');
     res.end();
-    if (code !== 0) {
-      console.error(`[${tool}] exited with code ${code}`);
-    }
+    if (code !== 0) console.error(`[${toolName}] exited with code ${code}`);
   });
 
   proc.on('error', (err) => {
-    console.error(`[${tool} spawn error]`, err.message);
-    res.write(`data: ${JSON.stringify({ error: `Failed to start ${tool} CLI. Is it installed?` })}\n\n`);
+    console.error(`[${toolName} spawn error]`, err.message);
+    res.write(`data: ${JSON.stringify({ error: `Failed to start ${toolName} CLI. Is it installed?` })}\n\n`);
     res.write('data: [DONE]\n\n');
     res.end();
   });
 
-  // Kill subprocess if client disconnects
-  req.on('close', () => {
-    if (!proc.killed) {
-      proc.kill('SIGTERM');
-    }
+  res.on('close', () => {
+    if (!proc.killed) proc.kill('SIGTERM');
   });
 });
 
