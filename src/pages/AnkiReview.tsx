@@ -80,7 +80,7 @@ export default function AnkiReview() {
       if (!seen.has(card.problemId)) {
         seen.add(card.problemId);
         const p = getById(card.problemId);
-        if (p && p.testCases.length > 0) problems.push(p);
+        if (p && (p.testCases || []).length > 0) problems.push(p);
       }
     }
     // Also include problems from all filtered flashcards if no due cards
@@ -89,7 +89,7 @@ export default function AnkiReview() {
         if (!seen.has(card.problemId)) {
           seen.add(card.problemId);
           const p = getById(card.problemId);
-          if (p && p.testCases.length > 0) problems.push(p);
+          if (p && (p.testCases || []).length > 0) problems.push(p);
         }
       }
     }
@@ -393,14 +393,14 @@ function SolveCardView({
 }) {
   const { execute, output, errors, testResults, isRunning, clearOutput } = useCodeExecution();
   const { updateStatus, getStatus } = useProgress();
-  const [code, setCode] = useState(problem.starterCode);
+  const [code, setCode] = useState((problem.starterCode || ''));
   const [language, setLanguage] = useState<Language>('javascript');
   const [hasRun, setHasRun] = useState(false);
   const [allPassed, setAllPassed] = useState(false);
 
   // Reset when problem changes
   useEffect(() => {
-    setCode(problem.starterCode);
+    setCode((problem.starterCode || ''));
     setHasRun(false);
     setAllPassed(false);
     clearOutput();
@@ -412,7 +412,7 @@ function SolveCardView({
     if (status === 'unseen') {
       updateStatus(problem.id, 'attempted');
     }
-    const result = await execute(code, problem.testCases, language);
+    const result = await execute(code, problem.testCases || [], language);
     setHasRun(true);
     const passed = result.testResults.length > 0 && result.testResults.every(t => t.passed);
     setAllPassed(passed);
@@ -508,7 +508,7 @@ function SolveCardView({
             </div>
             <div className="flex items-center gap-2">
               <button
-                onClick={() => { setCode(problem.starterCode); clearOutput(); setHasRun(false); setAllPassed(false); }}
+                onClick={() => { setCode((problem.starterCode || '')); clearOutput(); setHasRun(false); setAllPassed(false); }}
                 className="flex items-center gap-1 rounded-md px-2 py-1 text-xs text-gray-400 transition-colors hover:bg-gray-800 hover:text-gray-200"
               >
                 <RotateCcw className="h-3.5 w-3.5" />

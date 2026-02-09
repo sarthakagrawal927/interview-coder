@@ -66,7 +66,7 @@ export default function ImportProblem() {
 
       addCustomProblem(problem);
       const pat = patterns.find(p => p.id === problem.pattern);
-      setSuccess({ title: problem.title, difficulty: problem.difficulty, pattern: pat?.name || problem.pattern, testCases: problem.testCases.length, id: problem.id });
+      setSuccess({ title: problem.title, difficulty: problem.difficulty, pattern: pat?.name || problem.pattern, testCases: (problem.testCases || []).length, id: problem.id });
     } catch (e: any) {
       // Fallback: create from slug alone
       const titleFromSlug = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');

@@ -127,7 +127,7 @@ export default function ProblemView() {
     if (status === 'unseen') {
       updateStatus(problem.id, 'attempted');
     }
-    const result = await execute(code, problem.testCases, language);
+    const result = await execute(code, problem.testCases || [], language);
     if (result.testResults.length > 0 && result.testResults.every(t => t.passed)) {
       updateStatus(problem.id, 'solved');
     }
@@ -135,10 +135,10 @@ export default function ProblemView() {
 
   const handleReset = () => {
     if (problem) {
-      setCode(problem.starterCode);
+      setCode(problem.starterCode || '');
       setMarkers([]);
       clearOutput();
-      saveCode(problem.id, problem.starterCode, language);
+      saveCode(problem.id, problem.starterCode || '', language);
     }
   };
 
@@ -363,7 +363,7 @@ function ProblemHeader({ problem, pattern, status }) {
         )}
       </div>
       <h1 className="text-xl sm:text-2xl font-bold text-white">
-        {problem.leetcodeNumber}. {problem.title}
+        {problem.leetcodeNumber ? `${problem.leetcodeNumber}. ` : ''}{problem.title}
       </h1>
       {problem.leetcodeUrl && (
         <a
