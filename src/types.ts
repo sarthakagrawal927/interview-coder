@@ -35,6 +35,12 @@ export interface MCQCard {
   difficulty: 'easy' | 'medium' | 'hard';
 }
 
+export interface SimilarQuestion {
+  title: string;
+  titleSlug: string;
+  difficulty: string;
+}
+
 export interface Problem {
   id: string;
   title: string;
@@ -47,6 +53,7 @@ export interface Problem {
   steps: Step[];
   testCases: TestCase[];
   ankiCards: AnkiCard[];
+  similarQuestions?: SimilarQuestion[];
 }
 
 export interface ProblemsData {
