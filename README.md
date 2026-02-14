@@ -1,5 +1,8 @@
 # Interview Coder
 
+![AI Generated](https://ai-percentage-pin.vercel.app/api/ai-percentage?value=70)
+![AI PRs Welcome](https://ai-percentage-pin.vercel.app/api/ai-prs?welcome=yes)
+
 A comprehensive interview preparation platform for mastering DSA, Low-Level Design, System Design, and Behavioral interviews.
 
 ## Problem
